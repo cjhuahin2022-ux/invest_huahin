@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hua Hin Investment Portfolio · 3 Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8D08A;
+      --dark: #1a1a1a;
+      --mid: #2d2d2d;
+      --light: #f5f0e8;
+      --text: #333;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      min-height: 100vh;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 80px 40px 60px;
+      text-align: center;
+      background: linear-gradient(160deg, #1a1a1a 0%, #2a2018 50%, #1a1a1a 100%);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 20px;
+      padding: 6px 18px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero .sub {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.5px;
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-top: 6px;
+    }
+
+    /* CARDS */
+    .cards-section {
+      padding: 70px 40px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #242424, #1e1e1e);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.4);
+      border-color: rgba(201,168,76,0.4);
+    }
+
+    .card-header {
+      padding: 36px 32px 28px;
+      position: relative;
+    }
+
+    .card-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .card-number {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: rgba(201,168,76,0.5);
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,0.1);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+    }
+
+    .card h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .card-metrics {
+      padding: 20px 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      gap: 24px;
+    }
+
+    .metric {
+      flex: 1;
+    }
+
+    .metric-val {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .metric-key {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-top: 5px;
+    }
+
+    .card-footer {
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
+    .btn-view {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: gap 0.2s ease;
+    }
+
+    .card:hover .btn-view {
+      gap: 14px;
+    }
+
+    .btn-view svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ACCENT COLORS */
+    .card-1 .card-header { background: linear-gradient(135deg, rgba(90,60,20,0.3) 0%, transparent 60%); }
+    .card-2 .card-header { background: linear-gradient(135deg, rgba(20,60,90,0.3) 0%, transparent 60%); }
+    .card-3 .card-header { background: linear-gradient(135deg, rgba(30,80,50,0.3) 0%, transparent 60%); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 32px 40px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.5px;
+    }
+
+    footer strong {
+      color: rgba(201,168,76,0.6);
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 60px 24px 48px; }
+      .cards-section { padding: 50px 20px 60px; }
+      .stats-row { gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="badge">Investment Portfolio · Hua Hin, Thailand</div>
+  <h1>Three Projects.<br><span>One Vision.</span></h1>
+  <p class="sub">A curated collection of premium investment opportunities in Hua Hin — from lifestyle hospitality to wellness real estate.</p>
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Projects</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">฿</div>
+      <div class="stat-label">Thai Baht Returns</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2025</div>
+      <div class="stat-label">Launch Year</div>
+    </div>
+  </div>
+</section>
+
+<section class="cards-section">
+  <p class="section-label">Investor Decks</p>
+  <h2 class="section-title">Select a Project to Explore</h2>
+
+  <div class="cards">
+
+    <!-- TEA HOUSE -->
+    <a href="tea-house.html" class="card card-1">
+      <div class="card-header">
+        <span class="card-number">01</span>
+        <span class="card-icon">🍵</span>
+        <span class="card-tag">Hospitality</span>
+        <h2>Premium Tea House</h2>
+        <p>A dual-function venue combining an upscale tea experience with an exclusive investor meeting space in Hua Hin.</p>
+      </div>
+      <div class="card-metrics">
+        <div class="metric">
+          <div class="metric-val">Dual</div>
+          <div class="metric-key">Revenue Model</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">F&B + Events</div>
+          <div class="metric-key">Business Type</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="btn-view">
+          View Deck
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- FOOD COURT -->
+    <a href="food-court.html" class="card card-2">
+      <div class="card-header">
+        <span class="card-number">02</span>
+        <span class="card-icon">🏪</span>
+        <span class="card-tag">F&B · PropTech</span>
+        <h2>Smart Food Court</h2>
+        <p>QR-based multi-kitchen ordering system on Phetkasem Road — high-footfall location with technology-driven operations.</p>
+      </div>
+      <div class="card-metrics">
+        <div class="metric">
+          <div class="metric-val">QR-First</div>
+          <div class="metric-key">Ordering System</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">Multi-Kitchen</div>
+          <div class="metric-key">Format</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="btn-view">
+          View Deck
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- WELLNESS -->
+    <a href="wellness.html" class="card card-3">
+      <div class="card-header">
+        <span class="card-number">03</span>
+        <span class="card-icon">🌿</span>
+        <span class="card-tag">Wellness · Equestrian</span>
+        <h2>Wellness Center + Equestrian</h2>
+        <p>A premium wellness destination with an independent equestrian sub-project — separate P&L, separate growth story.</p>
+      </div>
+      <div class="card-metrics">
+        <div class="metric">
+          <div class="metric-val">2-in-1</div>
+          <div class="metric-key">Sub-Projects</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">Real Estate</div>
+          <div class="metric-key">Asset Class</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="btn-view">
+          View Deck
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <p>Confidential · For qualified investors only · <strong>Hua Hin Investment Portfolio 2025</strong></p>
+</footer>
+
+</body>
+</html>
