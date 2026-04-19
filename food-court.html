@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Food Court · Hua Hin — Investor Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    /* ─── RESET & VARIABLES ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:   #1B4332;
+      --green-mid: #2D6A4F;
+      --green-lt: #40916C;
+      --gold:    #D4A843;
+      --gold-dk: #B8882A;
+      --white:   #FFFFFF;
+      --bg:      #F8F6F1;
+      --text:    #2D2D2D;
+      --muted:   #6B7280;
+      --border:  #E5E0D5;
+      --font-head: 'Montserrat', sans-serif;
+      --font-body: 'Lora', Georgia, serif;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text); background: var(--white);
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+    body.lang-en [lang="th"] { display: none !important; }
+    body.lang-en [lang="ru"] { display: none !important; }
+    body.lang-th [lang="en"] { display: none !important; }
+    body.lang-th [lang="ru"] { display: none !important; }
+    body.lang-ru [lang="en"] { display: none !important; }
+    body.lang-ru [lang="th"] { display: none !important; }
+
+    /* ─── HEADER ────────────────────────────────────────── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background 0.3s, box-shadow 0.3s; padding: 0 2rem;
+    }
+    .site-header.scrolled {
+      background: rgba(27,67,50,0.97); backdrop-filter: blur(8px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+    .header-inner {
+      max-width: 1440px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .header-brand {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.95rem;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--white); text-decoration: none;
+    }
+    .header-brand .accent { color: var(--gold); }
+    .header-nav { display: flex; align-items: center; gap: 1.5rem; }
+    .lang-toggle {
+      display: flex; align-items: center;
+      border: 1px solid rgba(212,168,67,0.5); border-radius: 4px; overflow: hidden;
+    }
+    .lang-btn {
+      background: transparent; border: none; cursor: pointer;
+      font-family: var(--font-head); font-weight: 600; font-size: 0.75rem;
+      letter-spacing: 0.08em; color: rgba(255,255,255,0.65);
+      padding: 0.35rem 0.65rem; transition: all 0.2s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--green); }
+    .lang-btn:hover:not(.active) { color: var(--white); }
+    .btn-meeting {
+      font-family: var(--font-head); font-weight: 600; font-size: 0.78rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--green); background: var(--gold);
+      padding: 0.5rem 1.1rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s; white-space: nowrap;
+    }
+    .btn-meeting:hover { background: var(--gold-dk); transform: translateY(-1px); }
+
+    /* ─── HERO ──────────────────────────────────────────── */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(160deg, rgba(18,38,28,0.94) 0%, rgba(27,67,50,0.78) 50%, rgba(45,106,79,0.88) 100%);
+      background-color: #111E16;
+    }
+    .hero-bg::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+      background: linear-gradient(to top, rgba(212,168,67,0.08), transparent);
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%;
+      background: radial-gradient(ellipse at 70% 50%, rgba(212,168,67,0.06) 0%, transparent 65%);
+    }
+    .hero-bg .cuisine-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(64,145,108,0.15) 0%, transparent 35%),
+        radial-gradient(circle at 85% 75%, rgba(212,168,67,0.08) 0%, transparent 35%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 900px; padding: 8rem 2rem 6rem; text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-family: var(--font-head); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid rgba(212,168,67,0.45);
+      padding: 0.35rem 1rem; border-radius: 2px; margin-bottom: 1.8rem;
+    }
+    .hero-headline {
+      font-family: var(--font-head); font-weight: 800; line-height: 1.1;
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      color: var(--white); margin-bottom: 1.4rem; letter-spacing: -0.01em;
+    }
+    .hero-headline .num { color: var(--gold); }
+    .hero-headline em { font-style: italic; font-family: var(--font-body); font-weight: 500; }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.15rem); color: rgba(255,255,255,0.8);
+      max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.65;
+    }
+    .hero-badges {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .hero-badge {
+      font-family: var(--font-head); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.06em; color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.2); padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+    }
+    .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.85rem;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      background: var(--gold); color: var(--green);
+      padding: 0.9rem 2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-dk); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,168,67,0.4); }
+    .btn-secondary {
+      font-family: var(--font-head); font-weight: 600; font-size: 0.85rem;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      background: transparent; color: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 0.9rem 2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .scroll-indicator {
+      position: absolute; bottom: 2.2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; z-index: 2;
+    }
+    .scroll-indicator span {
+      display: block; width: 1px; height: 52px;
+      background: linear-gradient(to bottom, rgba(212,168,67,0.8), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    /* ─── SECTIONS SHARED ───────────────────────────────── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.7rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-head); font-weight: 800;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      color: var(--green); line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .section-lead {
+      font-size: 1.05rem; color: var(--muted); max-width: 700px;
+      margin-bottom: 3rem; line-height: 1.7;
+    }
+    .divider { width: 48px; height: 3px; background: var(--gold); margin: 1rem 0 2rem; }
+
+    /* ─── CONCEPT ───────────────────────────────────────── */
+    .concept { background: var(--white); }
+    .why-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem; margin-bottom: 3rem;
+    }
+    .why-block h3 {
+      font-family: var(--font-head); font-weight: 700; font-size: 1rem;
+      color: var(--green); margin-bottom: 0.75rem;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .why-block p { font-size: 0.96rem; line-height: 1.75; color: var(--text); }
+    .diff-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .diff-card {
+      background: var(--bg); border-radius: 6px;
+      padding: 2rem 1.6rem; border-top: 3px solid var(--gold);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .diff-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(27,67,50,0.12); }
+    .diff-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--green); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.2rem; font-size: 1.4rem;
+    }
+    .diff-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.95rem;
+      color: var(--green); margin-bottom: 0.6rem; line-height: 1.3;
+    }
+    .diff-body { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── OPPORTUNITY ───────────────────────────────────── */
+    .opportunity { background: var(--bg); }
+    .opp-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
+    }
+    .catchment-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1.25rem;
+    }
+    .catchment-bar-group { margin-bottom: 1.2rem; }
+    .catchment-bar-label {
+      display: flex; justify-content: space-between;
+      font-size: 0.82rem; margin-bottom: 0.35rem;
+    }
+    .catchment-bar-name { color: var(--text); font-weight: 500; }
+    .catchment-bar-val { color: var(--green); font-family: var(--font-head); font-weight: 700; }
+    .bar-track {
+      height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;
+    }
+    .bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(to right, var(--green), var(--green-lt)); }
+    .stat-row {
+      display: flex; align-items: baseline; gap: 1rem;
+      padding: 1.2rem 0; border-bottom: 1px solid var(--border);
+    }
+    .stat-row:first-child { border-top: 1px solid var(--border); }
+    .stat-value {
+      font-family: var(--font-head); font-weight: 800; font-size: 1.6rem;
+      color: var(--green); white-space: nowrap;
+    }
+    .stat-label { font-size: 0.88rem; color: var(--muted); line-height: 1.4; }
+    .gap-callout {
+      background: var(--green); color: var(--white);
+      border-radius: 6px; padding: 1.75rem 1.5rem; margin-top: 2rem;
+    }
+    .gap-callout h3 {
+      font-family: var(--font-head); font-weight: 800; font-size: 1rem;
+      color: var(--gold); margin-bottom: 0.75rem;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .gap-callout p { font-size: 0.92rem; line-height: 1.7; color: rgba(255,255,255,0.82); }
+
+    /* ─── ARCHITECTURE ──────────────────────────────────── */
+    .architecture { background: var(--white); }
+    .arch-image-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto; gap: 1.25rem; margin-bottom: 2.5rem;
+    }
+    .arch-image-grid .img-wide { grid-column: 1 / -1; }
+    .img-placeholder { border-radius: 6px; overflow: hidden; position: relative; }
+    .img-placeholder-inner { padding-top: 60%; position: relative; }
+    .img-placeholder.sqr .img-placeholder-inner { padding-top: 75%; }
+    .img-placeholder-bg {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .img-ph-icon { font-size: 2rem; margin-bottom: 0.75rem; opacity: 0.7; }
+    .img-ph-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.82rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: rgba(255,255,255,0.9); margin-bottom: 0.4rem;
+    }
+    .img-ph-desc { font-size: 0.75rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    .ph-1 { background: linear-gradient(135deg, #1B3A2E, #2D6A4F); }
+    .ph-2 { background: linear-gradient(135deg, #2A2A1A, #4A4A1A); }
+    .ph-3 { background: linear-gradient(135deg, #1A2A1A, #2D3A2D); }
+    .arch-spatial {
+      background: var(--bg); border-left: 4px solid var(--gold);
+      padding: 1.5rem 1.75rem; border-radius: 0 6px 6px 0;
+      font-size: 0.95rem; line-height: 1.8; color: var(--text);
+    }
+
+    /* ─── FINANCIALS ────────────────────────────────────── */
+    .financials { background: var(--green); }
+    .financials .section-title { color: var(--white); }
+    .financials .section-label { color: rgba(212,168,67,0.9); }
+    .financials .divider { background: var(--gold); }
+    .financials .section-lead { color: rgba(255,255,255,0.7); }
+    .metrics-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem; margin-bottom: 2rem;
+    }
+    .metric-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px; padding: 1.6rem 1.4rem;
+      transition: background 0.2s;
+    }
+    .metric-card:hover { background: rgba(255,255,255,0.11); }
+    .metric-card.highlight-card {
+      background: rgba(212,168,67,0.15); border-color: rgba(212,168,67,0.4);
+    }
+    .metric-label {
+      font-family: var(--font-head); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;
+    }
+    .metric-value {
+      font-family: var(--font-head); font-weight: 800;
+      font-size: 1.55rem; color: var(--white); line-height: 1.1;
+    }
+    .metric-value .currency { font-size: 1rem; font-weight: 600; opacity: 0.8; }
+    .metric-sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; }
+    .metric-card.highlight-card .metric-value { color: var(--gold); }
+
+    /* ─── METRIC TOOLTIPS ───────────────────────────────── */
+    .tooltip-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 15px; height: 15px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.6); font-family: var(--font-head);
+      font-size: 0.6rem; font-weight: 700; cursor: pointer;
+      flex-shrink: 0; position: relative;
+      transition: background 0.2s; text-transform: none; letter-spacing: 0;
+      line-height: 1; padding: 0; outline: none;
+    }
+    .tooltip-btn:hover,
+    .tooltip-btn:focus { background: rgba(255,255,255,0.28); color: var(--white); }
+    .tooltip-popup {
+      position: absolute; bottom: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%);
+      background: rgba(8,18,12,0.97); border: 1px solid rgba(212,168,67,0.45);
+      border-radius: 6px; padding: 0.85rem 1rem;
+      width: 250px; font-size: 0.78rem; line-height: 1.55;
+      color: rgba(255,255,255,0.88); font-family: var(--font-body);
+      font-weight: 400; text-transform: none; letter-spacing: 0;
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+      z-index: 300; white-space: normal; text-align: left;
+    }
+    .tooltip-popup::after {
+      content: '';
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: rgba(212,168,67,0.45);
+    }
+    .tooltip-btn:hover .tooltip-popup,
+    .tooltip-btn:focus .tooltip-popup { opacity: 1; }
+
+    /* Data sources & footnotes */
+    .data-sources { font-size: 0.7rem; color: #888; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.75rem; line-height: 1.6; }
+    .data-sources p { margin: 0.2rem 0; }
+    .data-sources a { color: #aaa; text-decoration: none; }
+    sup.src-ref { font-size: 0.6rem; color: #aaa; vertical-align: super; margin-left: 1px; cursor: help; }
+
+    .revenue-trajectory {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 1.75rem; margin-top: 1.5rem;
+    }
+    .traj-title {
+      font-family: var(--font-head); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;
+    }
+    .traj-bars { display: flex; align-items: flex-end; gap: 1rem; height: 120px; margin-bottom: 0.75rem; }
+    .traj-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .traj-bar {
+      width: 100%; border-radius: 3px 3px 0 0;
+      background: rgba(212,168,67,0.3); position: relative;
+      transition: background 0.2s;
+    }
+    .traj-bar:hover { background: rgba(212,168,67,0.5); }
+    .traj-bar-val {
+      position: absolute; top: -1.4rem; left: 50%; transform: translateX(-50%);
+      font-family: var(--font-head); font-weight: 700; font-size: 0.72rem;
+      color: var(--gold); white-space: nowrap;
+    }
+    .traj-bar-year {
+      font-family: var(--font-head); font-size: 0.72rem; font-weight: 600;
+      color: rgba(255,255,255,0.4);
+    }
+    .dscr-callout {
+      background: rgba(212,168,67,0.1); border: 1px solid rgba(212,168,67,0.3);
+      border-radius: 4px; padding: 1.25rem 1.5rem; margin-top: 1.5rem;
+      font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.8);
+    }
+    .dscr-callout strong { color: var(--gold); }
+
+    /* ─── PARTICIPATION OPTIONS ─────────────────────────── */
+    .invest-ask { background: var(--bg); }
+    .ask-header {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start; margin-bottom: 3rem;
+    }
+    .structure-item {
+      display: flex; align-items: baseline; gap: 1rem;
+      padding: 1.1rem 0; border-bottom: 1px solid var(--border);
+    }
+    .structure-item:first-child { border-top: 1px solid var(--border); }
+    .structure-key {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.78rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); min-width: 130px; flex-shrink: 0;
+    }
+    .structure-val {
+      font-family: var(--font-head); font-weight: 700; font-size: 1rem; color: var(--green);
+    }
+    .structure-note { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+    .donut-wrap { display: flex; flex-direction: column; align-items: center; }
+    .donut-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1.25rem;
+    }
+    .donut-svg { width: 200px; height: 200px; }
+    .donut-legend { margin-top: 1.5rem; width: 100%; max-width: 280px; }
+    .legend-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.82rem; color: var(--text); margin-bottom: 0.5rem;
+    }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .legend-pct {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.78rem;
+      color: var(--muted); margin-left: auto;
+    }
+    .participation-options {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    }
+    .option-card {
+      background: var(--white); border: 2px solid var(--border);
+      border-radius: 8px; padding: 2rem 1.75rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .option-card:hover {
+      border-color: var(--gold); transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(27,67,50,0.1);
+    }
+    .option-tag {
+      display: inline-block;
+      font-family: var(--font-head); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      background: var(--green); color: var(--gold);
+      padding: 0.25rem 0.65rem; border-radius: 3px; margin-bottom: 1.1rem;
+    }
+    .option-title {
+      font-family: var(--font-head); font-weight: 800; font-size: 1.1rem;
+      color: var(--green); margin-bottom: 0.75rem;
+    }
+    .option-body { font-size: 0.9rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.25rem; }
+    .option-detail { font-size: 0.88rem; line-height: 1.65; }
+    .option-detail strong { color: var(--green); font-family: var(--font-head); }
+
+    /* ─── CTA ───────────────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--green) 0%, #0D2318 100%);
+      text-align: center;
+    }
+    .cta-section .section-title { color: var(--white); }
+    .cta-section .section-lead { color: rgba(255,255,255,0.72); margin: 0 auto 2.5rem; }
+    .cta-step-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;
+    }
+    .cta-step {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 1.75rem 1.4rem;
+    }
+    .cta-step-num {
+      font-family: var(--font-head); font-weight: 800; font-size: 2.2rem;
+      color: rgba(212,168,67,0.3); margin-bottom: 0.75rem; line-height: 1;
+    }
+    .cta-step-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.88rem;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    .cta-step-desc { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.55; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-primary {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.88rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: var(--gold); color: var(--green);
+      padding: 1rem 2.2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-cta-primary:hover { background: var(--gold-dk); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,168,67,0.4); }
+    .btn-cta-secondary {
+      font-family: var(--font-head); font-weight: 600; font-size: 0.88rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: transparent; color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 1rem 2.2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-grid {
+      display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem;
+    }
+    .contact-item { font-size: 0.88rem; color: rgba(255,255,255,0.6); }
+    .contact-item a { color: var(--gold); text-decoration: none; }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .site-footer { background: #080F0A; padding: 2.5rem 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem; }
+    .footer-disclaimer {
+      font-size: 0.75rem; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 900px;
+    }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.8rem;
+      letter-spacing: 0.06em; color: rgba(255,255,255,0.4); text-transform: uppercase;
+    }
+    .footer-note { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .why-grid, .diff-grid { grid-template-columns: 1fr; }
+      .opp-inner, .ask-header, .participation-options { grid-template-columns: 1fr; }
+      .arch-image-grid { grid-template-columns: 1fr; }
+      .arch-image-grid .img-wide { grid-column: 1; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .cta-step-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .metrics-grid { grid-template-columns: 1fr; }
+      section { padding: 3.5rem 1.25rem; }
+      .hero-content { padding: 7rem 1.25rem 5rem; }
+      .btn-meeting { display: none; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+
+<!-- ═══════════════════════════════════════════════════════ HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#" class="header-brand">
+      <span lang="en">Smart <span class="accent">Food Court</span> · Hua Hin</span>
+      <span lang="th">สมาร์ท <span class="accent">ฟู้ดคอร์ท</span> · หัวหิน</span>
+      <span lang="ru">Смарт <span class="accent">Фуд-Корт</span> · Хуа Хин</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-th" onclick="setLang('th')">TH</button>
+        <button class="lang-btn" id="btn-ru" onclick="setLang('ru')">RU</button>
+      </div>
+      <a href="#contact" class="btn-meeting">
+        <span lang="en">Schedule a Meeting</span>
+        <span lang="th">นัดหมายประชุม</span>
+        <span lang="ru">Назначить встречу</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════ HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"><div class="cuisine-bg"></div></div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span lang="en">Investment Opportunity · Phetkasem Road, Hua Hin</span>
+      <span lang="th">โอกาสการลงทุน · ถนนเพชรเกษม, หัวหิน</span>
+      <span lang="ru">Инвестиционная возможность · Шоссе Петкасем, Хуа Хин</span>
+    </div>
+    <h1 class="hero-headline">
+      <span lang="en"><span class="num">Eight</span> cuisines. <span class="num">One</span> scan.<br><em>The food court Hua Hin has needed for twenty years.</em></span>
+      <span lang="th"><span class="num">แปด</span>อาหาร <span class="num">หนึ่ง</span> QR<br><em>ฟู้ดคอร์ทที่ย่านโรงพยาบาลหัวหินรอคอยมานานสองทศวรรษ</em></span>
+      <span lang="ru"><span class="num">Восемь</span> кухонь. <span class="num">Один</span> скан.<br><em>Фуд-корт, которого Хуа Хин ждал двадцать лет.</em></span>
+    </h1>
+    <p class="hero-sub">
+      <span lang="en">The first unified QR-ordering food destination in Prachuap Khiri Khan — anchored by a 2,500-person daily hospital catchment that operates regardless of tourist season.</span>
+      <span lang="th">จุดหมายปลายทางอาหารระบบ QR แบบรวมศูนย์แห่งแรกในจังหวัดประจวบคีรีขันธ์ — รองรับผู้ใช้บริการโรงพยาบาลกว่า 2,500 คนต่อวัน ดำเนินงานตลอดปีโดยไม่ขึ้นกับฤดูกาลท่องเที่ยว</span>
+      <span lang="ru">Первое унифицированное QR-заведение в провинции Прачуап-Кхири-Кхан — с базой 2 500 посетителей больниц в день, которая работает вне зависимости от туристического сезона.</span>
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge"><span lang="en">365 days/year</span><span lang="th">365 วัน/ปี</span><span lang="ru">365 дней/год</span></span>
+      <span class="hero-badge"><span lang="en">Non-seasonal demand</span><span lang="th">อุปสงค์ตลอดปี</span><span lang="ru">Внесезонный спрос</span></span>
+      <span class="hero-badge"><span lang="en">First-mover technology</span><span lang="th">เทคโนโลยีผู้บุกเบิก</span><span lang="ru">Технология первопроходца</span></span>
+      <span class="hero-badge"><span lang="en">Halal certified</span><span lang="th">อาหารฮาลาล</span><span lang="ru">Сертификат Халяль</span></span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">
+        <span lang="en">Request Operator &amp; Investor Pack</span>
+        <span lang="th">ขอรับเอกสารผู้ประกอบการและนักลงทุน</span>
+        <span lang="ru">Запросить материалы</span>
+      </a>
+      <a href="#financials" class="btn-secondary">
+        <span lang="en">View Financial Highlights</span>
+        <span lang="th">ดูตัวเลขทางการเงิน</span>
+        <span lang="ru">Финансовые показатели</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span></span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ CONCEPT -->
+<section class="concept" id="concept">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">The Concept</span>
+      <span lang="th">แนวคิดโครงการ</span>
+      <span lang="ru">Концепция</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Why This · Why Hua Hin · Why Now</span>
+      <span lang="th">เหตุใดโครงการนี้ · เหตุใดหัวหิน · เหตุใดตอนนี้</span>
+      <span lang="ru">Почему это · Почему Хуа Хин · Почему сейчас</span>
+    </h2>
+    <div class="divider"></div>
+    <div class="why-grid">
+      <div class="why-block">
+        <h3><span lang="en">Why This</span><span lang="th">เหตุใดโครงการนี้</span><span lang="ru">Почему это</span></h3>
+        <p>
+          <span lang="en">Two hospitals on Phetkasem Road generate 700–1,100 outpatient visits and 550–750 daily staff within 600 meters of the target site. They eat three times a day, 52 weeks a year. They currently choose between a hospital canteen and two noodle stalls. Hospital workers deliver the base revenue. Tourists are the upside.</span>
+          <span lang="th">โรงพยาบาลสองแห่งบนถนนเพชรเกษมสร้างผู้ป่วยนอก 700–1,100 รายและบุคลากร 550–750 คนต่อวันภายในรัศมี 600 เมตรจากพื้นที่เป้าหมาย ปัจจุบันตัวเลือกมีเพียงโรงอาหารโรงพยาบาลและร้านก๋วยเตี๋ยวสองร้าน บุคลากรโรงพยาบาลสร้างรายได้พื้นฐาน นักท่องเที่ยวคือศักยภาพที่เพิ่มขึ้น</span>
+          <span lang="ru">Две больницы на шоссе Петкасем генерируют 700–1 100 амбулаторных визитов и 550–750 сотрудников ежедневно в радиусе 600 м от целевого участка. Они едят три раза в день, 52 недели в году. Их выбор сейчас — больничная столовая и два ларька с лапшой. Персонал больниц — это базовая выручка. Туристы — это дополнительный потенциал.</span>
+        </p>
+      </div>
+      <div class="why-block">
+        <h3><span lang="en">Why Hua Hin</span><span lang="th">เหตุใดหัวหิน</span><span lang="ru">Почему Хуа Хин</span></h3>
+        <p>
+          <span lang="en">265,000 Russian and CIS travelers have grown into <span title="Source: Russian Embassy Bangkok / Prachuap Khiri Khan Provincial Statistics Office, 2022–2024 estimates">5,000–15,000 semi-permanent residents</span><sup class="src-ref">[¹]</sup> seeking European cuisine. <span title="Source: Tourism Authority of Thailand (TAT), International Visitor Statistics, 2024">GCC visitors at 152,000/year</span><sup class="src-ref">[²]</sup> — the fastest-growing group — demand halal-certified dining. Neither segment is served by any current Hua Hin food court. 3,000–5,000 residential units within 1.5 km add a structurally non-seasonal catchment.</span>
+          <span lang="th">นักท่องเที่ยวชาวรัสเซียและ CIS 265,000 คนเติบโตเป็น<span title="ที่มา: สถานทูตรัสเซีย กรุงเทพฯ / สำนักงานสถิติจังหวัดประจวบคีรีขันธ์ 2565–2567">ผู้พำนักระยะยาว 5,000–15,000 คน</span><sup class="src-ref">[¹]</sup> กลุ่ม<span title="ที่มา: การท่องเที่ยวแห่งประเทศไทย (TAT), สถิตินักท่องเที่ยวต่างชาติ, 2567">GCC ที่มี 152,000 คนต่อปี</span><sup class="src-ref">[²]</sup>เป็นกลุ่มที่เติบโตเร็วที่สุดและต้องการอาหารฮาลาลที่ได้รับการรับรอง ไม่มีฟู้ดคอร์ทใดในหัวหินที่รองรับทั้งสองกลุ่มนี้</span>
+          <span lang="ru">265 000 российских и СНГ-туристов переросли в <span title="Источник: Посольство России в Бангкоке / Статистическое управление провинции Прачуапкхирикхан, оценки 2022–2024">5 000–15 000 постоянных жителей</span><sup class="src-ref">[¹]</sup>, ищущих европейскую кухню. Гости из стран ГСС — <span title="Источник: Туристическое управление Таиланда (TAT), статистика международных прибытий, 2024">152 000 в год</span><sup class="src-ref">[²]</sup>, самая быстрорастущая группа — требуют халяльного питания. Ни одна из этих аудиторий не обслуживается ни одним существующим фуд-кортом Хуа Хина.</span>
+        </p>
+      </div>
+      <div class="why-block">
+        <h3><span lang="en">Why Now</span><span lang="th">เหตุใดตอนนี้</span><span lang="ru">Почему сейчас</span></h3>
+        <p>
+          <span lang="en">Thailand's post-COVID <span title="Source: Bank of Thailand, Payment Systems Report, 2024">QR payment adoption exceeds 65%</span><sup class="src-ref">[³]</sup> in mid-to-premium F&B. Unified multi-kitchen QR ordering — one scan, all kitchens, one table — does not yet exist in Hua Hin province. The technology is mature. The market is ready. The operator who moves first writes the category.</span>
+          <span lang="th">การยอมรับ<span title="ที่มา: ธนาคารแห่งประเทศไทย, รายงานระบบการชำระเงิน, 2567">การชำระเงินผ่าน QR ในประเทศไทยหลังโควิดเกิน 65%</span><sup class="src-ref">[³]</sup>ในกลุ่ม F&B ระดับกลางถึงพรีเมียม ระบบสั่งอาหาร QR แบบรวมหลายครัวยังไม่มีอยู่ในจังหวัดประจวบคีรีขันธ์ เทคโนโลยีมีความพร้อม ตลาดพร้อมแล้ว ผู้ประกอบการที่เข้ามาก่อนเป็นผู้กำหนดหมวดหมู่นี้</span>
+          <span lang="ru">Проникновение <span title="Источник: Банк Таиланда, отчёт о платёжных системах, 2024">QR-платежей в Таиланде после COVID превысило 65%</span><sup class="src-ref">[³]</sup> в сегменте F&B среднего и премиум-класса. Единой QR-системы заказа из нескольких кухонь — один скан, все кухни, один стол — ещё не существует в провинции. Технология готова. Рынок готов. Оператор, который войдёт первым, задаёт правила категории.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="data-sources">
+      <p><sup class="src-ref">[¹]</sup> Russian Embassy Bangkok / Prachuap Khiri Khan Provincial Statistics Office, 2022–2024 estimates</p>
+      <p><sup class="src-ref">[²]</sup> Tourism Authority of Thailand (TAT), International Visitor Statistics, 2024</p>
+      <p><sup class="src-ref">[³]</sup> Bank of Thailand, Payment Systems Report, 2024</p>
+    </div>
+
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">📍</div>
+        <div class="diff-title">
+          <span lang="en">Location-Fixed Catchment</span>
+          <span lang="th">ฐานลูกค้าที่กำหนดโดยทำเล</span>
+          <span lang="ru">Фиксированная локационная база</span>
+        </div>
+        <div class="diff-body">
+          <span lang="en">No competitor can replicate proximity to San Paulo and Bangkok Hospital Hua Hin — 2,500+ captive customers per day before a single tourist arrives.</span>
+          <span lang="th">ไม่มีคู่แข่งรายใดสามารถจำลองความใกล้ชิดกับโรงพยาบาลซานเปาโลและกรุงเทพหัวหินได้ — ลูกค้าประจำ 2,500+ คนต่อวันก่อนที่นักท่องเที่ยวจะมาถึง</span>
+          <span lang="ru">Ни один конкурент не воспроизведёт близость к больницам San Paulo и Bangkok Hospital — 2 500+ постоянных клиентов в день ещё до прихода первого туриста.</span>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📱</div>
+        <div class="diff-title">
+          <span lang="en">First-Mover Technology</span>
+          <span lang="th">เทคโนโลยีผู้บุกเบิกรายแรก</span>
+          <span lang="ru">Технология первопроходца</span>
+        </div>
+        <div class="diff-body">
+          <span lang="en">One scan orders from all eight kitchens to one table. No food court in the province operates a unified QR system. Existing market operators are structurally resistant to technology change.</span>
+          <span lang="th">สแกนหนึ่งครั้ง สั่งจากทุกครัว โต๊ะเดียว ไม่มีฟู้ดคอร์ทใดในจังหวัดที่ใช้ระบบ QR แบบรวมศูนย์ ผู้ประกอบการตลาดที่มีอยู่ต่อต้านการเปลี่ยนแปลงทางเทคโนโลยี</span>
+          <span lang="ru">Один скан — заказ из всех восьми кухонь за один стол. Ни один фуд-корт в провинции не работает с единой QR-системой. Существующие операторы структурно невосприимчивы к технологическим изменениям.</span>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🌍</div>
+        <div class="diff-title">
+          <span lang="en">Underserved High-Spend Demographics</span>
+          <span lang="th">กลุ่มที่มีการใช้จ่ายสูงที่ยังขาดบริการ</span>
+          <span lang="ru">Высокодоходные аудитории без предложения</span>
+        </div>
+        <div class="diff-body">
+          <span lang="en">Russian, GCC, Korean, and international segments — the highest-spending groups in Hua Hin — currently have no dedicated multi-cuisine venue. Halal certification opens the entire GCC market.</span>
+          <span lang="th">กลุ่มรัสเซีย GCC เกาหลี และนานาชาติ — กลุ่มที่มีการใช้จ่ายสูงที่สุดในหัวหิน — ไม่มีสถานที่หลายอาหารเฉพาะในปัจจุบัน การรับรองฮาลาลเปิดตลาด GCC ทั้งหมด</span>
+          <span lang="ru">Россияне, гости из ГСС, корейцы и другие иностранные гости — наиболее высокодоходные группы Хуа Хина — не имеют ни одного специализированного многокухонного заведения. Сертификация Халяль открывает весь рынок ГСС.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ OPPORTUNITY -->
+<section class="opportunity" id="opportunity">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Market Opportunity</span>
+      <span lang="th">โอกาสทางตลาด</span>
+      <span lang="ru">Рыночная возможность</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Daily Demand That Doesn't Sleep</span>
+      <span lang="th">อุปสงค์รายวันที่ไม่เคยหยุด</span>
+      <span lang="ru">Ежедневный спрос, который не спит</span>
+    </h2>
+    <div class="divider"></div>
+    <div class="opp-inner">
+      <div>
+        <div class="catchment-title">
+          <span lang="en">Daily Catchment — Within 600m of Site</span>
+          <span lang="th">ฐานลูกค้ารายวัน — ภายในรัศมี 600 เมตรจากพื้นที่</span>
+          <span lang="ru">Ежедневная база — в радиусе 600 м от участка</span>
+        </div>
+        <div class="catchment-bar-group">
+          <div class="catchment-bar-label">
+            <span class="catchment-bar-name"><span lang="en">Hospital outpatients (daily)</span><span lang="th">ผู้ป่วยนอกโรงพยาบาล (ต่อวัน)</span><span lang="ru">Амбулаторные пациенты (в день)</span></span>
+            <span class="catchment-bar-val">700–1,100</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+        </div>
+        <div class="catchment-bar-group">
+          <div class="catchment-bar-label">
+            <span class="catchment-bar-name"><span lang="en">Hospital staff (daily)</span><span lang="th">บุคลากรโรงพยาบาล (ต่อวัน)</span><span lang="ru">Персонал больниц (в день)</span></span>
+            <span class="catchment-bar-val">550–750</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
+        </div>
+        <div class="catchment-bar-group">
+          <div class="catchment-bar-label">
+            <span class="catchment-bar-name"><span lang="en">Residential units within 1.5 km</span><span lang="th">ที่พักอาศัยภายใน 1.5 กม.</span><span lang="ru">Жилых единиц в радиусе 1,5 км</span></span>
+            <span class="catchment-bar-val">3,000–5,000</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+        </div>
+        <div class="catchment-bar-group">
+          <div class="catchment-bar-label">
+            <span class="catchment-bar-name"><span lang="en">Russian/CIS semi-permanent residents</span><span lang="th">ผู้พำนักระยะยาว รัสเซีย/CIS</span><span lang="ru">Постоянные жители РФ/СНГ</span></span>
+            <span class="catchment-bar-val">5,000–15,000<sup class="src-ref">[¹]</sup></span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
+        </div>
+
+        <div class="gap-callout">
+          <h3><span lang="en">The Gap</span><span lang="th">ช่องว่างของตลาด</span><span lang="ru">Рыночная пустота</span></h3>
+          <p>
+            <span lang="en">Cicada Market: 3 evenings/week. Central Food Hall: chains only, no technology. Jodd Fairs equivalent: weekends. None operate daily, all-weather, with cuisine diversity, QR technology, and proximity to the highest-density residential catchment in the western corridor.</span>
+            <span lang="th">Cicada Market: 3 เย็น/สัปดาห์ Central Food Hall: เฉพาะแบรนด์เชน ไม่มีเทคโนโลยี ตลาดสร้างสรรค์: เฉพาะวันหยุดสัปดาห์ ไม่มีแห่งใดดำเนินงานทุกวัน ทนต่อทุกสภาพอากาศ มีความหลากหลายทางอาหาร มีเทคโนโลยี QR และอยู่ใกล้ฐานลูกค้าที่มีความหนาแน่นสูงสุดในย่านตะวันตก</span>
+            <span lang="ru">Cicada Market: 3 вечера/неделю. Central Food Hall: только сети, без технологий. Jodd Fairs: только выходные. Ни один не работает ежедневно, в любую погоду, с разнообразием кухонь, QR-технологией и близостью к плотнейшей жилой базе западного коридора.</span>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="stat-row">
+          <div class="stat-value">2,500+</div>
+          <div class="stat-label">
+            <span lang="en">captive daily customers before a single tourist arrives — hospital staff and patients, 52 weeks/year</span>
+            <span lang="th">ลูกค้าประจำต่อวันก่อนที่นักท่องเที่ยวจะมาถึง — บุคลากรและผู้ป่วยโรงพยาบาล 52 สัปดาห์/ปี</span>
+            <span lang="ru">постоянных клиентов ежедневно до прихода первого туриста — персонал и пациенты больниц, 52 недели/год</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-value">65%+<sup class="src-ref">[³]</sup></div>
+          <div class="stat-label">
+            <span lang="en">QR payment adoption in Thai mid-to-premium F&B — technology infrastructure is already in consumers' hands</span>
+            <span lang="th">การยอมรับการชำระเงินผ่าน QR ในกลุ่ม F&B ระดับกลางถึงพรีเมียมในประเทศไทย — โครงสร้างพื้นฐานเทคโนโลยีอยู่ในมือผู้บริโภคแล้ว</span>
+            <span lang="ru">проникновение QR-платежей в тайском F&B среднего и премиум-класса — инфраструктура уже в руках потребителей</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-value">0</div>
+          <div class="stat-label">
+            <span lang="en">food courts in Hua Hin province operating a unified QR multi-kitchen ordering system — this is a category creation, not a market share play</span>
+            <span lang="th">ฟู้ดคอร์ทในจังหวัดประจวบคีรีขันธ์ที่ใช้ระบบสั่งอาหาร QR แบบรวมหลายครัว — นี่คือการสร้างหมวดหมู่ใหม่ ไม่ใช่การแย่งส่วนแบ่งตลาด</span>
+            <span lang="ru">фуд-кортов в провинции с единой QR-системой заказа из нескольких кухонь — это создание категории, а не борьба за долю</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-value">152K<sup class="src-ref">[²]</sup></div>
+          <div class="stat-label">
+            <span lang="en">GCC visitors per year — fastest-growing nationality group, zero dedicated halal multi-cuisine venue in Hua Hin</span>
+            <span lang="th">นักท่องเที่ยวชาว GCC ต่อปี — กลุ่มสัญชาติที่เติบโตเร็วที่สุด ไม่มีสถานที่อาหารฮาลาลหลายประเภทในหัวหินเลย</span>
+            <span lang="ru">гостей из стран ГСС в год — самая быстрорастущая группа, ни одного халяльного многокухонного заведения в Хуа Хине</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ ARCHITECTURE -->
+<section class="architecture" id="architecture">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Architecture Vision</span>
+      <span lang="th">วิสัยทัศน์ทางสถาปัตยกรรม</span>
+      <span lang="ru">Архитектурная концепция</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Jodd Fairs Quality · Hua Hin Garden Format</span>
+      <span lang="th">คุณภาพระดับ Jodd Fairs · สไตล์สวนหัวหิน</span>
+      <span lang="ru">Качество Jodd Fairs · Садовый формат Хуа Хина</span>
+    </h2>
+    <div class="divider"></div>
+    <div class="arch-image-grid">
+      <div class="img-placeholder img-wide ph-1">
+        <div class="img-placeholder-inner">
+          <div class="img-placeholder-bg">
+            <div class="img-ph-icon">🌳</div>
+            <div class="img-ph-title">
+              <span lang="en">Garden Dining Zone</span>
+              <span lang="th">โซนรับประทานอาหารในสวน</span>
+              <span lang="ru">Садовая обеденная зона</span>
+            </div>
+            <div class="img-ph-desc">
+              <span lang="en">Tensile shade sails · Rattan & steel furniture · String lighting at canopy · Misting perimeter · 150 covers · No plastic chairs</span>
+              <span lang="th">หลังคาใบเรือตึง · เฟอร์นิเจอร์หวายและเหล็ก · ไฟสตริงที่ระดับเพดาน · สายมิสติ้งที่ขอบ · 150 ที่นั่ง · ไม่มีเก้าอี้พลาสติก</span>
+              <span lang="ru">Натяжные навесы · Мебель из ротанга и металла · Гирлянды на уровне крон · Туманообразователи · 150 посадочных мест · Без пластиковых стульев</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="img-placeholder ph-2">
+        <div class="img-placeholder-inner">
+          <div class="img-placeholder-bg">
+            <div class="img-ph-icon">📱</div>
+            <div class="img-ph-title">
+              <span lang="en">QR Ordering Moment</span>
+              <span lang="th">ช่วงเวลาสั่งอาหารผ่าน QR</span>
+              <span lang="ru">Момент QR-заказа</span>
+            </div>
+            <div class="img-ph-desc">
+              <span lang="en">Family of four · One scan · Multi-kitchen menu · 4 cuisine flag icons · Clean interface · Natural, unposed</span>
+              <span lang="th">ครอบครัวสี่คน · สแกนครั้งเดียว · เมนูหลายครัว · ไอคอนธงอาหาร 4 ชาติ · อินเทอร์เฟซสะอาดตา</span>
+              <span lang="ru">Семья из четырёх · Один скан · Меню нескольких кухонь · 4 флага кухонь · Чистый интерфейс · Естественная сцена</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="img-placeholder ph-3">
+        <div class="img-placeholder-inner">
+          <div class="img-placeholder-bg">
+            <div class="img-ph-icon">👨‍🍳</div>
+            <div class="img-ph-title">
+              <span lang="en">Kitchen Station</span>
+              <span lang="th">สถานีครัว</span>
+              <span lang="ru">Кухонная станция</span>
+            </div>
+            <div class="img-ph-desc">
+              <span lang="en">Designed counter · Branded panel · KDS screen above order window · Active orders displayed · Consistent design language</span>
+              <span lang="th">เคาน์เตอร์ออกแบบ · แผงแบรนด์ · จอ KDS เหนือหน้าต่างรับออเดอร์ · ดีไซน์สม่ำเสมอ</span>
+              <span lang="ru">Дизайнерский прилавок · Брендированная панель · Экран KDS над окном выдачи · Единый стиль оформления</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="arch-spatial">
+      <span lang="en">Single-level ground-floor commercial space of 800–1,200 sqm on Phetkasem Road. Eight kitchen stations in the back third of the plan — each 20–30 sqm, independent ventilation, kitchen display screen. The front two-thirds: a shared dining environment where planted zones break seating into informal clusters. Shade structures eliminate direct sun. A misting system maintains comfort through shoulder season. The character is Jodd Fairs quality in an outdoor-garden format — not a mall food court, not a street market.</span>
+      <span lang="th">อาคารพาณิชย์ชั้นเดียว 800–1,200 ตารางเมตรบนถนนเพชรเกษม สถานีครัวแปดแห่งในส่วนหลังหนึ่งในสามของผัง แต่ละแห่ง 20–30 ตารางเมตร มีระบบระบายอากาศอิสระและจอแสดงผลในครัว สองในสามด้านหน้าเป็นพื้นที่รับประทานอาหารร่วม โซนพืชพรรณแบ่งที่นั่ง โครงสร้างร่มกำจัดแสงแดดโดยตรง ระบบมิสติ้งรักษาความสบาย</span>
+      <span lang="ru">Одноэтажное коммерческое помещение 800–1 200 м² на шоссе Петкасем. Восемь кухонных станций в задней трети плана — каждая 20–30 м², независимая вентиляция, экран Kitchen Display System. Передние две трети: общая обеденная среда, где зелёные зоны разбивают посадку на неформальные кластеры. Навесы исключают прямое солнце. Туманообразователи обеспечивают комфорт в межсезонье. Уровень Jodd Fairs в садовом формате — не торговый фуд-корт, не уличный рынок.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ FINANCIALS -->
+<section class="financials" id="financials">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Financial Highlights</span>
+      <span lang="th">ตัวเลขทางการเงินที่สำคัญ</span>
+      <span lang="ru">Финансовые показатели</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Conservative Scenario — Year 2</span>
+      <span lang="th">สถานการณ์ Conservative — ปีที่ 2</span>
+      <span lang="ru">Консервативный сценарий — 2-й год</span>
+    </h2>
+    <div class="divider"></div>
+    <p class="section-lead">
+      <span lang="en">Master operator model: lease the space, sub-lease 8 kitchen stations. Kitchen operators bear food costs and staffing. Lean, high-margin structure. Full model (3 scenarios) available under NDA.</span>
+      <span lang="th">โมเดลผู้ประกอบการหลัก: เช่าพื้นที่ จากนั้นให้เช่าช่วงสถานีครัว 8 แห่ง ผู้ประกอบการครัวรับผิดชอบต้นทุนอาหารและพนักงานของตนเอง โครงสร้างที่กะทัดรัดและมีอัตรากำไรสูง โมเดลฉบับเต็ม (3 สถานการณ์) มีให้ภายใต้ NDA</span>
+      <span lang="ru">Модель мастер-оператора: арендуем площадь, сдаём в субаренду 8 кухонных станций. Операторы кухонь несут затраты на продукты и персонал. Лёгкая структура с высокой маржой. Полная модель (3 сценария) доступна под NDA.</span>
+    </p>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">Master Operator Revenue</span>
+          <span lang="th">รายได้ผู้ประกอบการหลัก</span>
+          <span lang="ru">Выручка мастер-оператора</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Total rent collected from kitchen station operators plus common area fees. The master operator does not carry food cost or kitchen staffing risk.</span>
+            <span lang="th">รายได้จากค่าเช่าสถานีครัวรวมค่าส่วนกลาง ผู้ประกอบการหลักไม่รับความเสี่ยงด้านต้นทุนอาหารหรือพนักงานครัว</span>
+            <span lang="ru">Суммарная арендная плата от операторов кухонных станций плюс плата за общие зоны. Мастер-оператор не несёт риска по себестоимости блюд и кухонному персоналу.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>5,688,000</div>
+        <div class="metric-sub"><span lang="en">Year 2 conservative</span><span lang="th">ปีที่ 2 conservative</span><span lang="ru">Год 2, консервативный</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">EBITDA Margin</span>
+          <span lang="th">อัตรากำไร EBITDA</span>
+          <span lang="ru">Маржа EBITDA</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Operating profit as a percentage of master operator revenue. Higher than typical F&B due to the asset-light model — no food cost, no kitchen staffing.</span>
+            <span lang="th">กำไรจากการดำเนินงานเป็นเปอร์เซ็นต์ของรายได้ผู้ประกอบการหลัก สูงกว่า F&B ทั่วไปเนื่องจากโมเดล asset-light ไม่มีต้นทุนอาหารและพนักงานครัว</span>
+            <span lang="ru">Операционная прибыль в % от выручки мастер-оператора. Выше типичного F&B благодаря лёгкой модели — без затрат на продукты и кухонный персонал.</span>
+          </span></button>
+        </div>
+        <div class="metric-value">40%</div>
+        <div class="metric-sub"><span lang="en">master operator level</span><span lang="th">ระดับผู้ประกอบการหลัก</span><span lang="ru">уровень мастер-оператора</span></div>
+      </div>
+      <div class="metric-card highlight-card">
+        <div class="metric-label">
+          <span lang="en">EBITDA</span>
+          <span lang="th">EBITDA</span>
+          <span lang="ru">EBITDA</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Operating cash generation at the master operator level — rent collected minus costs for the common area, QR technology, and management.</span>
+            <span lang="th">การสร้างเงินสดจากการดำเนินงานในระดับผู้ประกอบการหลัก — ค่าเช่าที่เก็บได้หักค่าบริหารพื้นที่ส่วนกลาง เทคโนโลยี QR และการจัดการ</span>
+            <span lang="ru">Операционный денежный поток на уровне мастер-оператора — аренда минус расходы на общие зоны, QR-технологию и управление.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>2,275,000</div>
+        <div class="metric-sub"><span lang="en">Year 2 conservative</span><span lang="th">ปีที่ 2 conservative</span><span lang="ru">Год 2, консервативный</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">Total CAPEX</span>
+          <span lang="th">เงินลงทุนรวม (CAPEX)</span>
+          <span lang="ru">Общий CAPEX</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Total investment to build the food court — shell construction, 8 kitchen stations, QR ordering system, landscaping, MEP, and soft costs.</span>
+            <span lang="th">เงินลงทุนทั้งหมดในการสร้างฟู้ดคอร์ท — การก่อสร้างโครงสร้าง สถานีครัว 8 แห่ง ระบบ QR ภูมิทัศน์ วิศวกรรม และค่าใช้จ่ายอ่อน</span>
+            <span lang="ru">Общий объём вложений в строительство фуд-корта — корпус, 8 кухонных станций, QR-система, озеленение, ИТП и сопутствующие расходы.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>49,000,000</div>
+        <div class="metric-sub"><span lang="en">total project cost</span><span lang="th">ต้นทุนโครงการรวม</span><span lang="ru">общая стоимость проекта</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">Bank Debt (60%)</span>
+          <span lang="th">หนี้สินธนาคาร (60%)</span>
+          <span lang="ru">Банковский кредит (60%)</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Portion of CAPEX financed through bank lending at 6.0% over 7 years. Higher leverage than the Tea House reflects the stronger non-seasonal hospital base load.</span>
+            <span lang="th">ส่วนของ CAPEX ที่จัดหาผ่านสินเชื่อธนาคารที่ 6.0% ระยะ 7 ปี เลเวอเรจสูงกว่า Tea House สะท้อนฐานรายได้โรงพยาบาลที่แข็งแกร่งกว่า</span>
+            <span lang="ru">Доля CAPEX, финансируемая банковским кредитом под 6,0% на 7 лет. Более высокое кредитное плечо, чем у Tea House — отражает более надёжную внесезонную больничную базу.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>29,400,000</div>
+        <div class="metric-sub">6.0% · 7 <span lang="en">years</span><span lang="th">ปี</span><span lang="ru">лет</span></div>
+      </div>
+      <div class="metric-card highlight-card">
+        <div class="metric-label">
+          <span lang="en">Base Case Revenue — Year 5</span>
+          <span lang="th">Base Case รายได้ — ปีที่ 5</span>
+          <span lang="ru">Базовый сценарий — Год 5</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Projected revenue at full operational maturity in the base case — 8 stations at full occupancy, 365-day operation, tourist upside realized.</span>
+            <span lang="th">รายได้ที่คาดการณ์เมื่อถึงวุฒิภาวะดำเนินงานในสถานการณ์ Base Case — 8 สถานีเต็ม 365 วัน และรับรู้รายได้จากนักท่องเที่ยว</span>
+            <span lang="ru">Прогнозная выручка при полной операционной зрелости в базовом сценарии — 8 станций в полной загрузке, 365 дней, туристический потенциал реализован.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>12,400,000</div>
+        <div class="metric-sub"><span lang="en">365 days/year operation</span><span lang="th">ดำเนินงาน 365 วัน/ปี</span><span lang="ru">работа 365 дней/год</span></div>
+      </div>
+    </div>
+
+    <div class="revenue-trajectory">
+      <div class="traj-title">
+        <span lang="en">Revenue Trajectory — Base Case</span>
+        <span lang="th">แนวโน้มรายได้ — Base Case</span>
+        <span lang="ru">Динамика выручки — базовый сценарий</span>
+      </div>
+      <div class="traj-bars">
+        <div class="traj-bar-wrap">
+          <div class="traj-bar" style="height:54%">
+            <span class="traj-bar-val">฿8.3M</span>
+          </div>
+          <span class="traj-bar-year"><span lang="en">Year 2</span><span lang="th">ปีที่ 2</span><span lang="ru">Год 2</span></span>
+        </div>
+        <div class="traj-bar-wrap">
+          <div class="traj-bar" style="height:74%">
+            <span class="traj-bar-val">฿10.8M</span>
+          </div>
+          <span class="traj-bar-year"><span lang="en">Year 3</span><span lang="th">ปีที่ 3</span><span lang="ru">Год 3</span></span>
+        </div>
+        <div class="traj-bar-wrap">
+          <div class="traj-bar" style="height:100%; background:rgba(212,168,67,0.6);">
+            <span class="traj-bar-val" style="color:var(--gold);">฿12.4M</span>
+          </div>
+          <span class="traj-bar-year" style="color:var(--gold);"><span lang="en">Year 5</span><span lang="th">ปีที่ 5</span><span lang="ru">Год 5</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dscr-callout">
+      <strong><span lang="en">Disclosure — DSCR below covenant in Year 1–2:</span><span lang="th">การเปิดเผยข้อมูล — DSCR ต่ำกว่าเกณฑ์ในปีที่ 1–2:</span><span lang="ru">Раскрытие — DSCR ниже ковенанта в Годы 1–2:</span></strong>
+      <span lang="en"> Year 2 DSCR at conservative (0.43×) sits below the 1.20× covenant minimum. This reflects the ramp-up period — a deliberate part of the operating plan. Base case Year 3 DSCR reaches 1.10×. The bank financing case rests on hospital base-load revenue stability and portfolio cross-support, not Year 1–2 DSCR in isolation. The investor case for the Food Court is the portfolio's daily cash-flow engine: 365 days/year, non-seasonal, no direct competition.</span>
+      <span lang="th"> อัตราส่วน DSCR ในปีที่ 2 สถานการณ์ Conservative อยู่ต่ำกว่าเกณฑ์ขั้นต่ำ 1.20× ซึ่งสะท้อนถึงช่วงปรับตัว — เป็นส่วนหนึ่งของแผนดำเนินงาน ในสถานการณ์ Base case ปีที่ 3 DSCR เข้าสู่ระดับที่ยั่งยืน กรณีการจัดหาเงินทุนจากธนาคารขึ้นอยู่กับความเสถียรของรายได้จากฐานลูกค้าโรงพยาบาลและโครงสร้างสนับสนุนพอร์ตโฟลิโอ</span>
+      <span lang="ru"> DSCR в Год 2, консервативный (0,43×), ниже ковенантного минимума 1,20×. Это отражает период раскрутки — намеренную часть операционного плана. В базовом сценарии DSCR в Год 3 достигает 1,10×. Банковское финансирование опирается на стабильность базовой выручки от больниц и кросс-поддержку портфеля, а не на DSCR Лет 1–2 в изоляции. Фуд-корт — ежедневный денежный двигатель портфеля: 365 дней/год, внесезонный, без прямой конкуренции.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ INVESTMENT ASK -->
+<section class="invest-ask" id="invest">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Investment Structure</span>
+      <span lang="th">โครงสร้างการลงทุน</span>
+      <span lang="ru">Структура инвестиций</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Two Ways to Participate</span>
+      <span lang="th">สองวิธีในการมีส่วนร่วม</span>
+      <span lang="ru">Два способа участия</span>
+    </h2>
+    <div class="divider"></div>
+
+    <div class="ask-header">
+      <div>
+        <div class="structure-item">
+          <div>
+            <div class="structure-key"><span lang="en">Total CAPEX</span><span lang="th">เงินลงทุนรวม</span><span lang="ru">Общий CAPEX</span></div>
+            <div class="structure-val">฿49,000,000</div>
+          </div>
+        </div>
+        <div class="structure-item">
+          <div>
+            <div class="structure-key"><span lang="en">Bank Debt</span><span lang="th">หนี้สินธนาคาร</span><span lang="ru">Банковский кредит</span></div>
+            <div class="structure-val">฿29,400,000 <span style="font-size:0.85rem;color:var(--muted)">(60%)</span></div>
+            <div class="structure-note">6.0% · 7 years</div>
+          </div>
+        </div>
+        <div class="structure-item">
+          <div>
+            <div class="structure-key"><span lang="en">Equity Round</span><span lang="th">ส่วนทุน</span><span lang="ru">Раунд акционерного капитала</span></div>
+            <div class="structure-val">฿19,600,000 <span style="font-size:0.85rem;color:var(--muted)">(40%)</span></div>
+          </div>
+        </div>
+        <div class="structure-item">
+          <div>
+            <div class="structure-key"><span lang="en">Min. Equity Ticket</span><span lang="th">ขั้นต่ำนักลงทุน</span><span lang="ru">Минимальный взнос</span></div>
+            <div class="structure-val">฿4,000,000</div>
+            <div class="structure-note"><span lang="en">≈ 10% economic interest in operating company</span><span lang="th">≈ ส่วนได้เสียทางเศรษฐกิจ 10%</span><span lang="ru">≈ 10% экономической доли в операционной компании</span></div>
+          </div>
+        </div>
+        <div class="structure-item">
+          <div>
+            <div class="structure-key"><span lang="en">Kitchen Station Rent</span><span lang="th">ค่าเช่าสถานีครัว</span><span lang="ru">Аренда кухонной станции</span></div>
+            <div class="structure-val" style="font-size:0.95rem">฿43,000–55,000<span style="font-size:0.8rem;color:var(--muted)">/month</span></div>
+            <div class="structure-note"><span lang="en">+ ฿10,000/month common area · cuisine exclusivity guaranteed</span><span lang="th">+ ค่าส่วนกลาง 10,000 บาท/เดือน · รับประกันความเป็นเอกสิทธิ์</span><span lang="ru">+ ฿10 000/мес. общие зоны · гарантирована эксклюзивность кухни</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="donut-wrap">
+        <div class="donut-title">
+          <span lang="en">Use of Funds — ฿49,000,000</span>
+          <span lang="th">การใช้เงินทุน — 49,000,000 บาท</span>
+          <span lang="ru">Использование средств — ฿49 000 000</span>
+        </div>
+        <svg class="donut-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#E5E0D5" stroke-width="28"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#1B4332" stroke-width="28"
+            stroke-dasharray="256.4 502.65" stroke-dashoffset="0"
+            transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#D4A843" stroke-width="28"
+            stroke-dasharray="116.0 502.65" stroke-dashoffset="-256.4"
+            transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#40916C" stroke-width="28"
+            stroke-dasharray="51.3 502.65" stroke-dashoffset="-372.4"
+            transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#B8882A" stroke-width="28"
+            stroke-dasharray="51.3 502.65" stroke-dashoffset="-423.7"
+            transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#8BAF9E" stroke-width="28"
+            stroke-dasharray="22.6 502.65" stroke-dashoffset="-475.0"
+            transform="rotate(-90 100 100)"/>
+          <text x="100" y="95" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="18" fill="#1B4332">฿49M</text>
+          <text x="100" y="113" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9" fill="#6B7280">CAPEX</text>
+        </svg>
+        <div class="donut-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#1B4332"></div><span lang="en">Shell construction / renovation</span><span lang="th">การก่อสร้างโครงสร้าง</span><span lang="ru">Строительство корпуса</span><span class="legend-pct">51%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#D4A843"></div><span lang="en">Soft costs &amp; contingency</span><span lang="th">ค่าใช้จ่ายอ่อนและค่าสำรอง</span><span lang="ru">Административные расходы и резерв</span><span class="legend-pct">23%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#40916C"></div><span lang="en">MEP, suppression, misting</span><span lang="th">ระบบวิศวกรรมและมิสติ้ง</span><span lang="ru">ИТП, пожаротушение, туман</span><span class="legend-pct">10%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#B8882A"></div><span lang="en">Interior, seating, landscaping</span><span lang="th">การตกแต่งภายในและภูมิทัศน์</span><span lang="ru">Интерьер, мебель, озеленение</span><span class="legend-pct">10%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8BAF9E"></div><span lang="en">Kitchen stations (×8) + QR tech</span><span lang="th">สถานีครัว (×8) + ระบบ QR</span><span lang="ru">Кухонные станции (×8) + QR</span><span class="legend-pct">6%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="participation-options">
+      <div class="option-card">
+        <div class="option-tag"><span lang="en">Option A</span><span lang="th">ตัวเลือก A</span><span lang="ru">Вариант A</span></div>
+        <div class="option-title">
+          <span lang="en">Equity Investor</span>
+          <span lang="th">นักลงทุนด้านทุน</span>
+          <span lang="ru">Акционерный инвестор</span>
+        </div>
+        <div class="option-body">
+          <span lang="en">Co-invest in the operating company. Receive proportional profit distributions from Year 3 when DSCR stabilizes above covenant minimum.</span>
+          <span lang="th">ร่วมลงทุนในบริษัทดำเนินงาน รับการแจกจ่ายกำไรตามสัดส่วนตั้งแต่ปีที่ 3 เมื่อ DSCR เข้าสู่ระดับที่ยั่งยืน</span>
+          <span lang="ru">Со-инвестиция в операционную компанию. Пропорциональное распределение прибыли с Года 3, когда DSCR стабилизируется выше ковенантного минимума.</span>
+        </div>
+        <div class="option-detail">
+          <strong><span lang="en">Minimum:</span><span lang="th">ขั้นต่ำ:</span><span lang="ru">Минимум:</span></strong> ฿4,000,000 ≈ 10%<br>
+          <strong><span lang="en">Returns:</span><span lang="th">ผลตอบแทน:</span><span lang="ru">Доходность:</span></strong> <span lang="en">Profit distributions + quarterly reporting + advisory seat</span><span lang="th">ส่วนแบ่งกำไร + รายงานไตรมาส + ที่นั่งในคณะกรรมการที่ปรึกษา</span><span lang="ru">Распределение прибыли + ежеквартальная отчётность + место в совете</span>
+        </div>
+      </div>
+      <div class="option-card">
+        <div class="option-tag"><span lang="en">Option B</span><span lang="th">ตัวเลือก B</span><span lang="ru">Вариант B</span></div>
+        <div class="option-title">
+          <span lang="en">Kitchen Operator</span>
+          <span lang="th">ผู้ประกอบการครัว</span>
+          <span lang="ru">Оператор кухни</span>
+        </div>
+        <div class="option-body">
+          <span lang="en">Lease a dedicated cuisine station. Full exclusivity within the Food Court. Your kitchen, your brand, your team — our technology and footfall.</span>
+          <span lang="th">เช่าสถานีอาหารเฉพาะทาง รับประกันความเป็นเอกสิทธิ์ภายในฟู้ดคอร์ท ครัวของท่าน แบรนด์ของท่าน ทีมของท่าน — เทคโนโลยีและผู้เข้าชมของเรา</span>
+          <span lang="ru">Аренда выделенной кухонной станции. Полная эксклюзивность внутри фуд-корта. Ваша кухня, ваш бренд, ваша команда — наши технологии и трафик.</span>
+        </div>
+        <div class="option-detail">
+          <strong><span lang="en">Base rent:</span><span lang="th">ค่าเช่าคงที่:</span><span lang="ru">Базовая аренда:</span></strong> ฿43,000–55,000/<span lang="en">month</span><span lang="th">เดือน</span><span lang="ru">мес.</span><br>
+          <strong><span lang="en">Common area:</span><span lang="th">ค่าส่วนกลาง:</span><span lang="ru">Общие зоны:</span></strong> ฿10,000/<span lang="en">month</span><span lang="th">เดือน</span><span lang="ru">мес.</span><br>
+          <strong><span lang="en">Pack:</span><span lang="th">เอกสาร:</span><span lang="ru">Пакет:</span></strong> <span lang="en">Full operator economics model available</span><span lang="th">โมเดลเศรษฐกิจผู้ประกอบการฉบับเต็มมีให้</span><span lang="ru">Полная финансовая модель оператора доступна</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ CTA -->
+<section class="cta-section" id="contact">
+  <div class="section-inner">
+    <div class="section-label" style="color:rgba(212,168,67,0.8);">
+      <span lang="en">Next Steps</span>
+      <span lang="th">ขั้นตอนต่อไป</span>
+      <span lang="ru">Следующие шаги</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Let's Build This Together</span>
+      <span lang="th">มาสร้างสิ่งนี้ร่วมกัน</span>
+      <span lang="ru">Строим это вместе</span>
+    </h2>
+    <div class="divider" style="margin:1rem auto 2rem;"></div>
+    <p class="section-lead">
+      <span lang="en">Whether you're an equity investor or a kitchen operator — we have a path for you.</span>
+      <span lang="th">ไม่ว่าท่านจะเป็นนักลงทุนด้านทุนหรือผู้ประกอบการครัว — เรามีเส้นทางสำหรับท่าน</span>
+      <span lang="ru">Акционерный инвестор или оператор кухни — у нас есть путь для вас.</span>
+    </p>
+
+    <div class="cta-step-grid">
+      <div class="cta-step">
+        <div class="cta-step-num">01</div>
+        <div class="cta-step-title"><span lang="en">Request the Investor Pack</span><span lang="th">ขอรับเอกสารนักลงทุน</span><span lang="ru">Запросить пакет инвестора</span></div>
+        <div class="cta-step-desc"><span lang="en">Full financial model (3 scenarios), legal structure, site analysis, hospital catchment verification data. Under NDA within 24 hours.</span><span lang="th">โมเดลการเงินฉบับเต็ม (3 สถานการณ์) โครงสร้างทางกฎหมาย การวิเคราะห์ทำเล ข้อมูลยืนยันฐานลูกค้าโรงพยาบาล ภายใต้ NDA ภายใน 24 ชั่วโมง</span><span lang="ru">Полная финансовая модель (3 сценария), правовая структура, анализ локации, данные подтверждения больничной базы. Под NDA в течение 24 часов.</span></div>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">02</div>
+        <div class="cta-step-title"><span lang="en">Request the Operator Pack</span><span lang="th">ขอรับเอกสารผู้ประกอบการ</span><span lang="ru">Запросить пакет оператора</span></div>
+        <div class="cta-step-desc"><span lang="en">Kitchen station specs, cuisine exclusivity map, individual station P&L model, and LOI template. For prospective cuisine operators.</span><span lang="th">ข้อกำหนดสถานีครัว แผนที่ความเป็นเอกสิทธิ์ทางอาหาร โมเดล P&L สถานีเดี่ยว และแบบ LOI สำหรับผู้ประกอบการครัวที่สนใจ</span><span lang="ru">Спецификации станции, карта кухонной эксклюзивности, P&L модель отдельной станции и шаблон LOI. Для потенциальных операторов кухонь.</span></div>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">03</div>
+        <div class="cta-step-title"><span lang="en">Schedule a Site Visit</span><span lang="th">นัดหมายเยี่ยมชมสถานที่</span><span lang="ru">Организовать осмотр участка</span></div>
+        <div class="cta-step-desc"><span lang="en">Phetkasem Road — 3 hours from Bangkok. Accompanied visit includes hospital catchment walk and competitor landscape review.</span><span lang="th">ถนนเพชรเกษม — 3 ชั่วโมงจากกรุงเทพฯ การเยี่ยมชมพร้อมไกด์รวมถึงการสำรวจฐานลูกค้าโรงพยาบาลและทบทวนภูมิทัศน์คู่แข่ง</span><span lang="ru">Шоссе Петкасем — 3 часа от Бангкока. Сопровождаемый осмотр включает обход больничной зоны и анализ конкурентной среды.</span></div>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="mailto:contact@example.com?subject=Food Court - Investor Pack Request" class="btn-cta-primary">
+        <span lang="en">Request Operator &amp; Investor Pack</span>
+        <span lang="th">ขอรับเอกสารผู้ประกอบการและนักลงทุน</span>
+        <span lang="ru">Запросить материалы</span>
+      </a>
+      <a href="mailto:contact@example.com?subject=Food Court - Site Visit" class="btn-cta-secondary">
+        <span lang="en">Schedule a Site Visit</span>
+        <span lang="th">นัดหมายเยี่ยมชมสถานที่</span>
+        <span lang="ru">Организовать осмотр</span>
+      </a>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item"><span lang="en">Email:</span><span lang="th">อีเมล:</span><span lang="ru">Эл. почта:</span> <a href="mailto:contact@example.com">[PROJECT SPONSOR EMAIL]</a></div>
+      <div class="contact-item">LINE / WhatsApp: <a href="#">[CONTACT]</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclaimer">
+      <span lang="en"><strong style="color:rgba(255,255,255,0.5)">Investment Risk Disclaimer:</strong> This document is for informational purposes only and does not constitute an offer to sell or solicitation to buy any securities. All financial projections are forward-looking statements based on assumptions that may not materialize. Year 1–2 DSCR below covenant minimum is disclosed; this reflects the ramp-up period as modeled. Full financial model available under NDA. Investment in real estate and F&B development involves significant risk including possible loss of principal. Prospective investors and operators should conduct independent due diligence and seek legal, financial, and tax advice before any commitment. All figures in Thai Baht (฿) unless stated.</span>
+      <span lang="th"><strong style="color:rgba(255,255,255,0.5)">ข้อจำกัดความรับผิดชอบ:</strong> เอกสารนี้จัดทำขึ้นเพื่อให้ข้อมูลเท่านั้น ไม่ถือเป็นข้อเสนอขายหรือการชักชวนซื้อหลักทรัพย์ใดๆ การคาดการณ์ทางการเงินทั้งหมดเป็นการแถลงการณ์เชิงคาดการณ์ล่วงหน้า DSCR ต่ำกว่าเกณฑ์ในปีที่ 1–2 ได้รับการเปิดเผยตามโมเดลช่วงปรับตัว โมเดลฉบับเต็มมีให้ภายใต้ NDA</span>
+      <span lang="ru"><strong style="color:rgba(255,255,255,0.5)">Предупреждение об инвестиционных рисках:</strong> Данный документ носит исключительно информационный характер. Все финансовые прогнозы являются перспективными утверждениями. DSCR ниже ковенантного минимума в Годы 1–2 раскрыт; это отражает период раскрутки по модели. Полная модель доступна под NDA. Все цифры в тайских батах (฿).</span>
+    </p>
+    <div class="footer-bottom">
+      <div class="footer-brand">Smart Food Court · Hua Hin · Project 2 of 3</div>
+      <div class="footer-note">
+        <span lang="en">Content version 1.0 · April 2026 · TH content requires native speaker verification</span>
+        <span lang="th">เวอร์ชันเนื้อหา 1.0 · เมษายน 2569 · เนื้อหาภาษาไทยต้องมีการตรวจสอบโดยเจ้าของภาษา</span>
+        <span lang="ru">Версия 1.0 · Апрель 2026 · Тайский текст требует проверки носителем языка</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = document.body.className.replace(/lang-\w+/g, '').trim() + ' lang-' + lang;
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-th').classList.toggle('active', lang === 'th');
+    document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+    document.documentElement.lang = lang === 'th' ? 'th' : lang === 'ru' ? 'ru' : 'en';
+    localStorage.setItem('hhLang', lang);
+  }
+  (function() {
+    var s = localStorage.getItem('hhLang');
+    if (s === 'th') setLang('th');
+    else if (s === 'ru') setLang('ru');
+  })();
+  var header = document.getElementById('site-header');
+  window.addEventListener('scroll', function() {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.metric-card,.diff-card,.cta-step,.option-card').forEach(function(el) {
+    el.style.opacity='0'; el.style.transform='translateY(16px)';
+    el.style.transition='opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>

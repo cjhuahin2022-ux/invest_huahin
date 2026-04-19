@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Private Tea House · Hua Hin — Investor Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    /* ─── RESET & VARIABLES ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:   #1B4332;
+      --green-mid: #2D6A4F;
+      --green-lt: #40916C;
+      --gold:    #D4A843;
+      --gold-dk: #B8882A;
+      --white:   #FFFFFF;
+      --bg:      #F8F6F1;
+      --text:    #2D2D2D;
+      --muted:   #6B7280;
+      --border:  #E5E0D5;
+      --font-head: 'Montserrat', sans-serif;
+      --font-body: 'Lora', Georgia, serif;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── LANGUAGE TOGGLE ───────────────────────────────── */
+    body.lang-en [lang="th"] { display: none !important; }
+    body.lang-en [lang="ru"] { display: none !important; }
+    body.lang-th [lang="en"] { display: none !important; }
+    body.lang-th [lang="ru"] { display: none !important; }
+    body.lang-ru [lang="en"] { display: none !important; }
+    body.lang-ru [lang="th"] { display: none !important; }
+
+    /* ─── HEADER ────────────────────────────────────────── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background 0.3s, box-shadow 0.3s;
+      padding: 0 2rem;
+    }
+    .site-header.scrolled {
+      background: rgba(27,67,50,0.97);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+    .header-inner {
+      max-width: 1440px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .header-brand {
+      font-family: var(--font-head);
+      font-weight: 700; font-size: 0.95rem;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--white); text-decoration: none;
+    }
+    .header-brand span.accent { color: var(--gold); }
+    .header-nav { display: flex; align-items: center; gap: 1.5rem; }
+    .lang-toggle {
+      display: flex; align-items: center; gap: 0.25rem;
+      border: 1px solid rgba(212,168,67,0.5);
+      border-radius: 4px; overflow: hidden;
+    }
+    .lang-btn {
+      background: transparent; border: none; cursor: pointer;
+      font-family: var(--font-head); font-weight: 600;
+      font-size: 0.75rem; letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.65); padding: 0.35rem 0.65rem;
+      transition: all 0.2s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--green); }
+    .lang-btn:hover:not(.active) { color: var(--white); }
+    .btn-meeting {
+      font-family: var(--font-head); font-weight: 600;
+      font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--green); background: var(--gold);
+      padding: 0.5rem 1.1rem; border-radius: 3px;
+      text-decoration: none; transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-meeting:hover { background: var(--gold-dk); transform: translateY(-1px); }
+
+    /* ─── HERO ──────────────────────────────────────────── */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(160deg, rgba(27,67,50,0.92) 0%, rgba(27,67,50,0.75) 50%, rgba(13,35,26,0.90) 100%),
+        repeating-linear-gradient(
+          45deg,
+          rgba(212,168,67,0.03) 0px, rgba(212,168,67,0.03) 1px,
+          transparent 1px, transparent 40px
+        );
+      background-color: #0D2318;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; top: -10%; right: -5%;
+      width: 55%; height: 110%;
+      background: radial-gradient(ellipse at 80% 30%, rgba(64,145,108,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 860px; padding: 8rem 2rem 6rem;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-family: var(--font-head); font-size: 0.72rem;
+      font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid rgba(212,168,67,0.45);
+      padding: 0.35rem 1rem; border-radius: 2px; margin-bottom: 1.8rem;
+    }
+    .hero-headline {
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800; line-height: 1.15;
+      color: var(--white); margin-bottom: 1.4rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-headline em { font-style: italic; color: var(--gold); font-family: var(--font-body); font-weight: 500; }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.18rem); color: rgba(255,255,255,0.82);
+      max-width: 660px; margin: 0 auto 2.5rem;
+      line-height: 1.65;
+    }
+    .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.85rem; letter-spacing: 0.07em; text-transform: uppercase;
+      background: var(--gold); color: var(--green);
+      padding: 0.9rem 2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-dk); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,168,67,0.4); }
+    .btn-secondary {
+      font-family: var(--font-head); font-weight: 600;
+      font-size: 0.85rem; letter-spacing: 0.07em; text-transform: uppercase;
+      background: transparent; color: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 0.9rem 2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .scroll-indicator {
+      position: absolute; bottom: 2.2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem; z-index: 2;
+    }
+    .scroll-indicator span {
+      display: block; width: 1px; height: 52px;
+      background: linear-gradient(to bottom, rgba(212,168,67,0.8), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    /* ─── SECTIONS SHARED ───────────────────────────────── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-head); font-weight: 800;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      color: var(--green); line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .section-lead {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 680px; margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+    .divider {
+      width: 48px; height: 3px;
+      background: var(--gold); margin: 1rem 0 2rem;
+    }
+
+    /* ─── CONCEPT ───────────────────────────────────────── */
+    .concept { background: var(--white); }
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem; margin-top: 2.5rem;
+    }
+    .why-block { margin-bottom: 2.5rem; }
+    .why-block h3 {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 1rem; color: var(--green);
+      margin-bottom: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .why-block p { font-size: 0.96rem; line-height: 1.75; color: var(--text); }
+    .differentiator-card {
+      background: var(--bg); border-radius: 6px;
+      padding: 2rem 1.6rem; border-top: 3px solid var(--gold);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .differentiator-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(27,67,50,0.12); }
+    .diff-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--green); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.2rem; font-size: 1.4rem;
+    }
+    .diff-title {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.95rem; color: var(--green);
+      margin-bottom: 0.6rem; line-height: 1.3;
+    }
+    .diff-body { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── OPPORTUNITY ───────────────────────────────────── */
+    .opportunity { background: var(--bg); }
+    .opp-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
+    }
+    .stat-row {
+      display: flex; align-items: baseline; gap: 1rem;
+      padding: 1.2rem 0; border-bottom: 1px solid var(--border);
+    }
+    .stat-row:first-child { border-top: 1px solid var(--border); }
+    .stat-value {
+      font-family: var(--font-head); font-weight: 800;
+      font-size: 1.6rem; color: var(--green); white-space: nowrap;
+    }
+    .stat-label { font-size: 0.88rem; color: var(--muted); line-height: 1.4; }
+    .vs-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+    .vs-table th {
+      font-family: var(--font-head); font-size: 0.72rem;
+      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); padding: 0.5rem 0.75rem; text-align: left;
+      border-bottom: 2px solid var(--green);
+    }
+    .vs-table td {
+      padding: 0.8rem 0.75rem; font-size: 0.88rem;
+      border-bottom: 1px solid var(--border); vertical-align: top;
+    }
+    .vs-table tr:last-child td { border-bottom: none; }
+    .vs-table .highlight { background: rgba(27,67,50,0.05); font-weight: 600; }
+    .check { color: var(--green-lt); font-weight: 700; }
+    .cross { color: #DC2626; }
+
+    /* ─── ARCHITECTURE ──────────────────────────────────── */
+    .architecture { background: var(--white); }
+    .arch-image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1.25rem; margin-bottom: 2.5rem;
+    }
+    .arch-image-grid .img-wide { grid-column: 1 / -1; }
+    .img-placeholder {
+      border-radius: 6px; overflow: hidden;
+      position: relative; background: var(--green);
+    }
+    .img-placeholder-inner {
+      padding-top: 60%; position: relative;
+    }
+    .img-placeholder.tall .img-placeholder-inner { padding-top: 75%; }
+    .img-placeholder-bg {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .img-ph-icon { font-size: 2rem; margin-bottom: 0.75rem; opacity: 0.7; }
+    .img-ph-title {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: rgba(255,255,255,0.9); margin-bottom: 0.4rem;
+    }
+    .img-ph-desc { font-size: 0.75rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    .ph-1 { background: linear-gradient(135deg, #1B4332, #2D6A4F); }
+    .ph-2 { background: linear-gradient(135deg, #2D3A2E, #1B4332); }
+    .ph-3 { background: linear-gradient(135deg, #3D2B1F, #5C3D2E); }
+    .ph-4 { background: linear-gradient(135deg, #1A2A3A, #2D4A5C); }
+    .arch-spatial {
+      background: var(--bg); border-left: 4px solid var(--gold);
+      padding: 1.5rem 1.75rem; border-radius: 0 6px 6px 0;
+      font-size: 0.95rem; line-height: 1.8; color: var(--text);
+    }
+
+    /* ─── FINANCIALS ────────────────────────────────────── */
+    .financials { background: var(--green); }
+    .financials .section-title { color: var(--white); }
+    .financials .section-label { color: var(--gold); opacity: 0.9; }
+    .financials .divider { background: var(--gold); }
+    .financials .section-lead { color: rgba(255,255,255,0.7); }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem; margin-bottom: 2.5rem;
+    }
+    .metric-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px; padding: 1.6rem 1.4rem;
+      transition: background 0.2s;
+    }
+    .metric-card:hover { background: rgba(255,255,255,0.11); }
+    .metric-card.highlight-card {
+      background: rgba(212,168,67,0.15);
+      border-color: rgba(212,168,67,0.4);
+    }
+    .metric-label {
+      font-family: var(--font-head); font-size: 0.7rem;
+      font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;
+    }
+    .metric-value {
+      font-family: var(--font-head); font-weight: 800;
+      font-size: 1.55rem; color: var(--white); line-height: 1.1;
+    }
+    .metric-value .currency { font-size: 1rem; font-weight: 600; opacity: 0.8; }
+    .metric-sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; }
+    .metric-card.highlight-card .metric-value { color: var(--gold); }
+
+    /* ─── METRIC TOOLTIPS ───────────────────────────────── */
+    .tooltip-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 15px; height: 15px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.6); font-family: var(--font-head);
+      font-size: 0.6rem; font-weight: 700; cursor: pointer;
+      flex-shrink: 0; position: relative;
+      transition: background 0.2s; text-transform: none; letter-spacing: 0;
+      line-height: 1; padding: 0; outline: none;
+    }
+    .tooltip-btn:hover,
+    .tooltip-btn:focus { background: rgba(255,255,255,0.28); color: var(--white); }
+    .tooltip-popup {
+      position: absolute; bottom: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%);
+      background: rgba(8,18,12,0.97); border: 1px solid rgba(212,168,67,0.45);
+      border-radius: 6px; padding: 0.85rem 1rem;
+      width: 250px; font-size: 0.78rem; line-height: 1.55;
+      color: rgba(255,255,255,0.88); font-family: var(--font-body);
+      font-weight: 400; text-transform: none; letter-spacing: 0;
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+      z-index: 300; white-space: normal; text-align: left;
+    }
+    .tooltip-popup::after {
+      content: '';
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: rgba(212,168,67,0.45);
+    }
+    .tooltip-btn:hover .tooltip-popup,
+    .tooltip-btn:focus .tooltip-popup { opacity: 1; }
+
+    /* Data sources & footnotes */
+    .data-sources { font-size: 0.7rem; color: #888; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.75rem; line-height: 1.6; }
+    .data-sources p { margin: 0.2rem 0; }
+    .data-sources a { color: #aaa; text-decoration: none; }
+    sup.src-ref { font-size: 0.6rem; color: #aaa; vertical-align: super; margin-left: 1px; cursor: help; }
+
+    /* Payback timeline */
+    .timeline-wrap { margin-top: 1.5rem; }
+    .timeline-label {
+      font-family: var(--font-head); font-size: 0.72rem;
+      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); margin-bottom: 1rem;
+    }
+    .timeline-bar {
+      position: relative; height: 8px;
+      background: rgba(255,255,255,0.1); border-radius: 4px;
+      overflow: visible; margin-bottom: 1.5rem;
+    }
+    .timeline-fill {
+      height: 100%; border-radius: 4px;
+      background: linear-gradient(to right, var(--gold), var(--gold-dk));
+      position: relative; transition: width 1s ease;
+    }
+    .timeline-markers {
+      display: flex; justify-content: space-between;
+      margin-top: 0.6rem;
+    }
+    .timeline-marker {
+      font-family: var(--font-head); font-size: 0.68rem;
+      font-weight: 600; color: rgba(255,255,255,0.45);
+    }
+    .timeline-marker.current { color: var(--gold); font-weight: 700; }
+    .dscr-note {
+      background: rgba(64,145,108,0.25); border: 1px solid rgba(64,145,108,0.4);
+      border-radius: 4px; padding: 1rem 1.25rem;
+      font-size: 0.85rem; color: rgba(255,255,255,0.8);
+      margin-top: 1rem; line-height: 1.6;
+    }
+    .dscr-note strong { color: var(--gold); }
+
+    /* ─── INVESTMENT ASK ────────────────────────────────── */
+    .invest-ask { background: var(--bg); }
+    .ask-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
+    }
+    .ask-structure { }
+    .structure-item {
+      display: flex; align-items: baseline; gap: 1rem;
+      padding: 1.1rem 0; border-bottom: 1px solid var(--border);
+    }
+    .structure-item:first-child { border-top: 1px solid var(--border); }
+    .structure-key {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); min-width: 130px; flex-shrink: 0;
+    }
+    .structure-val {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 1rem; color: var(--green);
+    }
+    .structure-note { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+    .donut-wrap {
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .donut-title {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1.25rem;
+    }
+    .donut-svg { width: 200px; height: 200px; }
+    .donut-legend { margin-top: 1.5rem; width: 100%; max-width: 280px; }
+    .legend-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.82rem; color: var(--text); margin-bottom: 0.5rem;
+    }
+    .legend-dot {
+      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+    }
+    .legend-pct {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.78rem; color: var(--muted);
+      margin-left: auto;
+    }
+    .investor-benefits {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 6px; padding: 1.75rem; margin-top: 1.5rem;
+    }
+    .benefits-title {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 1.1rem;
+    }
+    .benefit-item {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+      font-size: 0.88rem; color: var(--text); margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+    .benefit-item:last-child { margin-bottom: 0; }
+    .benefit-bullet {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0; margin-top: 0.45rem;
+    }
+
+    /* ─── CTA ───────────────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--green) 0%, #0D2318 100%);
+      text-align: center;
+    }
+    .cta-section .section-title { color: var(--white); }
+    .cta-section .section-lead { color: rgba(255,255,255,0.72); margin: 0 auto 2.5rem; }
+    .cta-step-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-bottom: 3rem;
+    }
+    .cta-step {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 1.75rem 1.4rem;
+    }
+    .cta-step-num {
+      font-family: var(--font-head); font-weight: 800;
+      font-size: 2.2rem; color: rgba(212,168,67,0.3);
+      margin-bottom: 0.75rem; line-height: 1;
+    }
+    .cta-step-title {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.88rem; color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .cta-step-desc { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.55; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-primary {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase;
+      background: var(--gold); color: var(--green);
+      padding: 1rem 2.2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-cta-primary:hover { background: var(--gold-dk); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,168,67,0.4); }
+    .btn-cta-secondary {
+      font-family: var(--font-head); font-weight: 600;
+      font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase;
+      background: transparent; color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 1rem 2.2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-grid {
+      display: flex; gap: 2rem; justify-content: center;
+      flex-wrap: wrap; margin-top: 3rem;
+    }
+    .contact-item { font-size: 0.88rem; color: rgba(255,255,255,0.6); }
+    .contact-item a { color: var(--gold); text-decoration: none; }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .site-footer {
+      background: #080F0A; padding: 2.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 1.25rem;
+    }
+    .footer-disclaimer {
+      font-size: 0.75rem; color: rgba(255,255,255,0.35);
+      line-height: 1.7; max-width: 900px;
+    }
+    .footer-bottom {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 0.8rem; letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.4); text-transform: uppercase;
+    }
+    .footer-note { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 1200px) {
+      .metrics-grid { grid-template-columns: repeat(3, 1fr); }
+      .opp-inner, .ask-inner { gap: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .concept-grid { grid-template-columns: 1fr; }
+      .opp-inner { grid-template-columns: 1fr; }
+      .ask-inner { grid-template-columns: 1fr; }
+      .arch-image-grid { grid-template-columns: 1fr; }
+      .arch-image-grid .img-wide { grid-column: 1; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .cta-step-grid { grid-template-columns: 1fr; }
+      .header-brand { font-size: 0.82rem; }
+    }
+    @media (max-width: 480px) {
+      .metrics-grid { grid-template-columns: 1fr; }
+      section { padding: 3.5rem 1.25rem; }
+      .hero-content { padding: 7rem 1.25rem 5rem; }
+      .btn-meeting { display: none; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+
+<!-- ═══════════════════════════════════════════════════════ HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#" class="header-brand">
+      <span lang="en">The Private <span class="accent">Tea House</span> · Hua Hin</span>
+      <span lang="th">ที่ พรีเวท <span class="accent">ที ฮาวส์</span> · หัวหิน</span>
+      <span lang="ru">Частный <span class="accent">Чайный Дом</span> · Хуа Хин</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-th" onclick="setLang('th')">TH</button>
+        <button class="lang-btn" id="btn-ru" onclick="setLang('ru')">RU</button>
+      </div>
+      <a href="#contact" class="btn-meeting">
+        <span lang="en">Schedule a Meeting</span>
+        <span lang="th">นัดหมายประชุม</span>
+        <span lang="ru">Назначить встречу</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════ HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span lang="en">Investment Opportunity · Hua Hin, Thailand</span>
+      <span lang="th">โอกาสการลงทุน · หัวหิน, ประเทศไทย</span>
+      <span lang="ru">Инвестиционная возможность · Хуа Хин, Таиланд</span>
+    </div>
+    <h1 class="hero-headline">
+      <span lang="en">Hua Hin's first private-room tea house.<br><em>Built for business. Open to everyone.</em></span>
+      <span lang="th">ที ฮาวส์เอกชนแห่งแรกในหัวหิน<br><em>สร้างเพื่อธุรกิจ เปิดสำหรับทุกคน</em></span>
+      <span lang="ru">Первый частный чайный дом в Хуа Хине.<br><em>Создан для бизнеса. Открыт для всех.</em></span>
+    </h1>
+    <p class="hero-sub">
+      <span lang="en">A soundproofed investor venue and a premium commercial tea experience — one property, two revenue streams, no competition.</span>
+      <span lang="th">สถานที่ประชุมนักลงทุนและประสบการณ์ชาระดับพรีเมียม — อสังหาริมทรัพย์เดียว สองกระแสรายได้ ไร้คู่แข่ง</span>
+      <span lang="ru">Звукоизолированная переговорная площадка и первоклассный чайный опыт — одна недвижимость, два источника дохода, без конкурентов.</span>
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">
+        <span lang="en">Request Project Brief</span>
+        <span lang="th">ขอรับเอกสารโครงการ</span>
+        <span lang="ru">Запросить материалы</span>
+      </a>
+      <a href="#financials" class="btn-secondary">
+        <span lang="en">View Financial Highlights</span>
+        <span lang="th">ดูตัวเลขทางการเงิน</span>
+        <span lang="ru">Финансовые показатели</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span></span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ CONCEPT -->
+<section class="concept" id="concept">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">The Concept</span>
+      <span lang="th">แนวคิดโครงการ</span>
+      <span lang="ru">Концепция</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Why This · Why Hua Hin · Why Now</span>
+      <span lang="th">เหตุใดโครงการนี้ · เหตุใดหัวหิน · เหตุใดตอนนี้</span>
+      <span lang="ru">Почему это · Почему Хуа Хин · Почему сейчас</span>
+    </h2>
+    <div class="divider"></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;margin-bottom:3rem;">
+      <div class="why-block">
+        <h3>
+          <span lang="en">Why This</span>
+          <span lang="th">เหตุใดโครงการนี้</span>
+          <span lang="ru">Почему это</span>
+        </h3>
+        <p>
+          <span lang="en">Hua Hin has <span title="Source: Tourism Authority of Thailand (TAT), Hotel Inventory Report, 2024">18,800 hotel rooms</span><sup class="src-ref">[¹]</sup>. It has no privacy-first, standalone venue for serious business meetings. Every investor conversation in this city happens in a hotel lobby at ฿28,000–50,000 per session. The Private Tea House is built around a single principle: a meeting held here is qualitatively different from any meeting held anywhere else in the city.</span>
+          <span lang="th">หัวหินมีห้องพักโรงแรมกว่า <span title="ที่มา: การท่องเที่ยวแห่งประเทศไทย (TAT), 2567">18,800 ห้อง</span><sup class="src-ref">[¹]</sup> แต่ยังขาดสถานที่เอกชนที่เหมาะสมสำหรับการประชุมธุรกิจระดับสูง การประชุมนักลงทุนในเมืองนี้ทุกครั้งต้องอาศัยห้องประชุมโรงแรม ในราคา 28,000–50,000 บาทต่อครั้ง ที ฮาวส์แห่งนี้สร้างขึ้นจากหลักการเดียว: การประชุมที่นี่มีคุณภาพแตกต่างจากทุกที่ในเมือง</span>
+          <span lang="ru">В Хуа Хине <span title="Источник: Туристическое управление Таиланда (TAT), реестр гостиниц, 2024">18 800 гостиничных номеров</span><sup class="src-ref">[¹]</sup> — и ни одной отдельно стоящей площадки, где приватность гарантирована конструктивно. Каждая встреча с инвесторами в этом городе проходит в лобби отеля и стоит ฿28 000–50 000 за сессию. Частный чайный дом построен на одном принципе: встреча здесь качественно отличается от любой встречи в любом другом месте города.</span>
+        </p>
+      </div>
+      <div class="why-block">
+        <h3>
+          <span lang="en">Why Hua Hin</span>
+          <span lang="th">เหตุใดหัวหิน</span>
+          <span lang="ru">Почему Хуа Хин</span>
+        </h3>
+        <p>
+          <span lang="en"><span title="Source: Tourism Authority of Thailand (TAT), Visitor Arrivals Statistics, 2024">7,800,000 annual visitors</span><sup class="src-ref">[²]</sup>, 95% of pre-COVID peak. The Russian and CIS community has grown to <span title="Source: Russian Embassy Bangkok / Prachuap Khiri Khan Provincial Statistics Office, 2022–2024 estimates">5,000–15,000 semi-permanent residents</span><sup class="src-ref">[³]</sup> since 2022. Bangkok companies run <span title="Source: Thailand Convention and Exhibition Bureau (TCEB), MICE Industry Report, 2023">200–400 corporate retreats</span><sup class="src-ref">[⁴]</sup> per year here. The town has the demand. It does not have the venue.</span>
+          <span lang="th">หัวหินรับ<span title="ที่มา: การท่องเที่ยวแห่งประเทศไทย (TAT), สถิตินักท่องเที่ยว, 2567">นักท่องเที่ยว 7,800,000 คนต่อปี</span><sup class="src-ref">[²]</sup> คิดเป็น 95% ของระดับก่อนโควิด ชุมชนชาวรัสเซียและ CIS เติบโตเป็น<span title="ที่มา: สถานทูตรัสเซีย กรุงเทพฯ / สำนักงานสถิติจังหวัดประจวบคีรีขันธ์ 2565–2567">ผู้พำนักระยะยาวประมาณ 5,000–15,000 คน</span><sup class="src-ref">[³]</sup>นับตั้งแต่ปี 2565 ขณะที่บริษัทจากกรุงเทพฯ ใช้หัวหินเป็นสถานที่จัดกิจกรรมองค์กร<span title="ที่มา: สำนักงานส่งเสริมการจัดประชุมและนิทรรศการ (TCEB), 2566">200–400 ครั้งต่อปี</span><sup class="src-ref">[⁴]</sup></span>
+          <span lang="ru"><span title="Источник: Туристическое управление Таиланда (TAT), статистика прибытий, 2024">7 800 000 посетителей в год</span><sup class="src-ref">[²]</sup> — 95% от докризисного уровня. Сообщество россиян и жителей СНГ выросло до <span title="Источник: Посольство России в Бангкоке / Статистическое управление провинции Прачуапкхирикхан, оценки 2022–2024">5 000–15 000 постоянных жителей</span><sup class="src-ref">[³]</sup> с 2022 года. Компании из Бангкока проводят <span title="Источник: Бюро по содействию конгрессам и выставкам Таиланда (TCEB), отчёт MICE, 2023">200–400 корпоративных мероприятий</span><sup class="src-ref">[⁴]</sup> в год. Спрос в городе есть. Площадки — нет.</span>
+        </p>
+      </div>
+      <div class="why-block">
+        <h3>
+          <span lang="en">Why Now</span>
+          <span lang="th">เหตุใดตอนนี้</span>
+          <span lang="ru">Почему сейчас</span>
+        </h3>
+        <p>
+          <span lang="en">International ultra-luxury hotel brands are entering the Hua Hin corridor (2025–2026)<a href="https://leading-hoteliers.com/" target="_blank" style="color:#D4A843;font-size:0.8em">[source]</a> — marking the destination's transition from mid-market beach town to internationally recognized luxury corridor. This raises the market ceiling for every quality operator who opens ahead of it. The window closes in 2026.</span>
+          <span lang="th">แบรนด์โรงแรมระดับ ultra-luxury นานาชาติกำลังเข้าสู่ย่านหัวหิน (2568–2569)<a href="https://leading-hoteliers.com/" target="_blank" style="color:#D4A843;font-size:0.8em">[แหล่งที่มา]</a> ถือเป็นสัญญาณที่ชัดเจนว่าหัวหินกำลังเปลี่ยนผ่านสู่จุดหมายปลายทางสายหรูระดับสากล สิ่งนี้ยกเพดานตลาดสำหรับผู้ประกอบการที่มีคุณภาพทุกราย ช่องทางนี้จะปิดลงในปี 2569</span>
+          <span lang="ru">Международные бренды ultra-luxury выходят в коридор Хуа Хина (2025–2026)<a href="https://leading-hoteliers.com/" target="_blank" style="color:#D4A843;font-size:0.8em">[источник]</a> — знаменуя переход города к международному люксовому направлению. Это поднимает потолок рынка для каждого качественного оператора, успевшего открыться раньше. Окно закроется в 2026 году.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="data-sources">
+      <p><sup class="src-ref">[¹]</sup> Tourism Authority of Thailand (TAT), Hotel Inventory Report, 2024</p>
+      <p><sup class="src-ref">[²]</sup> Tourism Authority of Thailand (TAT), Visitor Arrivals Statistics, 2024</p>
+      <p><sup class="src-ref">[³]</sup> Russian Embassy Bangkok / Prachuap Khiri Khan Provincial Statistics Office, 2022–2024 estimates</p>
+      <p><sup class="src-ref">[⁴]</sup> Thailand Convention and Exhibition Bureau (TCEB), MICE Industry Report, 2023</p>
+    </div>
+
+    <div class="concept-grid">
+      <div class="differentiator-card">
+        <div class="diff-icon">🔒</div>
+        <div class="diff-title">
+          <span lang="en">Structural Privacy</span>
+          <span lang="th">ความเป็นส่วนตัวเป็นโครงสร้างพื้นฐาน</span>
+          <span lang="ru">Конструктивная приватность</span>
+        </div>
+        <div class="diff-body">
+          <span lang="en">Soundproofed rooms at STC 52+, screened parking, and 3m living green walls — infrastructure that no hotel conference room can replicate.</span>
+          <span lang="th">ห้องกันเสียงระดับ STC 52+ ที่จอดรถแบบกำบัง และกำแพงสีเขียวสูง 3 เมตร — โครงสร้างพื้นฐานที่ห้องประชุมโรงแรมไม่สามารถจำลองได้</span>
+          <span lang="ru">Комнаты с шумоизоляцией STC 52+, закрытая парковка и трёхметровые живые зелёные стены — инфраструктура, которую ни одна гостиничная переговорная не воспроизведёт.</span>
+        </div>
+      </div>
+      <div class="differentiator-card">
+        <div class="diff-icon">💰</div>
+        <div class="diff-title">
+          <span lang="en">Dual Revenue Model</span>
+          <span lang="th">โมเดลรายได้สองทาง</span>
+          <span lang="ru">Двойная модель доходов</span>
+        </div>
+        <div class="diff-body">
+          <span lang="en">The commercial tea business services the debt while the venue function delivers intangible strategic value — two drivers that reinforce each other.</span>
+          <span lang="th">ธุรกิจชาเชิงพาณิชย์ชำระหนี้ขณะที่ฟังก์ชันสถานที่ประชุมให้มูลค่าเชิงกลยุทธ์เพิ่มเติม ทั้งสองปัจจัยเสริมกัน</span>
+          <span lang="ru">Коммерческий чайный бизнес обслуживает долг, тогда как функция переговорной площадки приносит нематериальную стратегическую ценность — два драйвера усиливают друг друга.</span>
+        </div>
+      </div>
+      <div class="differentiator-card">
+        <div class="diff-icon">🏆</div>
+        <div class="diff-title">
+          <span lang="en">No Direct Competitor</span>
+          <span lang="th">ไร้คู่แข่งโดยตรง</span>
+          <span lang="ru">Нет прямых конкурентов</span>
+        </div>
+        <div class="diff-body">
+          <span lang="en">This product does not exist within 50 km of Hua Hin. Location, design, and a 15-year operating leasehold are not assembled quickly by a competitor.</span>
+          <span lang="th">ผลิตภัณฑ์ประเภทนี้ไม่มีอยู่ในรัศมี 50 กิโลเมตรจากหัวหิน ทำเล การออกแบบ และสัญญาเช่าดำเนินงาน 15 ปีไม่สามารถประกอบสร้างได้อย่างรวดเร็ว</span>
+          <span lang="ru">Такого продукта не существует в радиусе 50 км от Хуа Хина. Локацию, дизайн и 15-летнюю операционную аренду конкурент не соберёт быстро.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ OPPORTUNITY -->
+<section class="opportunity" id="opportunity">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Market Opportunity</span>
+      <span lang="th">โอกาสทางตลาด</span>
+      <span lang="ru">Рыночная возможность</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">The Gap No One Has Filled</span>
+      <span lang="th">ช่องว่างที่ยังไม่มีใครเติมเต็ม</span>
+      <span lang="ru">Незаполненная ниша</span>
+    </h2>
+    <div class="divider"></div>
+
+    <div class="opp-inner">
+      <div>
+        <div class="stat-row">
+          <div class="stat-value">18,800<sup class="src-ref">[¹]</sup></div>
+          <div class="stat-label">
+            <span lang="en">Hotel rooms in Hua Hin — zero private standalone meeting venues</span>
+            <span lang="th">ห้องพักโรงแรมในหัวหิน — ไม่มีสถานที่ประชุมเอกชนแบบแยกตัวแม้แต่แห่งเดียว</span>
+            <span lang="ru">Гостиничных номеров в Хуа Хине — ни одной отдельной частной переговорной площадки</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-value">฿35,000</div>
+          <div class="stat-label">
+            <span lang="en">Average cost per hotel meeting session — avoided by every investor who uses the Tea House</span>
+            <span lang="th">ต้นทุนเฉลี่ยต่อครั้งสำหรับการประชุมที่โรงแรม — ประหยัดได้ทุกครั้งที่ใช้ ที ฮาวส์</span>
+            <span lang="ru">Средняя стоимость переговорной сессии в отеле — экономится при каждом использовании Чайного Дома</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-value">200–400</div>
+          <div class="stat-label">
+            <span lang="en">Bangkok corporate retreats hosted in Hua Hin per year — all using hotel facilities with no quality alternative</span>
+            <span lang="th">กิจกรรมองค์กรจากกรุงเทพฯ ที่จัดในหัวหินต่อปี — ทั้งหมดใช้สถานที่โรงแรมโดยไม่มีทางเลือกที่มีคุณภาพ</span>
+            <span lang="ru">Корпоративных мероприятий из Бангкока в Хуа Хине в год — все используют гостиничные площадки без качественной альтернативы</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-value">50 km</div>
+          <div class="stat-label">
+            <span lang="en">Radius in which no comparable product exists — not a market share play, a market creation</span>
+            <span lang="th">รัศมีที่ไม่มีผลิตภัณฑ์ที่เทียบเคียงได้ — ไม่ใช่การแย่งส่วนแบ่งตลาด แต่คือการสร้างตลาดใหม่</span>
+            <span lang="ru">Радиус, в котором нет аналогичного продукта — это не борьба за долю рынка, а создание нового рынка</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="section-label" style="margin-bottom:0.75rem;">
+          <span lang="en">Competitive Comparison</span>
+          <span lang="th">การเปรียบเทียบคู่แข่ง</span>
+          <span lang="ru">Сравнение с конкурентами</span>
+        </p>
+        <table class="vs-table">
+          <thead>
+            <tr>
+              <th><span lang="en">Feature</span><span lang="th">คุณสมบัติ</span><span lang="ru">Характеристика</span></th>
+              <th><span lang="en">Hotel Conf. Room</span><span lang="th">ห้องโรงแรม</span><span lang="ru">Гост. переговорная</span></th>
+              <th style="color:var(--green)"><span lang="en">Tea House</span><span lang="th">ที ฮาวส์</span><span lang="ru">Чайный Дом</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span lang="en">Acoustic privacy (STC 52+)</span><span lang="th">กันเสียง (STC 52+)</span><span lang="ru">Акустическая изоляция (STC 52+)</span></td>
+              <td class="cross">✕</td>
+              <td class="check highlight">✓</td>
+            </tr>
+            <tr>
+              <td><span lang="en">Screened private parking</span><span lang="th">ที่จอดรถส่วนตัวมิดชิด</span><span lang="ru">Закрытая частная парковка</span></td>
+              <td class="cross">✕</td>
+              <td class="check highlight">✓</td>
+            </tr>
+            <tr>
+              <td><span lang="en">Standalone — no lobby foot traffic</span><span lang="th">แยกตัว — ไม่มีคนพลุกพล่าน</span><span lang="ru">Отдельное здание — без лобби</span></td>
+              <td class="cross">✕</td>
+              <td class="check highlight">✓</td>
+            </tr>
+            <tr>
+              <td><span lang="en">Premium tea ceremony on-site</span><span lang="th">พิธีชาระดับพรีเมียม</span><span lang="ru">Премиум чайная церемония</span></td>
+              <td class="cross">✕</td>
+              <td class="check highlight">✓</td>
+            </tr>
+            <tr>
+              <td><span lang="en">Corporate event capability</span><span lang="th">จัดงานองค์กรได้</span><span lang="ru">Корпоративные мероприятия</span></td>
+              <td><span lang="en">Limited</span><span lang="th">จำกัด</span><span lang="ru">Ограничено</span></td>
+              <td class="check highlight">✓</td>
+            </tr>
+            <tr>
+              <td><span lang="en">Dual revenue model</span><span lang="th">รายได้สองกระแส</span><span lang="ru">Двойная модель доходов</span></td>
+              <td class="cross">✕</td>
+              <td class="check highlight">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ ARCHITECTURE -->
+<section class="architecture" id="architecture">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Architecture Vision</span>
+      <span lang="th">วิสัยทัศน์ทางสถาปัตยกรรม</span>
+      <span lang="ru">Архитектурная концепция</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">The Space</span>
+      <span lang="th">พื้นที่</span>
+      <span lang="ru">Пространство</span>
+    </h2>
+    <div class="divider"></div>
+
+    <div class="arch-image-grid">
+      <div class="img-placeholder img-wide ph-1">
+        <div class="img-placeholder-inner">
+          <div class="img-placeholder-bg">
+            <div class="img-ph-icon">🌿</div>
+            <div class="img-ph-title">
+              <span lang="en">Courtyard & Entry</span>
+              <span lang="th">ลานภายในและทางเข้า</span>
+              <span lang="ru">Внутренний двор и вход</span>
+            </div>
+            <div class="img-ph-desc">
+              <span lang="en">Internal courtyard — lush bamboo screens, mature tropical planting, stone water feature. No street view. Completely private.</span>
+              <span lang="th">ลานภายในที่เขียวชอุ่ม — ฉากไม้ไผ่ พรรณพฤกษ์เขตร้อน น้ำพุหิน ไม่มองเห็นถนน ความเป็นส่วนตัวสมบูรณ์</span>
+              <span lang="ru">Внутренний двор — бамбуковые ширмы, тропические растения, каменный водоём. Не просматривается с улицы. Полная приватность.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="img-placeholder ph-2">
+        <div class="img-placeholder-inner">
+          <div class="img-placeholder-bg">
+            <div class="img-ph-icon">🍵</div>
+            <div class="img-ph-title">
+              <span lang="en">Private Tea Room</span>
+              <span lang="th">ห้องชาส่วนตัว</span>
+              <span lang="ru">Приватный чайный зал</span>
+            </div>
+            <div class="img-ph-desc">
+              <span lang="en">20 sqm · STC 52+ acoustic · Low teak table · Indirect 2700K lighting · Dedicated service station</span>
+              <span lang="th">20 ตร.ม. · กันเสียง STC 52+ · โต๊ะสักต่ำ · แสง 2700K · สถานีบริการเฉพาะ</span>
+              <span lang="ru">20 м² · Акустика STC 52+ · Низкий тиковый стол · Рассеянный свет 2700K · Персональная сервисная стойка</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="img-placeholder ph-3">
+        <div class="img-placeholder-inner">
+          <div class="img-placeholder-bg">
+            <div class="img-ph-icon">🏛️</div>
+            <div class="img-ph-title">
+              <span lang="en">Main Hall</span>
+              <span lang="th">ห้องโถงหลัก</span>
+              <span lang="ru">Главный зал</span>
+            </div>
+            <div class="img-ph-desc">
+              <span lang="en">50 seats · Low tables · Three-level pendant lighting · Glass view to courtyard garden · Walk-in tea ceremony guests</span>
+              <span lang="th">50 ที่นั่ง · โต๊ะต่ำ · โคมไฟสามระดับ · วิวสวนผ่านกระจก · แขกพิธีชาทั่วไป</span>
+              <span lang="ru">50 мест · Низкие столы · Трёхуровневые подвесные светильники · Стеклянный вид на внутренний сад · Гости чайных церемоний</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arch-spatial">
+      <span lang="en">The building is a converted standalone villa — not a shophouse, not a hotel outlet. Entry is unmarked from the street. A 3-metre living green wall separates the parking court from public view. Four private rooms open individually onto the courtyard — each acoustically sealed, with dedicated climate control, presentation capability, and service station. The main hall serves walk-in tea ceremony guests. The two functions coexist without visual or acoustic overlap.</span>
+      <span lang="th">อาคารเป็นวิลล่าแบบแยกตัวที่ดัดแปลง ทางเข้าไม่มีป้ายบอกชื่อจากถนน กำแพงสีเขียวมีชีวิตสูง 3 เมตรกั้นลานจอดรถจากสายตาสาธารณะ ภายในมีห้องเอกชนสี่ห้องเปิดแยกกันสู่ลานภายใน แต่ละห้องป้องกันเสียงระดับ STC 52+ มีการควบคุมอุณหภูมิเฉพาะห้อง ความสามารถนำเสนอ และสถานีบริการเฉพาะ</span>
+      <span lang="ru">Здание — переоборудованная отдельно стоящая вилла, не рядовая торговая точка и не ресторан при отеле. Вход не обозначен со стороны улицы. Трёхметровая живая зелёная стена отделяет парковочный двор от посторонних взглядов. Четыре приватных зала выходят на внутренний двор — каждый акустически изолирован, имеет индивидуальное кондиционирование, проекционное оборудование и персональную сервисную стойку.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ FINANCIALS -->
+<section class="financials" id="financials">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Financial Highlights</span>
+      <span lang="th">ตัวเลขทางการเงินที่สำคัญ</span>
+      <span lang="ru">Финансовые показатели</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Conservative Scenario — Year 2</span>
+      <span lang="th">สถานการณ์ Conservative — ปีที่ 2</span>
+      <span lang="ru">Консервативный сценарий — 2-й год</span>
+    </h2>
+    <div class="divider"></div>
+    <p class="section-lead">
+      <span lang="en">Conservative projection only. Full model (3 scenarios, 10-year DCF) available on request under NDA.</span>
+      <span lang="th">การคาดการณ์แบบ Conservative เท่านั้น โมเดลฉบับเต็ม (3 สถานการณ์, DCF 10 ปี) มีให้ตามคำขอภายใต้ NDA</span>
+      <span lang="ru">Только консервативный прогноз. Полная модель (3 сценария, DCF на 10 лет) предоставляется по запросу под NDA.</span>
+    </p>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">Gross Revenue</span>
+          <span lang="th">รายได้รวม</span>
+          <span lang="ru">Валовая выручка</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Total revenue from all sources before any deductions — tea ceremonies, room hire, events, and retail tea sales.</span>
+            <span lang="th">รายได้รวมจากทุกแหล่งก่อนหักค่าใช้จ่ายใดๆ รวมถึงพิธีชา การเช่าห้อง งานอีเวนต์ และการขายปลีก</span>
+            <span lang="ru">Общий доход по всем потокам до вычета расходов — чайные церемонии, аренда залов, мероприятия, розничные продажи.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>13,800,000</div>
+        <div class="metric-sub"><span lang="en">per year</span><span lang="th">ต่อปี</span><span lang="ru">в год</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">EBITDA Margin</span>
+          <span lang="th">อัตรากำไร EBITDA</span>
+          <span lang="ru">Маржа EBITDA</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Operating profit as a percentage of revenue, before interest, taxes, depreciation and amortization. Measures operational efficiency.</span>
+            <span lang="th">กำไรจากการดำเนินงานเป็นเปอร์เซ็นต์ของรายได้ก่อนดอกเบี้ย ภาษี ค่าเสื่อมราคา วัดประสิทธิภาพการดำเนินงาน</span>
+            <span lang="ru">Операционная прибыль в % от выручки до вычета процентов, налогов и амортизации. Показатель операционной эффективности.</span>
+          </span></button>
+        </div>
+        <div class="metric-value">35%</div>
+        <div class="metric-sub"><span lang="en">conservative</span><span lang="th">สถานการณ์ conservative</span><span lang="ru">консервативный</span></div>
+      </div>
+      <div class="metric-card highlight-card">
+        <div class="metric-label">
+          <span lang="en">EBITDA</span>
+          <span lang="th">EBITDA</span>
+          <span lang="ru">EBITDA</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Earnings Before Interest, Taxes, Depreciation and Amortization — the project's annual operating cash generation capacity.</span>
+            <span lang="th">กำไรก่อนดอกเบี้ย ภาษี ค่าเสื่อมราคา — แสดงความสามารถในการสร้างกระแสเงินสดจากการดำเนินงานต่อปี</span>
+            <span lang="ru">Прибыль до вычета процентов, налогов, износа и амортизации — годовой операционный денежный поток проекта.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>4,830,000</div>
+        <div class="metric-sub"><span lang="en">per year</span><span lang="th">ต่อปี</span><span lang="ru">в год</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">Total CAPEX</span>
+          <span lang="th">เงินลงทุนรวม (CAPEX)</span>
+          <span lang="ru">Общий CAPEX</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Total capital expenditure to build and open the project — fit-out, acoustic works, landscaping, furniture, and soft costs.</span>
+            <span lang="th">เงินลงทุนทั้งหมดที่ต้องใช้สร้างและเปิดโครงการ รวมถึงการตกแต่ง งานกันเสียง ภูมิทัศน์ เฟอร์นิเจอร์ และค่าใช้จ่ายอ่อน</span>
+            <span lang="ru">Общий объём капитальных вложений для строительства и открытия — отделка, звукоизоляция, озеленение, мебель, сопутствующие расходы.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>49,000,000</div>
+        <div class="metric-sub"><span lang="en">total project cost</span><span lang="th">ต้นทุนโครงการรวม</span><span lang="ru">общая стоимость проекта</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">Venue Savings (annual)</span>
+          <span lang="th">ประหยัดค่าห้องประชุม (ต่อปี)</span>
+          <span lang="ru">Экономия на площадке (в год)</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Annual cost avoided by using the Tea House instead of hotel conference rooms. Calculated at ฿35,000/session × 4 meetings/month.</span>
+            <span lang="th">ต้นทุนที่ประหยัดได้ต่อปีจากการใช้ ที ฮาวส์แทนห้องประชุมโรงแรม คำนวณที่ 35,000 บาท/ครั้ง × 4 ครั้ง/เดือน</span>
+            <span lang="ru">Ежегодная экономия на аренде переговорных залов в отелях. Расчёт: ฿35 000/сессия × 4 встречи/мес.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>1,680,000</div>
+        <div class="metric-sub"><span lang="en">avoided hotel meeting costs</span><span lang="th">หลีกเลี่ยงค่าใช้จ่ายโรงแรม</span><span lang="ru">избежанные расходы на отель</span></div>
+      </div>
+      <div class="metric-card highlight-card">
+        <div class="metric-label">
+          <span lang="en">Combined Value / Year</span>
+          <span lang="th">มูลค่ารวมต่อปี</span>
+          <span lang="ru">Совокупная ценность / год</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Sum of annual EBITDA and annual venue savings — the total economic value delivered by the project each year.</span>
+            <span lang="th">ผลรวมของ EBITDA รายปีและการประหยัดค่าสถานที่รายปี แสดงมูลค่าเศรษฐกิจรวมต่อปี</span>
+            <span lang="ru">Сумма годовой EBITDA и ежегодной экономии на площадке — совокупная экономическая ценность проекта в год.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>6,510,000</div>
+        <div class="metric-sub"><span lang="en">EBITDA + venue savings</span><span lang="th">EBITDA + ประหยัดค่าสถานที่</span><span lang="ru">EBITDA + экономия на площадке</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-wrap">
+      <div class="timeline-label">
+        <span lang="en">Simple Payback Timeline (7.5 years)</span>
+        <span lang="th">ระยะเวลาคืนทุน (7.5 ปี)</span>
+        <span lang="ru">Срок простой окупаемости (7,5 лет)</span>
+      </div>
+      <div class="timeline-bar">
+        <div class="timeline-fill" style="width:75%"></div>
+      </div>
+      <div class="timeline-markers">
+        <span class="timeline-marker"><span lang="en">Year 0</span><span lang="th">ปีที่ 0</span><span lang="ru">Год 0</span></span>
+        <span class="timeline-marker"><span lang="en">Year 2</span><span lang="th">ปีที่ 2</span><span lang="ru">Год 2</span></span>
+        <span class="timeline-marker"><span lang="en">Year 4</span><span lang="th">ปีที่ 4</span><span lang="ru">Год 4</span></span>
+        <span class="timeline-marker current"><span lang="en">Year 7.5 — Payback</span><span lang="th">ปีที่ 7.5 — คืนทุน</span><span lang="ru">Год 7,5 — окупаемость</span></span>
+        <span class="timeline-marker"><span lang="en">Year 10</span><span lang="th">ปีที่ 10</span><span lang="ru">Год 10</span></span>
+      </div>
+    </div>
+
+    <div class="dscr-note">
+      <strong>DSCR (<span lang="en">Year 2, Conservative</span><span lang="th">ปีที่ 2, Conservative</span><span lang="ru">Год 2, консервативный</span>): 1.46×</strong> —
+      <span lang="en">above the 1.20× bank covenant minimum. Debt: ฿24.5M at 6.5% over 7 years = ฿4,465,000 annual service. Conservative scenario holds above covenant minimum even at −20% tourism shock.</span>
+      <span lang="th">สูงกว่าเกณฑ์ขั้นต่ำของธนาคาร 1.20× หนี้สิน: 24.5 ล้านบาท ที่อัตราดอกเบี้ย 6.5% ระยะเวลา 7 ปี = ภาระหนี้ต่อปี 4,465,000 บาท สถานการณ์ Conservative ยังคงอยู่เหนือเกณฑ์ขั้นต่ำแม้ในกรณีนักท่องเที่ยวลดลง 20%</span>
+      <span lang="ru">превышает банковский ковенантный минимум 1,20×. Долг: ฿24,5 млн под 6,5% на 7 лет = ฿4 465 000 ежегодного обслуживания. Консервативный сценарий остаётся выше ковенантного минимума даже при снижении турпотока на 20%.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ INVESTMENT ASK -->
+<section class="invest-ask" id="invest">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Investment Structure</span>
+      <span lang="th">โครงสร้างการลงทุน</span>
+      <span lang="ru">Структура инвестиций</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">What We Are Building Together</span>
+      <span lang="th">สิ่งที่เราสร้างร่วมกัน</span>
+      <span lang="ru">Что мы строим вместе</span>
+    </h2>
+    <div class="divider"></div>
+
+    <div class="ask-inner">
+      <div>
+        <div class="ask-structure">
+          <div class="structure-item">
+            <div>
+              <div class="structure-key"><span lang="en">Total CAPEX</span><span lang="th">เงินลงทุนรวม</span><span lang="ru">Общий CAPEX</span></div>
+              <div class="structure-val">฿49,000,000</div>
+            </div>
+          </div>
+          <div class="structure-item">
+            <div>
+              <div class="structure-key"><span lang="en">Bank Debt</span><span lang="th">หนี้สินธนาคาร</span><span lang="ru">Банковский кредит</span></div>
+              <div class="structure-val">฿24,500,000 <span style="font-size:0.85rem;color:var(--muted)">(50%)</span></div>
+              <div class="structure-note">6.5% · 7 <span lang="en">years</span><span lang="th">ปี</span><span lang="ru">лет</span></div>
+            </div>
+          </div>
+          <div class="structure-item">
+            <div>
+              <div class="structure-key"><span lang="en">Developer Equity</span><span lang="th">ส่วนทุนผู้พัฒนา</span><span lang="ru">Капитал девелопера</span></div>
+              <div class="structure-val">฿24,500,000 <span style="font-size:0.85rem;color:var(--muted)">(50%)</span></div>
+            </div>
+          </div>
+          <div class="structure-item">
+            <div>
+              <div class="structure-key"><span lang="en">Minimum Ticket</span><span lang="th">ขั้นต่ำการลงทุน</span><span lang="ru">Минимальный взнос</span></div>
+              <div class="structure-val">฿5,000,000</div>
+              <div class="structure-note"><span lang="en">≈ 10% economic interest in operating company</span><span lang="th">≈ ส่วนได้เสียทางเศรษฐกิจ 10%</span><span lang="ru">≈ 10% экономической доли в операционной компании</span></div>
+            </div>
+          </div>
+          <div class="structure-item">
+            <div>
+              <div class="structure-key"><span lang="en">Legal Structure</span><span lang="th">โครงสร้างทางกฎหมาย</span><span lang="ru">Правовая структура</span></div>
+              <div class="structure-val" style="font-size:0.9rem;line-height:1.4">
+                <span lang="en">Thai Ltd Co · 49% foreign / 51% Thai · Tilleke & Gibbins</span>
+                <span lang="th">บริษัทจำกัดไทย · 49% ต่างชาติ / 51% ไทย · Tilleke & Gibbins</span>
+                <span lang="ru">Thai Ltd Co · 49% иностранный / 51% тайский · Tilleke & Gibbins</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="investor-benefits">
+          <div class="benefits-title">
+            <span lang="en">What Investors Receive</span>
+            <span lang="th">สิ่งที่นักลงทุนได้รับ</span>
+            <span lang="ru">Что получает инвестор</span>
+          </div>
+          <div class="benefit-item"><div class="benefit-bullet"></div><span lang="en">Proportional share of operating company profit distributions</span><span lang="th">ส่วนแบ่งกำไรตามสัดส่วนจากบริษัทดำเนินงาน</span><span lang="ru">Пропорциональная доля в прибыли операционной компании</span></div>
+          <div class="benefit-item"><div class="benefit-bullet"></div><span lang="en">Venue access for own investor meetings — ฿35,000/session avoided</span><span lang="th">สิทธิ์เข้าใช้สถานที่สำหรับการประชุมนักลงทุนของตนเอง — ประหยัด 35,000 บาท/ครั้ง</span><span lang="ru">Доступ к площадке для собственных переговоров — экономия ฿35 000/сессия</span></div>
+          <div class="benefit-item"><div class="benefit-bullet"></div><span lang="en">Quarterly reporting against financial model</span><span lang="th">รายงานไตรมาสตามโมเดลการเงิน</span><span lang="ru">Ежеквартальная отчётность по финансовой модели</span></div>
+          <div class="benefit-item"><div class="benefit-bullet"></div><span lang="en">Seat on the advisory committee</span><span lang="th">ที่นั่งในคณะกรรมการที่ปรึกษา</span><span lang="ru">Место в консультативном комитете</span></div>
+        </div>
+      </div>
+
+      <div class="donut-wrap">
+        <div class="donut-title">
+          <span lang="en">Use of Funds — ฿49,000,000</span>
+          <span lang="th">การใช้เงินทุน — 49,000,000 บาท</span>
+          <span lang="ru">Использование средств — ฿49 000 000</span>
+        </div>
+        <svg class="donut-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#E5E0D5" stroke-width="28"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#1B4332" stroke-width="28"
+            stroke-dasharray="276.9 502.65" stroke-dashoffset="0"
+            transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#D4A843" stroke-width="28"
+            stroke-dasharray="169.4 502.65" stroke-dashoffset="-276.9"
+            transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#40916C" stroke-width="28"
+            stroke-dasharray="25.6 502.65" stroke-dashoffset="-446.3"
+            transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#B8882A" stroke-width="28"
+            stroke-dasharray="15.6 502.65" stroke-dashoffset="-471.9"
+            transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#8BAF9E" stroke-width="28"
+            stroke-dasharray="15.6 502.65" stroke-dashoffset="-487.5"
+            transform="rotate(-90 100 100)"/>
+          <text x="100" y="95" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="18" fill="#1B4332">฿49M</text>
+          <text x="100" y="113" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9" fill="#6B7280">CAPEX</text>
+        </svg>
+        <div class="donut-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#1B4332"></div><span lang="en">Shell &amp; acoustic fit-out</span><span lang="th">โครงสร้างและฉนวนกันเสียง</span><span lang="ru">Корпус и звукоизоляция</span><span class="legend-pct">55%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#D4A843"></div><span lang="en">Soft costs &amp; contingency</span><span lang="th">ค่าใช้จ่ายอ่อนและค่าสำรอง</span><span lang="ru">Административные расходы и резерв</span><span class="legend-pct">34%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#40916C"></div><span lang="en">MEP (HVAC, electrical)</span><span lang="th">ระบบวิศวกรรม</span><span lang="ru">ИТП (ОВиК, электрика)</span><span class="legend-pct">5%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#B8882A"></div><span lang="en">Courtyard &amp; landscaping</span><span lang="th">ลานภายในและภูมิทัศน์</span><span lang="ru">Двор и озеленение</span><span class="legend-pct">3%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8BAF9E"></div><span lang="en">Furniture, teaware &amp; AV</span><span lang="th">เฟอร์นิเจอร์ ชุดชา อุปกรณ์ AV</span><span lang="ru">Мебель, посуда и AV</span><span class="legend-pct">3%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ CTA -->
+<section class="cta-section" id="contact">
+  <div class="section-inner">
+    <div class="section-label" style="color:rgba(212,168,67,0.8);">
+      <span lang="en">Next Steps</span>
+      <span lang="th">ขั้นตอนต่อไป</span>
+      <span lang="ru">Следующие шаги</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">How to Move Forward</span>
+      <span lang="th">วิธีดำเนินการต่อ</span>
+      <span lang="ru">Как двигаться дальше</span>
+    </h2>
+    <div class="divider" style="margin:1rem auto 2rem;"></div>
+    <p class="section-lead">
+      <span lang="en">Three paths into this project — choose your level of engagement.</span>
+      <span lang="th">สามเส้นทางสู่โครงการนี้ — เลือกระดับการมีส่วนร่วมของท่าน</span>
+      <span lang="ru">Три способа участия — выберите уровень вовлечённости.</span>
+    </p>
+
+    <div class="cta-step-grid">
+      <div class="cta-step">
+        <div class="cta-step-num">01</div>
+        <div class="cta-step-title">
+          <span lang="en">Request the Full Brief</span>
+          <span lang="th">ขอรับเอกสารโครงการฉบับเต็ม</span>
+          <span lang="ru">Запросить полные материалы</span>
+        </div>
+        <div class="cta-step-desc">
+          <span lang="en">Financial model (3 scenarios), legal structure, site analysis, competitor landscape. Sent under NDA within 24 hours.</span>
+          <span lang="th">โมเดลการเงิน (3 สถานการณ์) โครงสร้างทางกฎหมาย การวิเคราะห์ทำเล ภูมิทัศน์การแข่งขัน ส่งภายใต้ NDA ภายใน 24 ชั่วโมง</span>
+          <span lang="ru">Финансовая модель (3 сценария), правовая структура, анализ локации, конкурентная среда. Отправляется под NDA в течение 24 часов.</span>
+        </div>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">02</div>
+        <div class="cta-step-title">
+          <span lang="en">Schedule a Site Visit</span>
+          <span lang="th">นัดหมายเยี่ยมชมสถานที่</span>
+          <span lang="ru">Организовать осмотр</span>
+        </div>
+        <div class="cta-step-desc">
+          <span lang="en">The shortlisted locations in central Hua Hin. We walk through the investment thesis in person. 15 minutes from Bangkok commuter rail.</span>
+          <span lang="th">ทำเลที่คัดสรรในใจกลางหัวหิน นำเสนอวิทยานิพนธ์การลงทุนด้วยตนเอง ห่างจากรถไฟฟ้ากรุงเทพฯ 15 นาที</span>
+          <span lang="ru">Отобранные локации в центре Хуа Хина. Разбор инвестиционного тезиса лично. 15 минут от городской электрички Бангкока.</span>
+        </div>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">03</div>
+        <div class="cta-step-title">
+          <span lang="en">Investor Reception Evening</span>
+          <span lang="th">งานต้อนรับนักลงทุน</span>
+          <span lang="ru">Вечер для инвесторов</span>
+        </div>
+        <div class="cta-step-desc">
+          <span lang="en">A private introductory evening for prospective co-investors at our operating Tea House — before general opening.</span>
+          <span lang="th">งานตอนเย็นแบบเอกชนสำหรับนักลงทุนร่วมที่สนใจ ที่ ที ฮาวส์ที่เปิดดำเนินการของเรา ก่อนเปิดให้บริการทั่วไป</span>
+          <span lang="ru">Приватный вечер для потенциальных со-инвесторов в нашем работающем Чайном Доме — до официального открытия.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="mailto:contact@example.com?subject=Tea House - Project Brief Request" class="btn-cta-primary">
+        <span lang="en">Request Project Brief</span>
+        <span lang="th">ขอรับเอกสารโครงการ</span>
+        <span lang="ru">Запросить материалы</span>
+      </a>
+      <a href="mailto:contact@example.com?subject=Tea House - Site Visit Request" class="btn-cta-secondary">
+        <span lang="en">Schedule a Site Visit</span>
+        <span lang="th">นัดหมายเยี่ยมชมสถานที่</span>
+        <span lang="ru">Организовать осмотр</span>
+      </a>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item"><span lang="en">Email:</span><span lang="th">อีเมล:</span><span lang="ru">Эл. почта:</span> <a href="mailto:contact@example.com">[PROJECT SPONSOR EMAIL]</a></div>
+      <div class="contact-item"><span lang="en">LINE / WhatsApp:</span><span lang="th">LINE / WhatsApp:</span><span lang="ru">LINE / WhatsApp:</span> <a href="#">[CONTACT]</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclaimer">
+      <span lang="en"><strong style="color:rgba(255,255,255,0.5)">Investment Risk Disclaimer:</strong> This document is for informational purposes only and does not constitute an offer to sell or a solicitation to buy any securities. All financial projections are forward-looking statements based on assumptions that may not materialize. Past performance is not indicative of future results. Investment in real estate development involves significant risk, including the possible loss of principal. Prospective investors should conduct their own due diligence and seek independent legal, financial, and tax advice before making any investment decision. All figures are in Thai Baht (฿) unless otherwise stated. Conservative scenario presented; full model available under NDA.</span>
+      <span lang="th"><strong style="color:rgba(255,255,255,0.5)">ข้อจำกัดความรับผิดชอบด้านความเสี่ยงในการลงทุน:</strong> เอกสารนี้จัดทำขึ้นเพื่อให้ข้อมูลเท่านั้น และไม่ถือเป็นข้อเสนอขายหรือการชักชวนซื้อหลักทรัพย์ใดๆ การคาดการณ์ทางการเงินทั้งหมดเป็นการแถลงการณ์เชิงคาดการณ์ล่วงหน้าซึ่งอิงตามสมมติฐานที่อาจไม่เป็นจริง การลงทุนในการพัฒนาอสังหาริมทรัพย์มีความเสี่ยงสูง นักลงทุนที่สนใจควรทำการตรวจสอบวิเคราะห์สถานะด้วยตนเองและขอคำแนะนำจากที่ปรึกษาอิสระ</span>
+      <span lang="ru"><strong style="color:rgba(255,255,255,0.5)">Предупреждение об инвестиционных рисках:</strong> Данный документ носит исключительно информационный характер и не является предложением о продаже или приглашением к покупке ценных бумаг. Все финансовые прогнозы являются перспективными утверждениями, основанными на допущениях, которые могут не реализоваться. Инвестиции в девелопмент недвижимости сопряжены со значительными рисками, включая возможную полную потерю вложений. Все цифры в тайских батах (฿), если не указано иное. Представлен консервативный сценарий; полная модель доступна под NDA.</span>
+    </p>
+    <div class="footer-bottom">
+      <div class="footer-brand">The Private Tea House · Hua Hin · Project 1 of 3</div>
+      <div class="footer-note">
+        <span lang="en">Content version 1.0 · April 2026 · Requires native Thai speaker verification for TH content</span>
+        <span lang="th">เวอร์ชันเนื้อหา 1.0 · เมษายน 2569 · ต้องมีการตรวจสอบโดยเจ้าของภาษาไทย</span>
+        <span lang="ru">Версия 1.0 · Апрель 2026 · Тайский текст требует проверки носителем языка</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Language toggle
+  function setLang(lang) {
+    document.body.className = document.body.className.replace(/lang-\w+/g, '').trim() + ' lang-' + lang;
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-th').classList.toggle('active', lang === 'th');
+    document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+    document.documentElement.lang = lang === 'th' ? 'th' : lang === 'ru' ? 'ru' : 'en';
+    localStorage.setItem('hhLang', lang);
+  }
+
+  // Restore saved language preference
+  (function() {
+    var saved = localStorage.getItem('hhLang');
+    if (saved === 'th') setLang('th');
+    else if (saved === 'ru') setLang('ru');
+  })();
+
+  // Sticky header background on scroll
+  var header = document.getElementById('site-header');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 60) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  // Animate metric cards on viewport entry
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.metric-card, .differentiator-card, .cta-step').forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>

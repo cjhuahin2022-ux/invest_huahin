@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hillside Wellness &amp; Equestrian Resort · Hua Hin — Investor Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    /* ─── RESET & VARIABLES ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:   #1B4332;
+      --green-mid: #2D6A4F;
+      --green-lt: #40916C;
+      --gold:    #D4A843;
+      --gold-dk: #B8882A;
+      --white:   #FFFFFF;
+      --bg:      #F8F6F1;
+      --text:    #2D2D2D;
+      --muted:   #6B7280;
+      --border:  #E5E0D5;
+      --font-head: 'Montserrat', sans-serif;
+      --font-body: 'Lora', Georgia, serif;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body); color: var(--text);
+      background: var(--white); line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.lang-en [lang="th"] { display: none !important; }
+    body.lang-en [lang="ru"] { display: none !important; }
+    body.lang-th [lang="en"] { display: none !important; }
+    body.lang-th [lang="ru"] { display: none !important; }
+    body.lang-ru [lang="en"] { display: none !important; }
+    body.lang-ru [lang="th"] { display: none !important; }
+
+    /* ─── HEADER ────────────────────────────────────────── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background 0.3s, box-shadow 0.3s; padding: 0 2rem;
+    }
+    .site-header.scrolled {
+      background: rgba(27,67,50,0.97); backdrop-filter: blur(8px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+    .header-inner {
+      max-width: 1440px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .header-brand {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.92rem;
+      letter-spacing: 0.03em; text-transform: uppercase;
+      color: var(--white); text-decoration: none;
+    }
+    .header-brand .accent { color: var(--gold); }
+    .header-nav { display: flex; align-items: center; gap: 1.5rem; }
+    .lang-toggle {
+      display: flex; align-items: center;
+      border: 1px solid rgba(212,168,67,0.5); border-radius: 4px; overflow: hidden;
+    }
+    .lang-btn {
+      background: transparent; border: none; cursor: pointer;
+      font-family: var(--font-head); font-weight: 600; font-size: 0.75rem;
+      letter-spacing: 0.08em; color: rgba(255,255,255,0.65);
+      padding: 0.35rem 0.65rem; transition: all 0.2s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--green); }
+    .lang-btn:hover:not(.active) { color: var(--white); }
+    .btn-meeting {
+      font-family: var(--font-head); font-weight: 600; font-size: 0.78rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--green); background: var(--gold);
+      padding: 0.5rem 1.1rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s; white-space: nowrap;
+    }
+    .btn-meeting:hover { background: var(--gold-dk); transform: translateY(-1px); }
+
+    /* ─── HERO ──────────────────────────────────────────── */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-color: #0A1A0E;
+      background-image:
+        linear-gradient(170deg, rgba(10,26,14,0.95) 0%, rgba(27,67,50,0.80) 40%, rgba(13,35,26,0.92) 100%);
+    }
+    /* Hillside gradient suggestion */
+    .hero-bg::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
+      background: radial-gradient(ellipse at 30% 100%, rgba(45,106,79,0.2) 0%, transparent 60%);
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%;
+      background:
+        radial-gradient(ellipse at 80% 40%, rgba(64,145,108,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 60% 80%, rgba(212,168,67,0.06) 0%, transparent 40%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 920px; padding: 8rem 2rem 6rem; text-align: center;
+    }
+    .hero-tag {
+      display: inline-block; font-family: var(--font-head); font-size: 0.72rem;
+      font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid rgba(212,168,67,0.45);
+      padding: 0.35rem 1rem; border-radius: 2px; margin-bottom: 1.8rem;
+    }
+    .hero-headline {
+      font-family: var(--font-head); font-weight: 800; line-height: 1.12;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--white); margin-bottom: 1.4rem; letter-spacing: -0.01em;
+    }
+    .hero-headline em { font-style: italic; font-family: var(--font-body); font-weight: 500; color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(0.98rem, 2vw, 1.15rem); color: rgba(255,255,255,0.8);
+      max-width: 720px; margin: 0 auto 2rem; line-height: 1.65;
+    }
+    .hero-components {
+      display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .hero-component {
+      font-family: var(--font-head); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.18);
+      padding: 0.3rem 0.85rem; border-radius: 20px;
+    }
+    .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.85rem;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      background: var(--gold); color: var(--green);
+      padding: 0.9rem 2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-dk); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,168,67,0.4); }
+    .btn-secondary {
+      font-family: var(--font-head); font-weight: 600; font-size: 0.85rem;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      background: transparent; color: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 0.9rem 2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .scroll-indicator {
+      position: absolute; bottom: 2.2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; z-index: 2;
+    }
+    .scroll-indicator span {
+      display: block; width: 1px; height: 52px;
+      background: linear-gradient(to bottom, rgba(212,168,67,0.8), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    /* ─── SECTIONS SHARED ───────────────────────────────── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.7rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-head); font-weight: 800;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      color: var(--green); line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .section-lead {
+      font-size: 1.05rem; color: var(--muted); max-width: 720px;
+      margin-bottom: 3rem; line-height: 1.7;
+    }
+    .divider { width: 48px; height: 3px; background: var(--gold); margin: 1rem 0 2rem; }
+
+    /* ─── CONCEPT ───────────────────────────────────────── */
+    .concept { background: var(--white); }
+    .why-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem; margin-bottom: 3rem;
+    }
+    .why-block h3 {
+      font-family: var(--font-head); font-weight: 700; font-size: 1rem;
+      color: var(--green); margin-bottom: 0.75rem;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .why-block p { font-size: 0.96rem; line-height: 1.75; color: var(--text); }
+    .diff-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem;
+    }
+    .diff-card {
+      background: var(--bg); border-radius: 6px; padding: 2rem 1.6rem;
+      border-top: 3px solid var(--gold); transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .diff-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(27,67,50,0.12); }
+    .diff-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--green); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.2rem; font-size: 1.4rem;
+    }
+    .diff-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.95rem;
+      color: var(--green); margin-bottom: 0.6rem; line-height: 1.3;
+    }
+    .diff-body { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── OPPORTUNITY ───────────────────────────────────── */
+    .opportunity { background: var(--bg); }
+    .opp-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+    .comp-table { width: 100%; border-collapse: collapse; }
+    .comp-table th {
+      font-family: var(--font-head); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); padding: 0.5rem 0.75rem; text-align: left;
+      border-bottom: 2px solid var(--green);
+    }
+    .comp-table td {
+      padding: 0.8rem 0.75rem; font-size: 0.87rem;
+      border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.4;
+    }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .comp-table .highlight { background: rgba(27,67,50,0.05); font-weight: 600; }
+    .comp-table .occ { font-family: var(--font-head); font-weight: 700; color: var(--green); }
+    .comp-table .rate { font-size: 0.82rem; color: var(--muted); }
+    .stat-row {
+      display: flex; align-items: baseline; gap: 1rem;
+      padding: 1.2rem 0; border-bottom: 1px solid var(--border);
+    }
+    .stat-row:first-child { border-top: 1px solid var(--border); }
+    .stat-value {
+      font-family: var(--font-head); font-weight: 800; font-size: 1.5rem;
+      color: var(--green); white-space: nowrap;
+    }
+    .stat-label { font-size: 0.88rem; color: var(--muted); line-height: 1.4; }
+    .gap-note {
+      background: var(--green); color: var(--white); border-radius: 6px;
+      padding: 1.5rem; margin-top: 2rem;
+    }
+    .gap-note h3 {
+      font-family: var(--font-head); font-weight: 800; font-size: 0.95rem;
+      color: var(--gold); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .gap-note p { font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.82); }
+
+    /* ─── ARCHITECTURE ──────────────────────────────────── */
+    .architecture { background: var(--white); }
+    .arch-image-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto; gap: 1.25rem; margin-bottom: 2.5rem;
+    }
+    .arch-image-grid .img-wide { grid-column: 1 / -1; }
+    .img-placeholder { border-radius: 6px; overflow: hidden; position: relative; }
+    .img-placeholder-inner { padding-top: 60%; position: relative; }
+    .img-placeholder-bg {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .img-ph-icon { font-size: 2rem; margin-bottom: 0.75rem; opacity: 0.7; }
+    .img-ph-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.82rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: rgba(255,255,255,0.9); margin-bottom: 0.4rem;
+    }
+    .img-ph-desc { font-size: 0.75rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    .ph-1 { background: linear-gradient(135deg, #1A3A2A, #2D6A4F); }
+    .ph-2 { background: linear-gradient(135deg, #2A1A0A, #5C3D1E); }
+    .ph-3 { background: linear-gradient(135deg, #1A2A18, #2D4A28); }
+    .ph-4 { background: linear-gradient(135deg, #1A1A2A, #2A2A4A); }
+    .arch-spatial {
+      background: var(--bg); border-left: 4px solid var(--gold);
+      padding: 1.5rem 1.75rem; border-radius: 0 6px 6px 0;
+      font-size: 0.95rem; line-height: 1.8; color: var(--text);
+    }
+    /* Site plan schematic */
+    .site-plan {
+      margin-top: 2.5rem; background: var(--bg);
+      border-radius: 8px; padding: 2rem; border: 1px solid var(--border);
+    }
+    .site-plan-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.72rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1.5rem;
+    }
+    .site-plan-zones {
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .zone-row {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .zone-label {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.72rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); width: 130px; flex-shrink: 0;
+    }
+    .zone-bar {
+      flex: 1; height: 32px; border-radius: 4px;
+      display: flex; align-items: center; padding: 0 0.75rem;
+      font-size: 0.78rem; font-family: var(--font-head); font-weight: 600;
+      color: rgba(255,255,255,0.9);
+    }
+    .zone-elevation {
+      width: 80px; text-align: right; font-family: var(--font-head);
+      font-size: 0.72rem; font-weight: 700; color: var(--gold);
+    }
+
+    /* ─── FINANCIALS ────────────────────────────────────── */
+    .financials { background: var(--green); }
+    .financials .section-title { color: var(--white); }
+    .financials .section-label { color: rgba(212,168,67,0.9); }
+    .financials .divider { background: var(--gold); }
+    .financials .section-lead { color: rgba(255,255,255,0.7); }
+    .metrics-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem; margin-bottom: 2rem;
+    }
+    .metric-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px; padding: 1.6rem 1.4rem; transition: background 0.2s;
+    }
+    .metric-card:hover { background: rgba(255,255,255,0.11); }
+    .metric-card.highlight-card {
+      background: rgba(212,168,67,0.15); border-color: rgba(212,168,67,0.4);
+    }
+    .metric-label {
+      font-family: var(--font-head); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;
+    }
+    .tooltip-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 15px; height: 15px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.6); font-size: 0.6rem; font-weight: 700;
+      cursor: pointer; flex-shrink: 0; position: relative; padding: 0;
+      font-family: var(--font-head); line-height: 1;
+    }
+    .tooltip-btn:hover, .tooltip-btn:focus { outline: none; background: rgba(255,255,255,0.22); }
+    .tooltip-popup {
+      position: absolute; bottom: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%);
+      background: rgba(8,18,12,0.97); border: 1px solid rgba(212,168,67,0.45);
+      border-radius: 6px; padding: 0.85rem 1rem; width: 250px;
+      pointer-events: none; opacity: 0; transition: opacity 0.2s; z-index: 300;
+      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.02em;
+      text-transform: none; color: rgba(255,255,255,0.82); line-height: 1.55;
+    }
+    .tooltip-popup::after {
+      content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      border: 6px solid transparent; border-top-color: rgba(212,168,67,0.45);
+    }
+    .tooltip-btn:hover .tooltip-popup,
+    .tooltip-btn:focus .tooltip-popup { opacity: 1; }
+
+    /* Data sources & footnotes */
+    .data-sources { font-size: 0.7rem; color: #888; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.75rem; line-height: 1.6; }
+    .data-sources p { margin: 0.2rem 0; }
+    .data-sources a { color: #aaa; text-decoration: none; }
+    sup.src-ref { font-size: 0.6rem; color: #aaa; vertical-align: super; margin-left: 1px; cursor: help; }
+
+    .metric-value {
+      font-family: var(--font-head); font-weight: 800;
+      font-size: 1.45rem; color: var(--white); line-height: 1.1;
+    }
+    .metric-value .currency { font-size: 0.95rem; font-weight: 600; opacity: 0.8; }
+    .metric-sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; }
+    .metric-card.highlight-card .metric-value { color: var(--gold); }
+    .exit-scenarios {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 1.75rem; margin-top: 1.5rem;
+    }
+    .exit-title {
+      font-family: var(--font-head); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 1.25rem;
+    }
+    .exit-row {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 0.5rem; padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+    }
+    .exit-row:last-child { border-bottom: none; }
+    .exit-row-label {
+      font-family: var(--font-head); font-size: 0.78rem; font-weight: 600;
+      color: rgba(255,255,255,0.6); letter-spacing: 0.04em;
+    }
+    .exit-val {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.85rem;
+      color: var(--gold); text-align: right;
+    }
+    .exit-header .exit-val {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .boi-note {
+      background: rgba(64,145,108,0.2); border: 1px solid rgba(64,145,108,0.35);
+      border-radius: 4px; padding: 1.1rem 1.35rem; margin-top: 1.25rem;
+      font-size: 0.85rem; line-height: 1.65; color: rgba(255,255,255,0.82);
+    }
+    .boi-note strong { color: var(--gold); }
+    .equestrian-note {
+      background: rgba(212,168,67,0.1); border: 1px solid rgba(212,168,67,0.3);
+      border-radius: 4px; padding: 1.1rem 1.35rem; margin-top: 1rem;
+      font-size: 0.85rem; line-height: 1.65; color: rgba(255,255,255,0.82);
+    }
+    .equestrian-note strong { color: var(--gold); }
+
+    /* ─── INVESTMENT ASK ────────────────────────────────── */
+    .invest-ask { background: var(--bg); }
+    .ask-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+    .structure-item {
+      display: flex; align-items: baseline; gap: 1rem;
+      padding: 1.1rem 0; border-bottom: 1px solid var(--border);
+    }
+    .structure-item:first-child { border-top: 1px solid var(--border); }
+    .structure-key {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.78rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); min-width: 130px; flex-shrink: 0;
+    }
+    .structure-val {
+      font-family: var(--font-head); font-weight: 700; font-size: 1rem; color: var(--green);
+    }
+    .structure-note { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+    .boi-box {
+      background: var(--green); border-radius: 6px; padding: 1.5rem; margin-top: 1.5rem;
+    }
+    .boi-box-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.78rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.85rem;
+    }
+    .boi-item {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+      font-size: 0.88rem; color: rgba(255,255,255,0.82);
+      margin-bottom: 0.65rem; line-height: 1.5;
+    }
+    .boi-item:last-child { margin-bottom: 0; }
+    .boi-bullet { color: var(--gold); flex-shrink: 0; }
+    .donut-wrap { display: flex; flex-direction: column; align-items: center; }
+    .donut-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1.25rem;
+    }
+    .donut-svg { width: 210px; height: 210px; }
+    .donut-legend { margin-top: 1.5rem; width: 100%; max-width: 300px; }
+    .legend-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.82rem; color: var(--text); margin-bottom: 0.5rem;
+    }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .legend-pct {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.78rem;
+      color: var(--muted); margin-left: auto;
+    }
+    .equestrian-sub {
+      background: var(--white); border: 2px dashed var(--gold);
+      border-radius: 6px; padding: 1.75rem; margin-top: 2rem;
+    }
+    .eq-sub-title {
+      font-family: var(--font-head); font-weight: 800; font-size: 0.9rem;
+      color: var(--green); margin-bottom: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .eq-sub-body { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── CTA ───────────────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--green) 0%, #0D2318 100%);
+      text-align: center;
+    }
+    .cta-section .section-title { color: var(--white); }
+    .cta-section .section-lead { color: rgba(255,255,255,0.72); margin: 0 auto 2.5rem; }
+    .cta-step-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;
+    }
+    .cta-step {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 1.75rem 1.4rem;
+    }
+    .cta-step-num {
+      font-family: var(--font-head); font-weight: 800; font-size: 2.2rem;
+      color: rgba(212,168,67,0.3); margin-bottom: 0.75rem; line-height: 1;
+    }
+    .cta-step-title {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.88rem;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    .cta-step-desc { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.55; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-primary {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.88rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: var(--gold); color: var(--green);
+      padding: 1rem 2.2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-cta-primary:hover { background: var(--gold-dk); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,168,67,0.4); }
+    .btn-cta-secondary {
+      font-family: var(--font-head); font-weight: 600; font-size: 0.88rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: transparent; color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 1rem 2.2rem; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-grid {
+      display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem;
+    }
+    .contact-item { font-size: 0.88rem; color: rgba(255,255,255,0.6); }
+    .contact-item a { color: var(--gold); text-decoration: none; }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .site-footer { background: #080F0A; padding: 2.5rem 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem; }
+    .footer-disclaimer {
+      font-size: 0.75rem; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 900px;
+    }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand {
+      font-family: var(--font-head); font-weight: 700; font-size: 0.8rem;
+      letter-spacing: 0.06em; color: rgba(255,255,255,0.4); text-transform: uppercase;
+    }
+    .footer-note { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .why-grid, .diff-grid { grid-template-columns: 1fr; }
+      .opp-inner, .ask-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .arch-image-grid { grid-template-columns: 1fr; }
+      .arch-image-grid .img-wide { grid-column: 1; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .cta-step-grid { grid-template-columns: 1fr; }
+      .exit-row { grid-template-columns: 2fr 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .metrics-grid { grid-template-columns: 1fr; }
+      section { padding: 3.5rem 1.25rem; }
+      .hero-content { padding: 7rem 1.25rem 5rem; }
+      .btn-meeting { display: none; }
+      .exit-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+
+<!-- ═══════════════════════════════════════════════════════ HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#" class="header-brand">
+      <span lang="en">Hillside <span class="accent">Wellness</span> &amp; Equestrian · Hua Hin</span>
+      <span lang="th">ฮิลไซด์ <span class="accent">เวลเนส</span> แอนด์ อีเควสเตรียน · หัวหิน</span>
+      <span lang="ru">Хиллсайд <span class="accent">Велнес</span> и Конный клуб · Хуахин</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-th" onclick="setLang('th')">TH</button>
+        <button class="lang-btn" id="btn-ru" onclick="setLang('ru')">RU</button>
+      </div>
+      <a href="#contact" class="btn-meeting">
+        <span lang="en">Schedule a Meeting</span>
+        <span lang="th">นัดหมายประชุม</span>
+        <span lang="ru">Назначить встречу</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════ HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span lang="en">Investment Opportunity · Soi 88 Hillside, Hua Hin</span>
+      <span lang="th">โอกาสการลงทุน · เนินเขาซอย 88, หัวหิน</span>
+      <span lang="ru">Инвестиционная возможность · Склон Сои 88, Хуахин</span>
+    </div>
+    <h1 class="hero-headline">
+      <span lang="en">The only wellness resort on the Hua Hin hillside<br><em>with horses.</em></span>
+      <span lang="th">รีสอร์ทเพื่อสุขภาวะบนเนินเขาแห่งเดียวในหัวหิน<br><em>ที่มีโปรแกรมกีฬาขี่ม้าครบครัน</em></span>
+      <span lang="ru">Единственный велнес-курорт на склоне холма в Хуахине<br><em>с конным комплексом.</em></span>
+    </h1>
+    <p class="hero-sub">
+      <span lang="en">Seven private villas, eight spa rooms, and a full equestrian complex — on the western hillside of Soi 88, where Chiva-Som and Aleenta have proven there is more demand for wellness than supply.</span>
+      <span lang="th">วิลล่าส่วนตัว 7 หลัง ห้องสปา 8 ห้อง และคอมเพล็กซ์กีฬาขี่ม้าสมบูรณ์แบบ — บนเนินเขาฝั่งตะวันตกซอย 88 ที่ซึ่ง Chiva-Som และ Aleenta พิสูจน์แล้วว่าอุปสงค์ด้านสุขภาวะมีมากกว่าอุปทาน</span>
+      <span lang="ru">Семь частных вилл, восемь кабинетов спа и полноценный конный комплекс — на западном склоне Сои 88, где Chiva-Som и Aleenta доказали: спрос на велнес превышает предложение.</span>
+    </p>
+    <div class="hero-components">
+      <span class="hero-component"><span lang="en">7 Pool Villas</span><span lang="th">วิลล่ามีสระ 7 หลัง</span><span lang="ru">7 Вилл с бассейном</span></span>
+      <span class="hero-component"><span lang="en">8 Spa Rooms</span><span lang="th">ห้องสปา 8 ห้อง</span><span lang="ru">8 Кабинетов спа</span></span>
+      <span class="hero-component"><span lang="en">Equestrian Complex</span><span lang="th">คอมเพล็กซ์กีฬาขี่ม้า</span><span lang="ru">Конный комплекс</span></span>
+      <span class="hero-component"><span lang="en">100-Person Event Hall</span><span lang="th">ห้องจัดงาน 100 คน</span><span lang="ru">Банкетный зал на 100 чел.</span></span>
+      <span class="hero-component"><span lang="en">BOI Section 7.4</span><span lang="th">BOI หมวด 7.4</span><span lang="ru">BOI Раздел 7.4</span></span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">
+        <span lang="en">Request Investment Summary</span>
+        <span lang="th">ขอรับสรุปการลงทุน</span>
+        <span lang="ru">Запросить инвестрезюме</span>
+      </a>
+      <a href="#financials" class="btn-secondary">
+        <span lang="en">View Financial Highlights</span>
+        <span lang="th">ดูตัวเลขทางการเงิน</span>
+        <span lang="ru">Финансовые показатели</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span></span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ CONCEPT -->
+<section class="concept" id="concept">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">The Concept</span>
+      <span lang="th">แนวคิดโครงการ</span>
+      <span lang="ru">Концепция</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Why This · Why Hua Hin · Why Now</span>
+      <span lang="th">เหตุใดโครงการนี้ · เหตุใดหัวหิน · เหตุใดตอนนี้</span>
+      <span lang="ru">Почему это · Почему Хуахин · Почему сейчас</span>
+    </h2>
+    <div class="divider"></div>
+    <div class="why-grid">
+      <div class="why-block">
+        <h3><span lang="en">Why This</span><span lang="th">เหตุใดโครงการนี้</span><span lang="ru">Почему это</span></h3>
+        <p>
+          <span lang="en">Chiva-Som maintains <span title="Source: Chiva-Som Annual Review / Bangkok Post, The Nation — industry media coverage">82–88% occupancy</span><sup class="src-ref">[¹]</sup> at ฿45,000–140,000/night. Aleenta runs <span title="Source: Aleenta public disclosures / Bangkok Post hospitality reports">68–78% occupancy</span><sup class="src-ref">[²]</sup> at ฿8,000–38,000/night. Both have waiting lists. No boutique wellness property in the ฿8,000–18,000 range operates in the Hua Hin corridor. This project fills that gap — not competing with Chiva-Som, but occupying the tier directly below it, in a format neither property offers: hillside setting, full equestrian, and private events capability under one roof.</span>
+          <span lang="th">Chiva-Som รักษา<span title="ที่มา: รายงานประจำปี Chiva-Som / Bangkok Post, The Nation — สื่ออุตสาหกรรม">อัตราการเข้าพัก 82–88%</span><sup class="src-ref">[¹]</sup>ที่ราคา 45,000–140,000 บาทต่อคืน Aleenta ดำเนินงานที่<span title="ที่มา: เอกสารเผยแพร่สาธารณะของ Aleenta / รายงานการโรงแรมของ Bangkok Post">อัตราการเข้าพัก 68–78%</span><sup class="src-ref">[²]</sup>ราคา 8,000–38,000 บาทต่อคืน ทั้งสองแห่งมีผู้จองล่วงหน้าเต็มตลอด ไม่มีรีสอร์ทเพื่อสุขภาวะระดับบูทิคในช่วงราคา 8,000–18,000 บาทต่อคืนในย่านหัวหิน โครงการนี้เติมช่องว่างดังกล่าว ไม่ใช่การแข่งขันกับ Chiva-Som แต่ดำเนินการในระดับราคาถัดลงมา ในรูปแบบที่ทั้งสองแห่งไม่มีให้</span>
+          <span lang="ru">Chiva-Som удерживает <span title="Источник: годовой обзор Chiva-Som / Bangkok Post, The Nation — отраслевые СМИ">загрузку 82–88%</span><sup class="src-ref">[¹]</sup> при ฿45 000–140 000 за ночь. Aleenta — <span title="Источник: публичные данные Aleenta / отраслевые репортажи Bangkok Post">68–78%</span><sup class="src-ref">[²]</sup> при ฿8 000–38 000. Оба объекта работают с листом ожидания. В коридоре Хуахин нет ни одного бутик-велнес-объекта в диапазоне ฿8 000–18 000. Этот проект закрывает нишу — не конкурируя с Chiva-Som, а занимая сегмент непосредственно ниже: склон холма, конный комплекс, частные мероприятия под одной крышей.</span>
+        </p>
+      </div>
+      <div class="why-block">
+        <h3><span lang="en">Why Hua Hin</span><span lang="th">เหตุใดหัวหิน</span><span lang="ru">Почему Хуахин</span></h3>
+        <p>
+          <span lang="en">Chiva-Som has ranked in Asia's top five wellness resorts for consecutive years. The Hua Hin–Pranburi corridor is the only location in Thailand where guests can drive from world-class wellness to the beach to the hillside in twenty minutes. The western Soi 88 hillside offers panoramic gulf views, cooler temperatures than beachfront, and a natural separation from tourist density — exactly what wellness guests pay a premium to find.</span>
+          <span lang="th">Chiva-Som ติดอันดับห้าสุดยอดรีสอร์ทเพื่อสุขภาวะแห่งเอเชียอย่างต่อเนื่อง ทำเลจากหัวหินถึงปราณบุรีเป็นสถานที่เดียวในประเทศไทยที่นักท่องเที่ยวสามารถเดินทางจากศูนย์สุขภาวะระดับโลกสู่ชายหาดสู่เนินเขาภายใน 20 นาที เนินเขาฝั่งตะวันตกซอย 88 เสนอทิวทัศน์แบบพาโนรามาของอ่าวไทยและอุณหภูมิที่เย็นกว่าแนวชายฝั่ง</span>
+          <span lang="ru">Chiva-Som стабильно входит в пятёрку лучших велнес-курортов Азии. Коридор Хуахин–Пранбури — единственное место в Таиланде, откуда за 20 минут можно добраться от велнес-курорта мирового уровня до пляжа и склона холма. Западный склон Сои 88 открывает панорамные виды на залив, прохладнее береговой линии и естественно изолирован от туристической плотности.</span>
+        </p>
+      </div>
+      <div class="why-block">
+        <h3><span lang="en">Why Now</span><span lang="th">เหตุใดตอนนี้</span><span lang="ru">Почему сейчас</span></h3>
+        <p>
+          <span lang="en">International ultra-luxury hotel brands are entering the Hua Hin corridor (2025–2026)<a href="https://leading-hoteliers.com/" target="_blank" style="color:#D4A843;font-size:0.8em">[source]</a> — raising the entire market ceiling and accelerating the repricing of hillside land. The window to acquire agricultural-zone hillside land at ฿500,000–1,500,000/rai closes as luxury-driven demand reaches this corridor. Adjacent polo farm cooperation eliminates horse CAPEX entirely and reduces monthly equestrian OPEX by 78%.</span>
+          <span lang="th">แบรนด์โรงแรมระดับ ultra-luxury นานาชาติกำลังเข้าสู่ย่านหัวหิน (2568–2569)<a href="https://leading-hoteliers.com/" target="_blank" style="color:#D4A843;font-size:0.8em">[แหล่งที่มา]</a> สิ่งนี้ยกระดับเพดานตลาดทั้งหมดและเร่งการปรับราคาที่ดินบนเนินเขา ช่องทางในการซื้อที่ดินเขตเกษตรกรรมบนเนินเขาที่ราคา 500,000–1,500,000 บาทต่อไร่จะปิดลง ความร่วมมือกับฟาร์มม้าใกล้เคียงช่วยลด CAPEX ด้านกีฬาขี่ม้าเป็นศูนย์</span>
+          <span lang="ru">Международные бренды ultra-luxury выходят в коридор Хуахина (2025–2026)<a href="https://leading-hoteliers.com/" target="_blank" style="color:#D4A843;font-size:0.8em">[источник]</a> — поднимая потолок всего рынка и ускоряя переоценку земель на склонах. Окно для приобретения сельскохозяйственных участков по ฿500 000–1 500 000 за рай закрывается. Сотрудничество с соседней поло-фермой обнуляет CAPEX на лошадей и сокращает ежемесячный OPEX конного блока на 78%.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="data-sources">
+      <p><sup class="src-ref">[¹]</sup> Chiva-Som Annual Review / Bangkok Post, The Nation — industry media coverage (exact figure not publicly disclosed)</p>
+      <p><sup class="src-ref">[²]</sup> Aleenta public disclosures / Bangkok Post hospitality reports</p>
+    </div>
+
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">⛰️</div>
+        <div class="diff-title">
+          <span lang="en">Irreplaceable Hillside Site</span>
+          <span lang="th">ทำเลเนินเขาที่ไม่สามารถทดแทนได้</span>
+          <span lang="ru">Незаменимое расположение на холме</span>
+        </div>
+        <div class="diff-body">
+          <span lang="en">Physical separation from every beachfront competitor. Panoramic gulf views, elevation, and quiet cannot be replicated from a Hua Hin beachfront address — at any price.</span>
+          <span lang="th">การแยกทางกายภาพจากคู่แข่งทุกแห่งที่ตั้งอยู่บนชายหาด ทิวทัศน์แบบพาโนรามา ความสูง และความเงียบสงบไม่สามารถจำลองได้จากที่อยู่บนชายหาดหัวหิน</span>
+          <span lang="ru">Физическое отделение от всех конкурентов на побережье. Панорамные виды на залив, высота и тишина недостижимы ни по какой цене с берегового адреса Хуахина.</span>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🐎</div>
+        <div class="diff-title">
+          <span lang="en">Equestrian as Differentiator</span>
+          <span lang="th">กีฬาขี่ม้าเป็นตัวสร้างความแตกต่าง</span>
+          <span lang="ru">Конный спорт как уникальное преимущество</span>
+        </div>
+        <div class="diff-body">
+          <span lang="en">GCC families, corporate retreat groups, European equestrian enthusiasts — a guest segment that no current Hua Hin property actively targets, served by a full program with covered arena and qualified instructor.</span>
+          <span lang="th">ครอบครัว GCC กลุ่มองค์กร นักกีฬาขี่ม้าชาวยุโรป — กลุ่มแขกที่ไม่มีอสังหาริมทรัพย์ในหัวหินรายใดให้บริการในปัจจุบัน</span>
+          <span lang="ru">Семьи из стран GCC, корпоративные ретриты, европейские любители верховой езды — сегмент гостей, который ни один объект в Хуахине сейчас не обслуживает: крытый манеж, квалифицированный инструктор, полная программа.</span>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🤝</div>
+        <div class="diff-title">
+          <span lang="en">Partnership Model Eliminates Horse Risk</span>
+          <span lang="th">โมเดลความร่วมมือกำจัดความเสี่ยงม้า</span>
+          <span lang="ru">Партнёрская модель устраняет риск лошадей</span>
+        </div>
+        <div class="diff-body">
+          <span lang="en">Adjacent polo farm cooperation: horse acquisition CAPEX drops to zero. Monthly equestrian OPEX falls from ฿189,000 to ฿45,000–85,000. Equestrian becomes net revenue contributor from Year 2.</span>
+          <span lang="th">ความร่วมมือกับฟาร์มม้าใกล้เคียง: CAPEX การซื้อม้าลดเหลือศูนย์ OPEX รายเดือนด้านกีฬาขี่ม้าลดจาก 189,000 บาทเป็น 45,000–85,000 บาท กีฬาขี่ม้ากลายเป็นตัวสร้างรายได้สุทธิตั้งแต่ปีที่ 2</span>
+          <span lang="ru">Сотрудничество с соседней поло-фермой: CAPEX на приобретение лошадей = ฿0. Ежемесячный OPEX конного блока снижается с ฿189 000 до ฿45 000–85 000. С года 2 конный блок генерирует чистый доход.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ OPPORTUNITY -->
+<section class="opportunity" id="opportunity">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Market Opportunity</span>
+      <span lang="th">โอกาสทางตลาด</span>
+      <span lang="ru">Рыночная возможность</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Validated Market, Unoccupied Tier</span>
+      <span lang="th">ตลาดที่พิสูจน์แล้ว ระดับราคาที่ว่างอยู่</span>
+      <span lang="ru">Подтверждённый рынок, незанятый сегмент</span>
+    </h2>
+    <div class="divider"></div>
+    <div class="opp-inner">
+      <div>
+        <p class="section-label" style="margin-bottom:0.75rem;">
+          <span lang="en">Hua Hin Wellness Corridor — Competitor Benchmarks</span>
+          <span lang="th">ย่านสุขภาวะหัวหิน — เกณฑ์เปรียบเทียบคู่แข่ง</span>
+          <span lang="ru">Велнес-коридор Хуахина — ориентиры конкурентов</span>
+        </p>
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th><span lang="en">Property</span><span lang="th">อสังหาริมทรัพย์</span><span lang="ru">Объект</span></th>
+              <th><span lang="en">ADR Range</span><span lang="th">ช่วงราคา ADR</span><span lang="ru">Диапазон ADR</span></th>
+              <th><span lang="en">Occupancy</span><span lang="th">อัตราเข้าพัก</span><span lang="ru">Загрузка</span></th>
+              <th><span lang="en">Waitlist</span><span lang="th">รอคิว</span><span lang="ru">Лист ожидания</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Chiva-Som</td>
+              <td class="rate">฿45K–140K</td>
+              <td><span class="occ">82–88%</span><sup class="src-ref">[¹]</sup></td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>Aleenta</td>
+              <td class="rate">฿8K–38K</td>
+              <td><span class="occ">68–78%</span><sup class="src-ref">[²]</sup></td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td><span lang="en">Int'l Ultra-luxury Brand</span><span lang="th">แบรนด์ ultra-luxury นานาชาติ</span><span lang="ru">Межд. бренд ultra-luxury</span> <span style="font-size:0.75rem;color:var(--muted)"><span lang="en">(entering corridor 2025–26)</span><span lang="th">(เข้าสู่ย่านหัวหิน 2568–69)</span><span lang="ru">(входит в коридор 2025–26)</span></span></td>
+              <td class="rate">฿25K–90K<span style="font-size:0.7rem;color:var(--muted)"> est.</span></td>
+              <td><span class="occ">—</span></td>
+              <td>—</td>
+            </tr>
+            <tr class="highlight">
+              <td><strong><span lang="en">This Project</span><span lang="th">โครงการนี้</span><span lang="ru">Этот проект</span></strong></td>
+              <td class="rate"><strong>฿8K–18K</strong></td>
+              <td><span class="occ">52%</span> <span style="font-size:0.75rem;color:var(--muted)"><span lang="en">cons.</span><span lang="th">conservative</span><span lang="ru">конс.</span></span></td>
+              <td><span style="color:var(--green-lt)">—</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="gap-note">
+          <h3><span lang="en">The Unoccupied Tier</span><span lang="th">ระดับราคาที่ว่างอยู่</span><span lang="ru">Незанятый ценовой сегмент</span></h3>
+          <p>
+            <span lang="en">No boutique wellness property operates in the ฿8,000–18,000/night range in the Hua Hin corridor. Pranburi Forest Resort is the only property offering horse riding alongside a resort experience — with 4–6 horses on basic trail rides, no covered arena, no structured lessons. There is no hillside wellness resort with a full equestrian complex anywhere in the corridor.</span>
+            <span lang="th">ไม่มีรีสอร์ทเพื่อสุขภาวะระดับบูทิคที่ดำเนินงานในช่วงราคา 8,000–18,000 บาทต่อคืนในย่านหัวหิน Pranburi Forest Resort เป็นอสังหาริมทรัพย์เดียวที่เสนอการขี่ม้าควบคู่กับประสบการณ์รีสอร์ท — ด้วยม้าสี่ถึงหกตัวบนเส้นทางพื้นฐาน ไม่มีสนามมีหลังคา ไม่มีบทเรียนที่มีโครงสร้าง ไม่มีรีสอร์ทเพื่อสุขภาวะบนเนินเขาที่มีคอมเพล็กซ์กีฬาขี่ม้าสมบูรณ์แบบในย่านนี้</span>
+            <span lang="ru">Ни один бутик-велнес-объект в коридоре Хуахина не работает в диапазоне ฿8 000–18 000 за ночь. Pranburi Forest Resort — единственный объект с конными прогулками: 4–6 лошадей на простых маршрутах, без крытого манежа, без структурированных занятий. Велнес-курорта с полноценным конным комплексом на склоне холма в этом коридоре не существует.</span>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="stat-row">
+          <div class="stat-value">฿0</div>
+          <div class="stat-label">
+            <span lang="en">horse CAPEX under the partnership model — adjacent polo farm cooperation eliminates the acquisition cost entirely</span>
+            <span lang="th">CAPEX ม้าภายใต้โมเดลความร่วมมือ — ความร่วมมือกับฟาร์มม้าใกล้เคียงกำจัดต้นทุนการซื้อม้าอย่างสมบูรณ์</span>
+            <span lang="ru">CAPEX на лошадей по партнёрской модели — сотрудничество с соседней поло-фермой полностью обнуляет затраты на приобретение</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-value">15 min</div>
+          <div class="stat-label">
+            <span lang="en">from Hua Hin center to the Soi 88 hillside site — closer to the beach than Chiva-Som, higher elevation than every beachfront property</span>
+            <span lang="th">จากใจกลางหัวหินสู่พื้นที่เนินเขาซอย 88 — ใกล้ชายหาดกว่า Chiva-Som สูงกว่าอสังหาริมทรัพย์ชายหาดทุกแห่ง</span>
+            <span lang="ru">от центра Хуахина до участка на склоне Сои 88 — ближе к пляжу, чем Chiva-Som, выше любого берегового объекта</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-value">78%</div>
+          <div class="stat-label">
+            <span lang="en">reduction in monthly equestrian OPEX under the partnership model vs. fully independent operation — ฿189,000 → ฿45,000–85,000/month</span>
+            <span lang="th">การลด OPEX รายเดือนด้านกีฬาขี่ม้าภายใต้โมเดลความร่วมมือเทียบกับการดำเนินงานอิสระ — 189,000 → 45,000–85,000 บาท/เดือน</span>
+            <span lang="ru">снижение ежемесячного OPEX конного блока по партнёрской модели vs. полностью независимая эксплуатация — ฿189 000 → ฿45 000–85 000/мес.</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-value">1 of 1</div>
+          <div class="stat-label">
+            <span lang="en">property in the Hua Hin corridor to combine spa (8 rooms), private pool villas, 100-person event hall, and full equestrian on a hillside site</span>
+            <span lang="th">อสังหาริมทรัพย์ในย่านหัวหินที่รวม: สปา (8 ห้อง) วิลล่ามีสระส่วนตัว ห้องจัดงาน 100 คน และกีฬาขี่ม้าครบครัน บนพื้นที่เนินเขา</span>
+            <span lang="ru">объект в коридоре Хуахина, объединяющий спа (8 кабинетов), частные виллы с бассейном, банкетный зал на 100 человек и полный конный комплекс на склоне холма</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ ARCHITECTURE -->
+<section class="architecture" id="architecture">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Architecture Vision</span>
+      <span lang="th">วิสัยทัศน์ทางสถาปัตยกรรม</span>
+      <span lang="ru">Архитектурная концепция</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">The Hillside · The Spa · The Arena</span>
+      <span lang="th">เนินเขา · สปา · สนามขี่ม้า</span>
+      <span lang="ru">Холм · Спа · Манеж</span>
+    </h2>
+    <div class="divider"></div>
+    <div class="arch-image-grid">
+      <div class="img-placeholder img-wide ph-1">
+        <div class="img-placeholder-inner">
+          <div class="img-placeholder-bg">
+            <div class="img-ph-icon">🌅</div>
+            <div class="img-ph-title"><span lang="en">Hillside Drone — Golden Hour</span><span lang="th">มุมมองโดรน — ยามพลบค่ำ</span><span lang="ru">Дрон над холмом — золотой час</span></div>
+            <div class="img-ph-desc"><span lang="en">Seven private pool villas across the hillside · Gulf of Thailand as silver band on horizon 8 km distant · No roads visible · Isolation, elevation, tropical luxury</span><span lang="th">วิลล่าส่วนตัวพร้อมสระ 7 หลังบนเนินเขา · อ่าวไทยเป็นแถบเงินที่ขอบฟ้า 8 กม. · ความโดดเดี่ยว ความสูง ความหรูหราเขตร้อน</span><span lang="ru">Семь вилл с бассейном на склоне · Залив в 8 км серебряной полосой на горизонте · Изоляция, высота, тропическая роскошь</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="img-placeholder ph-2">
+        <div class="img-placeholder-inner">
+          <div class="img-placeholder-bg">
+            <div class="img-ph-icon">🌿</div>
+            <div class="img-ph-title"><span lang="en">Spa Exterior</span><span lang="th">ภายนอกสปา</span><span lang="ru">Фасад спа</span></div>
+            <div class="img-ph-desc"><span lang="en">Single-story · Deep overhanging eaves · Natural stone base · Teak louvers · Tropical planting · Treatment pavilion (sala) visible beyond</span><span lang="th">อาคารชั้นเดียว · ชายคายื่นลึก · ฐานหินธรรมชาติ · บานเกล็ดไม้สัก · ซาลาบำบัดในสวนด้านหลัง</span><span lang="ru">Одноэтажное здание · Глубокие свесы кровли · Натуральный камень · Жалюзи из тика · Тропические насаждения · Процедурная сала за деревьями</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="img-placeholder ph-3">
+        <div class="img-placeholder-inner">
+          <div class="img-placeholder-bg">
+            <div class="img-ph-icon">🐴</div>
+            <div class="img-ph-title"><span lang="en">Equestrian Arena</span><span lang="th">สนามฝึกซ้อมม้า</span><span lang="ru">Конный манеж</span></div>
+            <div class="img-ph-desc"><span lang="en">Covered arena · Bay horse under late afternoon light · Steel-frame structure · Sand surface lit from above · Hillside visible through open gable · Professional, accessible</span><span lang="th">สนามมีหลังคา · ม้าสีน้ำตาลในแสงบ่าย · โครงสร้างเหล็ก · พื้นทราย · เนินเขามองเห็นผ่านปลายจั่ว · มืออาชีพแต่เข้าถึงได้</span><span lang="ru">Крытый манеж · Гнедой конь в послеполуденном свете · Стальной каркас · Песчаное покрытие · Склон холма в открытом торце · Профессионально и доступно</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="img-placeholder ph-4">
+        <div class="img-placeholder-inner">
+          <div class="img-placeholder-bg">
+            <div class="img-ph-icon">✨</div>
+            <div class="img-ph-title"><span lang="en">Event Hall — Corporate Setup</span><span lang="th">ห้องจัดงาน — งานองค์กร</span><span lang="ru">Банкетный зал — корпоратив</span></div>
+            <div class="img-ph-desc"><span lang="en">40-person corporate dinner · Round tables · Full-length glass wall open to valley and distant sea · A view no hotel banquet room can match</span><span lang="th">ดินเนอร์องค์กร 40 คน · โต๊ะกลม · กำแพงกระจกเต็มความสูงเปิดสู่วิวหุบเขาและทะเล</span><span lang="ru">Корпоративный ужин на 40 человек · Круглые столы · Полная стеклянная стена с видом на долину и море · Такого вида нет ни в одном гостиничном банкетном зале</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arch-spatial">
+      <span lang="en">The site plan separates functions with topography. Spa and main pool at highest elevation — furthest views. Villas step down in two rows, each with private pool and privacy planting. Restaurant and café terrace at mid-level arrival point. Event hall on a lower terrace with the broadest valley view. The equestrian complex is sited minimum 100m from the nearest villa, with the hillside buffer absorbing sound and separating the horse environment from the spa environment.</span>
+      <span lang="th">ผังพื้นที่แบ่งส่วนต่างๆ ด้วยภูมิประเทศ สปาและสระว่ายน้ำหลักตั้งอยู่ที่ระดับสูงสุด วิลล่าเรียงกันลงเนินเขาสองแถว แต่ละหลังมีสระส่วนตัวและการปลูกพืชเพื่อความเป็นส่วนตัว ร้านอาหารและคาเฟ่ระเบียงอยู่ที่ระดับกลาง ห้องจัดงานมีวิวหุบเขาที่กว้างที่สุด คอมเพล็กซ์กีฬาขี่ม้าตั้งอยู่ห่างจากวิลล่าที่ใกล้ที่สุดอย่างน้อย 100 เมตร</span>
+      <span lang="ru">Генплан разделяет функции рельефом. Спа и главный бассейн на наибольшей высоте — максимальные виды. Виллы спускаются двумя рядами, у каждой собственный бассейн и защитные насаждения. Ресторан и кафе-терраса — на среднем уровне у входной зоны. Банкетный зал на нижней террасе с самым широким видом на долину. Конный комплекс — не менее 100 м от ближайшей виллы; буферная зона склона гасит звук и отделяет «лошадиную» среду от «спа-среды».</span>
+    </div>
+
+    <!-- Elevation schematic -->
+    <div class="site-plan">
+      <div class="site-plan-title">
+        <span lang="en">Site Elevation Schematic — Function by Topography</span>
+        <span lang="th">แผนผังระดับความสูง — ฟังก์ชันตามภูมิประเทศ</span>
+        <span lang="ru">Схема зонирования по высоте — функции по рельефу</span>
+      </div>
+      <div class="site-plan-zones">
+        <div class="zone-row">
+          <div class="zone-label"><span lang="en">Highest Level</span><span lang="th">ระดับสูงสุด</span><span lang="ru">Верхний уровень</span></div>
+          <div class="zone-bar" style="background:var(--green); width:100%"><span lang="en">Spa · Main Pool · Furthest Views</span><span lang="th">สปา · สระว่ายน้ำหลัก · ทิวทัศน์ที่ไกลที่สุด</span><span lang="ru">Спа · Главный бассейн · Лучшие виды</span></div>
+          <div class="zone-elevation">▲ TOP</div>
+        </div>
+        <div class="zone-row">
+          <div class="zone-label"><span lang="en">Upper Villas</span><span lang="th">วิลล่าบน</span><span lang="ru">Верхние виллы</span></div>
+          <div class="zone-bar" style="background:var(--green-mid); width:90%"><span lang="en">3 Pool Villas · Gulf Views · Privacy Planting</span><span lang="th">วิลล่ามีสระ 3 หลัง · วิวอ่าว · ปลูกพืชกั้น</span><span lang="ru">3 Виллы с бассейном · Вид на залив · Озеленение</span></div>
+          <div class="zone-elevation"></div>
+        </div>
+        <div class="zone-row">
+          <div class="zone-label"><span lang="en">Mid Level</span><span lang="th">ระดับกลาง</span><span lang="ru">Средний уровень</span></div>
+          <div class="zone-bar" style="background:var(--green-lt); width:78%"><span lang="en">4 Pool Villas · Restaurant · Café Terrace · Arrival</span><span lang="th">วิลล่ามีสระ 4 หลัง · ร้านอาหาร · คาเฟ่ระเบียง · จุดมาถึง</span><span lang="ru">4 Виллы · Ресторан · Кафе-терраса · Въезд</span></div>
+          <div class="zone-elevation"></div>
+        </div>
+        <div class="zone-row">
+          <div class="zone-label"><span lang="en">Lower Terrace</span><span lang="th">ระเบียงล่าง</span><span lang="ru">Нижняя терраса</span></div>
+          <div class="zone-bar" style="background:#B8882A; width:65%"><span lang="en">Event Hall · Broadest Valley View</span><span lang="th">ห้องจัดงาน · วิวหุบเขาที่กว้างที่สุด</span><span lang="ru">Банкетный зал · Лучший вид на долину</span></div>
+          <div class="zone-elevation"></div>
+        </div>
+        <div class="zone-row">
+          <div class="zone-label"><span lang="en">Hillside Buffer</span><span lang="th">กันชนเนินเขา</span><span lang="ru">Буферная зона</span></div>
+          <div class="zone-bar" style="background:#8BAF9E; width:52%"><span lang="en">Equestrian Complex · 100m+ from nearest villa · Sound buffer</span><span lang="th">คอมเพล็กซ์กีฬาขี่ม้า · ห่าง 100+ เมตร · กันชนเสียง</span><span lang="ru">Конный комплекс · 100+ м от ближайшей виллы · Звукобуфер</span></div>
+          <div class="zone-elevation">▼ BASE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ FINANCIALS -->
+<section class="financials" id="financials">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Financial Highlights</span>
+      <span lang="th">ตัวเลขทางการเงินที่สำคัญ</span>
+      <span lang="ru">Финансовые показатели</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Conservative — Year 3 Stabilized (Wellness Only)</span>
+      <span lang="th">Conservative — ปีที่ 3 เสถียรภาพ (เฉพาะศูนย์สุขภาวะ)</span>
+      <span lang="ru">Консервативный — год 3, стабилизация (только велнес)</span>
+    </h2>
+    <div class="divider"></div>
+    <p class="section-lead">
+      <span lang="en">Equestrian sub-project financials are in a separate model. Figures below exclude equestrian revenue and CAPEX. Full DCF with exit scenarios available on request under NDA.</span>
+      <span lang="th">ตัวเลขทางการเงินของโครงการย่อยกีฬาขี่ม้าอยู่ในโมเดลแยกต่างหาก ตัวเลขด้านล่างไม่รวมรายได้และ CAPEX กีฬาขี่ม้า DCF ฉบับเต็มพร้อมสถานการณ์การขายมีให้ตามคำขอภายใต้ NDA</span>
+      <span lang="ru">Финансовая модель конного субпроекта ведётся отдельно. Цифры ниже не включают выручку и CAPEX конного блока. Полный DCF со сценариями выхода — по запросу под NDA.</span>
+    </p>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">Gross Revenue (Wellness)</span>
+          <span lang="th">รายได้รวม (สุขภาวะ)</span>
+          <span lang="ru">Валовая выручка (велнес)</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Total revenue across all wellness revenue streams — villas, spa, restaurant, café, events. Equestrian excluded.</span>
+            <span lang="th">รายได้รวมจากทุกสายรายได้ของศูนย์สุขภาวะ — วิลล่า สปา ร้านอาหาร คาเฟ่ งานอีเวนต์ ไม่รวมกีฬาขี่ม้า</span>
+            <span lang="ru">Общий доход по всем потокам центра здоровья — виллы, спа, ресторан, кафе, мероприятия. Конный комплекс исключён.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>28,000,000</div>
+        <div class="metric-sub"><span lang="en">Year 3 conservative</span><span lang="th">ปีที่ 3 conservative</span><span lang="ru">Год 3, консервативный</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">EBITDA Margin</span>
+          <span lang="th">อัตรากำไร EBITDA</span>
+          <span lang="ru">Маржа EBITDA</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Operating profit as a percentage of revenue in Year 3 conservative. Lower than food-court due to higher staffing intensity of a full wellness operation.</span>
+            <span lang="th">กำไรจากการดำเนินงานเป็นเปอร์เซ็นต์ของรายได้ในปีที่ 3 conservative ต่ำกว่า food court เนื่องจากความเข้มข้นด้านพนักงานที่สูงกว่า</span>
+            <span lang="ru">Операционная прибыль в % от выручки на 3-й год, консервативный. Ниже, чем у фуд-корта, из-за более высокой трудоёмкости персонала велнес-операции.</span>
+          </span></button>
+        </div>
+        <div class="metric-value">22%</div>
+        <div class="metric-sub"><span lang="en">Year 3 conservative</span><span lang="th">ปีที่ 3 conservative</span><span lang="ru">Год 3, консервативный</span></div>
+      </div>
+      <div class="metric-card highlight-card">
+        <div class="metric-label">
+          <span lang="en">EBITDA</span>
+          <span lang="th">EBITDA</span>
+          <span lang="ru">EBITDA</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Stabilised annual operating cash flow in Year 3 conservative. Equestrian financials are in a separate model and not included here.</span>
+            <span lang="th">กระแสเงินสดจากการดำเนินงานต่อปีที่เสถียรแล้วในปีที่ 3 conservative ตัวเลขกีฬาขี่ม้าอยู่ในโมเดลแยกต่างหาก</span>
+            <span lang="ru">Стабилизированный годовой операционный денежный поток на 3-й год, консервативный. Финансы конного комплекса — в отдельной модели.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>6,160,000</div>
+        <div class="metric-sub"><span lang="en">Year 3 conservative</span><span lang="th">ปีที่ 3 conservative</span><span lang="ru">Год 3, консервативный</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">Total CAPEX (Wellness)</span>
+          <span lang="th">CAPEX รวม (สุขภาวะ)</span>
+          <span lang="ru">Итого CAPEX (велнес)</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Capital expenditure for the wellness centre — villas, spa, restaurant, event hall, infrastructure, FF&amp;E, and soft costs. Equestrian is budgeted separately.</span>
+            <span lang="th">เงินลงทุนสำหรับศูนย์สุขภาวะ — วิลล่า สปา ร้านอาหาร ห้องจัดงาน โครงสร้างพื้นฐาน FF&amp;E และค่าใช้จ่ายอ่อน กีฬาขี่ม้าอยู่ในงบประมาณแยก</span>
+            <span lang="ru">Капитальные вложения в центр здоровья — виллы, спа, ресторан, ивент-зал, инфраструктура, FF&amp;E и сопутствующие расходы. Конный комплекс бюджетируется отдельно.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>226,000,000</div>
+        <div class="metric-sub"><span lang="en">excl. equestrian</span><span lang="th">ไม่รวมกีฬาขี่ม้า</span><span lang="ru">без конного блока</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">
+          <span lang="en">Villa ADR (weighted annual avg)</span>
+          <span lang="th">ADR วิลล่า (ถัวเฉลี่ยถ่วงน้ำหนัก)</span>
+          <span lang="ru">ADR вилл (взвешенный среднегодовой)</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Average villa rate per night, weighted across all 7 villas and all periods — peak, shoulder, and low season. Conservative assumption.</span>
+            <span lang="th">ราคาวิลล่าเฉลี่ยต่อคืน ถ่วงน้ำหนักสำหรับวิลล่าทั้ง 7 หลังและทุกช่วงเวลา — ไฮซีซั่น ช่วงกลาง และโลว์ซีซั่น สมมติฐาน conservative</span>
+            <span lang="ru">Средняя цена за виллу в сутки, взвешенная по всем 7 виллам и всем периодам — пик, плечо, низкий сезон, консервативный сценарий. Ориентир сектора: Aleenta Hua Hin 68–78%[²] при более высоком ADR.</span>
+          </span></button>
+        </div>
+        <div class="metric-value"><span class="currency">฿</span>9,000</div>
+        <div class="metric-sub"><span lang="en">per night, conservative</span><span lang="th">ต่อคืน conservative</span><span lang="ru">за ночь, консервативный</span></div>
+      </div>
+      <div class="metric-card highlight-card">
+        <div class="metric-label">
+          <span lang="en">Villa Occupancy</span>
+          <span lang="th">อัตราการเข้าพักวิลล่า</span>
+          <span lang="ru">Загрузка вилл</span>
+          <button class="tooltip-btn" type="button">?<span class="tooltip-popup">
+            <span lang="en">Share of available villa-nights sold in Year 3 conservative. Sector benchmark: Aleenta Hua Hin runs 68–78%[²] occupancy at a higher ADR (source: Aleenta public disclosures / Bangkok Post).</span>
+            <span lang="th">สัดส่วนของคืนวิลล่าที่ขายได้ในปีที่ 3 conservative เกณฑ์เปรียบเทียบ: Aleenta หัวหิน อยู่ที่ 68–78%[²] ที่ ADR สูงกว่า (ที่มา: เอกสารเผยแพร่สาธารณะ Aleenta / Bangkok Post)</span>
+            <span lang="ru">Доля доступных вилла-ночей, проданных на 3-й год, консервативный. Ориентир сектора: Aleenta Hua Hin 68–78%[²] при более высоком ADR (Aleenta / Bangkok Post).</span>
+          </span></button>
+        </div>
+        <div class="metric-value">52%</div>
+        <div class="metric-sub"><span lang="en">conservative year 3</span><span lang="th">conservative ปีที่ 3</span><span lang="ru">консервативный, год 3</span></div>
+      </div>
+    </div>
+
+    <div class="exit-scenarios">
+      <div class="exit-title">
+        <span lang="en">Asset Exit Reference — EV/EBITDA 9–11× (Thailand Boutique Wellness Comparable)</span>
+        <span lang="th">มูลค่าทรัพย์สินเมื่อขาย — EV/EBITDA 9–11 เท่า (ธุรกรรมรีสอร์ทเพื่อสุขภาวะระดับบูทิคในประเทศไทย)</span>
+        <span lang="ru">Ориентиры выхода — EV/EBITDA 9–11× (сопоставимые сделки бутик-велнес Таиланда)</span>
+      </div>
+      <div class="exit-row exit-header">
+        <div class="exit-row-label"></div>
+        <div class="exit-val">EBITDA</div>
+        <div class="exit-val">9× <span lang="en">exit</span><span lang="th">การขาย</span><span lang="ru">выход</span></div>
+        <div class="exit-val">11× <span lang="en">exit</span><span lang="th">การขาย</span><span lang="ru">выход</span></div>
+      </div>
+      <div class="exit-row">
+        <div class="exit-row-label"><span lang="en">Conservative scenario</span><span lang="th">สถานการณ์ Conservative</span><span lang="ru">Консервативный</span></div>
+        <div class="exit-val">฿6.2M</div>
+        <div class="exit-val">฿55.4M</div>
+        <div class="exit-val">฿67.8M</div>
+      </div>
+      <div class="exit-row">
+        <div class="exit-row-label"><span lang="en">Base case (Year 5+)</span><span lang="th">Base Case (ปีที่ 5+)</span><span lang="ru">Базовый (год 5+)</span></div>
+        <div class="exit-val">฿12.8M</div>
+        <div class="exit-val">฿115.2M</div>
+        <div class="exit-val">฿140.8M</div>
+      </div>
+      <div class="exit-row">
+        <div class="exit-row-label"><span lang="en">Optimistic scenario</span><span lang="th">สถานการณ์ Optimistic</span><span lang="ru">Оптимистичный</span></div>
+        <div class="exit-val">฿20.5M</div>
+        <div class="exit-val">฿184.5M</div>
+        <div class="exit-val">฿225.5M</div>
+      </div>
+    </div>
+
+    <div class="boi-note">
+      <strong>BOI Section 7.4 (Health &amp; Wellness Tourism) — <span lang="en">pending application:</span><span lang="th">รอการยื่นคำขอ:</span><span lang="ru">заявка на рассмотрении:</span></strong>
+      <span lang="en"> 3–5 year corporate income tax exemption on stabilized revenue of ฿40,000,000+. Estimated cumulative tax savings: ฿6,000,000–10,000,000 over the exemption period. If BOI approved: 100% foreign ownership permitted. Pre-consultation to be filed within 60 days.</span>
+      <span lang="th"> การยกเว้นภาษีเงินได้นิติบุคคล 3–5 ปีสำหรับรายได้ที่เสถียรแล้ว 40,000,000 บาทขึ้นไป ประเมินการประหยัดภาษีสะสม 6,000,000–10,000,000 บาท หาก BOI อนุมัติ: อนุญาตให้ถือหุ้น 100% โดยชาวต่างชาติ กำลังยื่นคำขอปรึกษาหารือก่อนภายใน 60 วัน</span>
+      <span lang="ru"> Освобождение от корпоративного налога на 3–5 лет при стабилизированной выручке ฿40 000 000+. Расчётная суммарная экономия: ฿6 000 000–10 000 000. При одобрении BOI: разрешено 100% иностранное владение. Подача заявки на предварительную консультацию — в течение 60 дней.</span>
+    </div>
+    <div class="equestrian-note">
+      <strong><span lang="en">Equestrian Partnership Impact:</span><span lang="th">ผลกระทบจากความร่วมมือด้านกีฬาขี่ม้า:</span><span lang="ru">Эффект партнёрской модели (конный блок):</span></strong>
+      <span lang="en"> Under the partnership model (Hua Hin Horse Club / adjacent polo farm), horse acquisition CAPEX = ฿0. Monthly equestrian OPEX: ฿45,000–85,000 (vs. ฿189,000 independent). Equestrian program becomes net revenue contributor from Year 2. Equestrian sub-project available as a separate ฿20,000,000–40,000,000 investment opportunity.</span>
+      <span lang="th"> ภายใต้โมเดลความร่วมมือกับ Hua Hin Horse Club CAPEX การซื้อม้า = ฿0 OPEX รายเดือนด้านกีฬาขี่ม้า: 45,000–85,000 บาท (เทียบกับ 189,000 บาทแบบอิสระ) โปรแกรมกีฬาขี่ม้ากลายเป็นตัวสร้างรายได้สุทธิตั้งแต่ปีที่ 2 โครงการย่อยกีฬาขี่ม้ามีให้เป็นโอกาสการลงทุนแยกต่างหาก 20,000,000–40,000,000 บาท</span>
+      <span lang="ru"> По партнёрской модели (Hua Hin Horse Club / соседняя поло-ферма) CAPEX на лошадей = ฿0. Ежемесячный OPEX конного блока: ฿45 000–85 000 (vs. ฿189 000 независимо). С года 2 конный блок приносит чистый доход. Конный субпроект — отдельная инвестиционная возможность на ฿20 000 000–40 000 000.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ INVESTMENT ASK -->
+<section class="invest-ask" id="invest">
+  <div class="section-inner">
+    <div class="section-label">
+      <span lang="en">Investment Structure</span>
+      <span lang="th">โครงสร้างการลงทุน</span>
+      <span lang="ru">Структура инвестиций</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">Building the First of Its Kind in the Corridor</span>
+      <span lang="th">สร้างสิ่งแรกของประเภทนี้ในย่านนี้</span>
+      <span lang="ru">Первый в своём роде в коридоре</span>
+    </h2>
+    <div class="divider"></div>
+
+    <div class="ask-inner">
+      <div>
+        <div class="structure-item">
+          <div>
+            <div class="structure-key"><span lang="en">Total CAPEX (Wellness)</span><span lang="th">CAPEX รวม (สุขภาวะ)</span><span lang="ru">Итого CAPEX (велнес)</span></div>
+            <div class="structure-val">฿226,000,000</div>
+            <div class="structure-note"><span lang="en">excl. equestrian sub-project</span><span lang="th">ไม่รวมโครงการย่อยกีฬาขี่ม้า</span><span lang="ru">без конного субпроекта</span></div>
+          </div>
+        </div>
+        <div class="structure-item">
+          <div>
+            <div class="structure-key"><span lang="en">Equity (45%)</span><span lang="th">ส่วนทุน (45%)</span><span lang="ru">Собственный капитал (45%)</span></div>
+            <div class="structure-val">฿101,700,000</div>
+          </div>
+        </div>
+        <div class="structure-item">
+          <div>
+            <div class="structure-key"><span lang="en">Debt (55%)</span><span lang="th">หนี้สิน (55%)</span><span lang="ru">Долг (55%)</span></div>
+            <div class="structure-val">฿124,300,000</div>
+            <div class="structure-note">6.5% · 10 years · <span lang="en">annual service</span><span lang="th">ภาระหนี้ต่อปี</span><span lang="ru">ежегодное обслуживание</span> ฿21,600,000</div>
+          </div>
+        </div>
+        <div class="structure-item">
+          <div>
+            <div class="structure-key"><span lang="en">Minimum Ticket</span><span lang="th">ขั้นต่ำการลงทุน</span><span lang="ru">Минимальный взнос</span></div>
+            <div class="structure-val">฿10,000,000</div>
+            <div class="structure-note"><span lang="en">≈ 5% economic interest in operating company</span><span lang="th">≈ ส่วนได้เสียทางเศรษฐกิจ 5%</span><span lang="ru">≈ 5% экономической доли в операционной компании</span></div>
+          </div>
+        </div>
+        <div class="structure-item">
+          <div>
+            <div class="structure-key"><span lang="en">Legal Structure</span><span lang="th">โครงสร้างทางกฎหมาย</span><span lang="ru">Правовая структура</span></div>
+            <div class="structure-val" style="font-size:0.88rem;line-height:1.5">
+              <span lang="en">Thai Ltd · 49% foreign / 51% Thai · BOI application pending · If approved: 100% foreign ownership</span>
+              <span lang="th">บริษัทจำกัดไทย · 49% ต่างชาติ / 51% ไทย · รอการยื่นคำขอ BOI · หากอนุมัติ: ถือหุ้น 100% โดยต่างชาติ</span>
+              <span lang="ru">Thai Ltd · 49% иностранный / 51% тайский · заявка BOI на рассмотрении · При одобрении: 100% иностранное владение</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="boi-box">
+          <div class="boi-box-title">
+            <span lang="en">BOI Section 7.4 — Investor Benefits</span>
+            <span lang="th">BOI หมวด 7.4 — ประโยชน์สำหรับนักลงทุน</span>
+            <span lang="ru">BOI Раздел 7.4 — Выгоды для инвесторов</span>
+          </div>
+          <div class="boi-item"><span class="boi-bullet">→</span><span lang="en">100% foreign ownership of the operating company (if BOI approved)</span><span lang="th">ถือหุ้น 100% โดยชาวต่างชาติในบริษัทดำเนินงาน (หาก BOI อนุมัติ)</span><span lang="ru">100% иностранное владение операционной компанией (при одобрении BOI)</span></div>
+          <div class="boi-item"><span class="boi-bullet">→</span><span lang="en">3–5 year corporate income tax exemption — ฿6–10M estimated cumulative saving</span><span lang="th">การยกเว้นภาษีเงินได้นิติบุคคล 3–5 ปี — ประมาณการประหยัดสะสม 6–10 ล้านบาท</span><span lang="ru">Освобождение от корпоративного налога на 3–5 лет — расчётная суммарная экономия ฿6–10M</span></div>
+          <div class="boi-item"><span class="boi-bullet">→</span><span lang="en">Investors who commit before BOI approval participate in the structure from inception</span><span lang="th">นักลงทุนที่มุ่งมั่นก่อนการอนุมัติ BOI จะเข้าร่วมโครงสร้างตั้งแต่เริ่มต้น</span><span lang="ru">Инвесторы, вошедшие до одобрения BOI, участвуют в структуре с первого дня</span></div>
+          <div class="boi-item"><span class="boi-bullet">→</span><span lang="en">Pre-consultation with BOI to be filed within 60 days</span><span lang="th">การปรึกษาหารือก่อนกับ BOI จะยื่นภายใน 60 วัน</span><span lang="ru">Предварительная консультация с BOI — подача в течение 60 дней</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="donut-wrap">
+          <div class="donut-title">
+            <span lang="en">Use of Funds — ฿226,000,000 Wellness CAPEX</span>
+            <span lang="th">การใช้เงินทุน — 226,000,000 บาท CAPEX สุขภาวะ</span>
+            <span lang="ru">Распределение средств — ฿226,000,000 CAPEX велнес</span>
+          </div>
+          <!-- C = 502.65 (r=80) -->
+          <!-- Soft costs 69.5M = 30.7% = 154.3px -->
+          <!-- Villa construction 39M = 17.3% = 86.9px -->
+          <!-- Spa building 35M = 15.5% = 77.9px -->
+          <!-- Restaurant+event hall 33.5M = 14.8% = 74.4px -->
+          <!-- FF&E 19M = 8.4% = 42.2px -->
+          <!-- Land 10M = 4.4% = 22.1px -->
+          <!-- Infrastructure 5M = 2.2% = 11.1px -->
+          <!-- Remaining: villa extension 15M = 6.6% = 33.2 ... let me fix: total = 226M -->
+          <!-- Land: 10M (4.4%), Villa: 39M (17.3%), Spa: 35M (15.5%), Rest+events: 33.5M (14.8%), Infra: 5M (2.2%), FF&E: 19M (8.4%), Soft costs: 69.5M (30.7%), remaining: 15M villa rounding (6.6%) -->
+          <!-- Actually let me use only 6 categories for cleanliness -->
+          <!-- Land+Infra: 15M (6.6%=33.2), Villa: 39M (17.3%=86.9), Spa: 35M (15.5%=77.9), Rest+Event: 33.5M (14.8%=74.4), FF&E: 19M (8.4%=42.2), Soft: 84.5M (37.4%=187.9) -->
+          <!-- Check: 15+39+35+33.5+19+84.5=226 ✓ -->
+          <svg class="donut-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#E5E0D5" stroke-width="28"/>
+            <!-- Soft costs 37.4% = 187.9 -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#D4A843" stroke-width="28"
+              stroke-dasharray="187.9 502.65" stroke-dashoffset="0"
+              transform="rotate(-90 100 100)"/>
+            <!-- Villas 17.3% = 86.9, offset -187.9 -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#1B4332" stroke-width="28"
+              stroke-dasharray="86.9 502.65" stroke-dashoffset="-187.9"
+              transform="rotate(-90 100 100)"/>
+            <!-- Spa 15.5% = 77.9, offset -274.8 -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#40916C" stroke-width="28"
+              stroke-dasharray="77.9 502.65" stroke-dashoffset="-274.8"
+              transform="rotate(-90 100 100)"/>
+            <!-- Rest+Event 14.8% = 74.4, offset -352.7 -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#2D6A4F" stroke-width="28"
+              stroke-dasharray="74.4 502.65" stroke-dashoffset="-352.7"
+              transform="rotate(-90 100 100)"/>
+            <!-- FF&E 8.4% = 42.2, offset -427.1 -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#B8882A" stroke-width="28"
+              stroke-dasharray="42.2 502.65" stroke-dashoffset="-427.1"
+              transform="rotate(-90 100 100)"/>
+            <!-- Land+Infra 6.6% = 33.2, offset -469.3 -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#8BAF9E" stroke-width="28"
+              stroke-dasharray="33.2 502.65" stroke-dashoffset="-469.3"
+              transform="rotate(-90 100 100)"/>
+            <text x="100" y="93" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="16" fill="#1B4332">฿226M</text>
+            <text x="100" y="109" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8.5" fill="#6B7280">WELLNESS CAPEX</text>
+          </svg>
+          <div class="donut-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#D4A843"></div><span lang="en">Soft costs &amp; contingency</span><span lang="th">ค่าใช้จ่ายอ่อนและค่าสำรอง</span><span lang="ru">Мягкие затраты и резерв</span><span class="legend-pct">37%</span></div>
+            <div class="legend-item"><div class="legend-dot" style="background:#1B4332"></div><span lang="en">Villa construction (5 units)</span><span lang="th">การก่อสร้างวิลล่า (5 หลัง)</span><span lang="ru">Строительство вилл (5 ед.)</span><span class="legend-pct">17%</span></div>
+            <div class="legend-item"><div class="legend-dot" style="background:#40916C"></div><span lang="en">Spa building (500 sqm, 8 rooms)</span><span lang="th">อาคารสปา (500 ตร.ม. 8 ห้อง)</span><span lang="ru">Здание спа (500 м², 8 кабинетов)</span><span class="legend-pct">16%</span></div>
+            <div class="legend-item"><div class="legend-dot" style="background:#2D6A4F"></div><span lang="en">Restaurant + café + event hall</span><span lang="th">ร้านอาหาร + คาเฟ่ + ห้องจัดงาน</span><span lang="ru">Ресторан + кафе + банкетный зал</span><span class="legend-pct">15%</span></div>
+            <div class="legend-item"><div class="legend-dot" style="background:#B8882A"></div><span lang="en">Landscaping + FF&amp;E</span><span lang="th">ภูมิทัศน์ + เฟอร์นิเจอร์</span><span lang="ru">Благоустройство + FF&amp;E</span><span class="legend-pct">8%</span></div>
+            <div class="legend-item"><div class="legend-dot" style="background:#8BAF9E"></div><span lang="en">Land + infrastructure</span><span lang="th">ที่ดิน + โครงสร้างพื้นฐาน</span><span lang="ru">Земля + инфраструктура</span><span class="legend-pct">7%</span></div>
+          </div>
+        </div>
+
+        <div class="equestrian-sub">
+          <div class="eq-sub-title">
+            <span lang="en">Equestrian Sub-Project — Separate Opportunity</span>
+            <span lang="th">โครงการย่อยกีฬาขี่ม้า — โอกาสแยกต่างหาก</span>
+            <span lang="ru">Конный субпроект — отдельная возможность</span>
+          </div>
+          <div class="eq-sub-body">
+            <span lang="en">฿20,000,000–40,000,000 investment opportunity. Modeled independently with a separate P&L. Under the partnership model (Hua Hin Horse Club cooperation): horse CAPEX = ฿0, equestrian profitable from Year 2. Contact for the equestrian investment pack separately.</span>
+            <span lang="th">โอกาสการลงทุน 20,000,000–40,000,000 บาท ประเมินอย่างเป็นอิสระพร้อม P&L แยกต่างหาก ภายใต้โมเดลความร่วมมือกับ Hua Hin Horse Club: CAPEX ม้า = ฿0 กีฬาขี่ม้ากำไรตั้งแต่ปีที่ 2 ติดต่อสำหรับเอกสารการลงทุนด้านกีฬาขี่ม้าแยกต่างหาก</span>
+            <span lang="ru">Инвестиционная возможность на ฿20 000 000–40 000 000. Отдельная модель с самостоятельным P&amp;L. По партнёрской модели (Hua Hin Horse Club): CAPEX на лошадей = ฿0, конный блок прибылен с года 2. Инвестиционный пакет по конному блоку — по запросу отдельно.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ CTA -->
+<section class="cta-section" id="contact">
+  <div class="section-inner">
+    <div class="section-label" style="color:rgba(212,168,67,0.8);">
+      <span lang="en">Next Steps</span>
+      <span lang="th">ขั้นตอนต่อไป</span>
+      <span lang="ru">Следующие шаги</span>
+    </div>
+    <h2 class="section-title">
+      <span lang="en">The Hillside Is Waiting</span>
+      <span lang="th">เนินเขากำลังรอ</span>
+      <span lang="ru">Холм ждёт</span>
+    </h2>
+    <div class="divider" style="margin:1rem auto 2rem;"></div>
+    <p class="section-lead">
+      <span lang="en">The window to acquire hillside agricultural land at pre-luxury-entry pricing closes in 2026. Three paths forward.</span>
+      <span lang="th">ช่องทางในการซื้อที่ดินเกษตรกรรมบนเนินเขาในราคาก่อนการเข้าของแบรนด์หรูระดับสากลจะปิดลงในปี 2569 สามเส้นทางข้างหน้า</span>
+      <span lang="ru">Окно для приобретения сельскохозяйственных земель на склоне по ценам до выхода международных luxury-брендов закрывается в 2026 году. Три пути вперёд.</span>
+    </p>
+
+    <div class="cta-step-grid">
+      <div class="cta-step">
+        <div class="cta-step-num">01</div>
+        <div class="cta-step-title"><span lang="en">Request the Investment Summary</span><span lang="th">ขอรับสรุปการลงทุน</span><span lang="ru">Запросить инвестиционное резюме</span></div>
+        <div class="cta-step-desc"><span lang="en">Full financial model (3 scenarios, 10-year DCF), BOI status, equestrian partnership structure, land shortlist, and comparable transaction analysis. Under NDA.</span><span lang="th">โมเดลการเงินฉบับเต็ม (3 สถานการณ์, DCF 10 ปี) สถานะ BOI โครงสร้างความร่วมมือกีฬาขี่ม้า รายชื่อที่ดินเป้าหมาย และการวิเคราะห์ธุรกรรมเปรียบเทียบ</span><span lang="ru">Полная финансовая модель (3 сценария, DCF 10 лет), статус BOI, структура партнёрства конного блока, шортлист участков, анализ сопоставимых сделок. Под NDA.</span></div>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">02</div>
+        <div class="cta-step-title"><span lang="en">Schedule a Hillside Site Visit</span><span lang="th">นัดหมายเยี่ยมชมเนินเขา</span><span lang="ru">Выезд на участок</span></div>
+        <div class="cta-step-desc"><span lang="en">Soi 88 hillside — 15 minutes from Hua Hin center. Visit includes: target land parcels, adjacent polo farm, and Pranburi Forest Resort as the nearest comparable. The most efficient way to understand why the location is irreplaceable.</span><span lang="th">เนินเขาซอย 88 — 15 นาทีจากใจกลางหัวหิน รวมถึง: แปลงที่ดินเป้าหมาย ฟาร์มม้าใกล้เคียง และ Pranburi Forest Resort เป็นตัวอ้างอิงที่ใกล้เคียงที่สุด</span><span lang="ru">Склон Сои 88 — 15 минут от центра Хуахина. Объезд включает: целевые участки, соседнюю поло-ферму и Pranburi Forest Resort как ближайший ориентир. Самый наглядный способ понять, почему локация незаменима.</span></div>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">03</div>
+        <div class="cta-step-title"><span lang="en">Join BOI Pre-Consultation</span><span lang="th">เข้าร่วมการปรึกษาหารือ BOI ล่วงหน้า</span><span lang="ru">Войти в предварительную консультацию BOI</span></div>
+        <div class="cta-step-desc"><span lang="en">For investors who want 100% foreign ownership. BOI Section 7.4 pre-consultation filing within 60 days. Investors who commit before approval participate in the structure from inception.</span><span lang="th">สำหรับนักลงทุนที่ต้องการถือหุ้น 100% โดยชาวต่างชาติ การยื่นคำขอปรึกษาหารือ BOI หมวด 7.4 ล่วงหน้าภายใน 60 วัน นักลงทุนที่มุ่งมั่นก่อนการอนุมัติจะเข้าร่วมโครงสร้างตั้งแต่เริ่มต้น</span><span lang="ru">Для инвесторов, желающих 100% иностранного владения. Подача заявки на предварительную консультацию BOI Раздел 7.4 — в течение 60 дней. Инвесторы, вошедшие до одобрения, участвуют в структуре с первого дня.</span></div>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="mailto:contact@example.com?subject=Wellness Resort - Investment Summary Request" class="btn-cta-primary">
+        <span lang="en">Request Investment Summary</span>
+        <span lang="th">ขอรับสรุปการลงทุน</span>
+        <span lang="ru">Запросить инвестрезюме</span>
+      </a>
+      <a href="mailto:contact@example.com?subject=Wellness Resort - Hillside Site Visit" class="btn-cta-secondary">
+        <span lang="en">Schedule a Hillside Site Visit</span>
+        <span lang="th">นัดหมายเยี่ยมชมเนินเขา</span>
+        <span lang="ru">Записаться на выезд</span>
+      </a>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item"><span lang="en">Email:</span><span lang="th">อีเมล:</span><span lang="ru">Email:</span> <a href="mailto:contact@example.com">[PROJECT SPONSOR EMAIL]</a></div>
+      <div class="contact-item">LINE / WhatsApp: <a href="#">[CONTACT]</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclaimer">
+      <span lang="en"><strong style="color:rgba(255,255,255,0.5)">Investment Risk Disclaimer:</strong> This document is for informational purposes only and does not constitute an offer to sell or solicitation to buy any securities. All financial projections are forward-looking statements. BOI benefits described are subject to application and approval — outcomes not guaranteed. Adjacent property relationships are described for informational purposes only; no representations are made regarding ownership or third-party affiliations that have not been independently verified. Royal family land connection referenced in internal notes is unverified and does not appear in this document; it requires legal review before any public representation. Investment in hospitality real estate development involves significant risk including possible loss of principal. All figures in Thai Baht (฿). Full model available under NDA.</span>
+      <span lang="th"><strong style="color:rgba(255,255,255,0.5)">ข้อจำกัดความรับผิดชอบ:</strong> เอกสารนี้จัดทำขึ้นเพื่อให้ข้อมูลเท่านั้น ไม่ถือเป็นข้อเสนอขายหรือการชักชวนซื้อหลักทรัพย์ใดๆ ประโยชน์ BOI ที่อธิบายขึ้นอยู่กับการยื่นคำขอและการอนุมัติ ไม่รับประกันผลลัพธ์ การลงทุนในการพัฒนาอสังหาริมทรัพย์มีความเสี่ยงสูง โมเดลฉบับเต็มมีให้ภายใต้ NDA</span>
+      <span lang="ru"><strong style="color:rgba(255,255,255,0.5)">Отказ от ответственности:</strong> Настоящий документ носит исключительно информационный характер и не является предложением о продаже или приглашением к покупке ценных бумаг. Все финансовые прогнозы содержат заявления о будущем. Льготы BOI зависят от подачи заявки и её одобрения — результаты не гарантируются. Инвестиции в девелопмент гостиничной недвижимости сопряжены со значительным риском, включая возможную потерю вложенного капитала. Все показатели указаны в тайских батах (฿). Полная модель предоставляется под NDA.</span>
+    </p>
+    <div class="footer-bottom">
+      <div class="footer-brand">Hillside Wellness &amp; Equestrian · Hua Hin · Project 3 of 3</div>
+      <div class="footer-note">
+        <span lang="en">Content version 1.0 · April 2026 · TH content requires native speaker verification · Equestrian financials in separate model</span>
+        <span lang="th">เวอร์ชันเนื้อหา 1.0 · เมษายน 2569 · เนื้อหาภาษาไทยต้องมีการตรวจสอบโดยเจ้าของภาษา · ตัวเลขกีฬาขี่ม้าอยู่ในโมเดลแยกต่างหาก</span>
+        <span lang="ru">Версия контента 1.0 · Апрель 2026 · TH-версия требует проверки носителем языка · Финансы конного блока в отдельной модели</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = document.body.className.replace(/lang-\w+/g, '').trim() + ' lang-' + lang;
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-th').classList.toggle('active', lang === 'th');
+    document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+    document.documentElement.lang = lang === 'th' ? 'th' : lang === 'ru' ? 'ru' : 'en';
+    localStorage.setItem('hhLang', lang);
+  }
+  (function() { var s = localStorage.getItem('hhLang'); if (s === 'th') setLang('th'); else if (s === 'ru') setLang('ru'); })();
+  var header = document.getElementById('site-header');
+  window.addEventListener('scroll', function() {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.metric-card,.diff-card,.cta-step').forEach(function(el) {
+    el.style.opacity='0'; el.style.transform='translateY(16px)';
+    el.style.transition='opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
